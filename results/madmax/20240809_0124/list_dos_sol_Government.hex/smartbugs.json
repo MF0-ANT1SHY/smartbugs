@@ -1,0 +1,51 @@
+{
+    "docker": {
+        "command": null,
+        "detach": true,
+        "entrypoint": "'/sb/bin/do_runtime.sh' '/sb/list_dos_sol_Government.hex' '1800'",
+        "image": "smartbugs/madmax:6e9a6e9",
+        "mem_limit": "8g",
+        "user": 0,
+        "volumes": {
+            "/tmp/tmpcfpycmo6": {
+                "bind": "/sb",
+                "mode": "rw"
+            }
+        }
+    },
+    "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/list_dos_sol_Government.hex",
+    "platform": {
+        "cpu": "Intel(R) Xeon(R) Gold 5418Y",
+        "python": "3.10.12.final.0 (64 bit)",
+        "release": "5.15.0-105-generic",
+        "smartbugs": "2.0.10",
+        "system": "Linux",
+        "version": "#115-Ubuntu SMP Mon Apr 15 09:52:04 UTC 2024"
+    },
+    "result": {
+        "duration": 1.9093258380889893,
+        "exit_code": 0,
+        "logs": "result.log",
+        "output": "result.tar",
+        "start": 1723166710.392443
+    },
+    "runid": "20240809_0124",
+    "solc": null,
+    "tool": {
+        "bin": "scripts",
+        "command": null,
+        "cpu_quota": null,
+        "entrypoint": "'$BIN/do_runtime.sh' '$FILENAME' '$TIMEOUT'",
+        "id": "madmax",
+        "image": "smartbugs/madmax:6e9a6e9",
+        "info": "Madmax consists of a series of analyses and queries that find gas-focused vulnerabilities in Ethereum smart contracts.",
+        "mem_limit": null,
+        "mode": "runtime",
+        "name": "MadMax",
+        "origin": "https://github.com/nevillegrech/MadMax",
+        "output": "/MadMax/results.json",
+        "parser": "parser.py",
+        "solc": null,
+        "version": "#6e9a6e9"
+    }
+}
