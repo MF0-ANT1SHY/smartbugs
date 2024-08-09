@@ -1,0 +1,30 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 1864,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01_sol_TokenBank.hex",
+            "function": "WitdrawTokenToHolder(address,address,uint256)",
+            "name": "Unchecked Low Level Call"
+        },
+        {
+            "address": 832,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01_sol_TokenBank.hex",
+            "function": "_fallthrough",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 1864,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01_sol_TokenBank.hex",
+            "function": "WitdrawTokenToHolder(address,address,uint256)",
+            "name": "Reentrancy"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "runtime",
+        "version": "2022/11/11"
+    }
+}

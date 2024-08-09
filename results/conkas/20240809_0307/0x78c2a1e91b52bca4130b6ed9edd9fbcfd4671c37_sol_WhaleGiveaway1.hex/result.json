@@ -1,0 +1,54 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 737,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37_sol_WhaleGiveaway1.hex",
+            "function": "withdraw()",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 1034,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37_sol_WhaleGiveaway1.hex",
+            "function": "Command(address,bytes)",
+            "name": "Unchecked Low Level Call"
+        },
+        {
+            "address": 1258,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37_sol_WhaleGiveaway1.hex",
+            "function": "redeem()",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 1034,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37_sol_WhaleGiveaway1.hex",
+            "function": "Command(address,bytes)",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 316,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37_sol_WhaleGiveaway1.hex",
+            "function": "Command(address,bytes)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 310,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37_sol_WhaleGiveaway1.hex",
+            "function": "Command(address,bytes)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 304,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x78c2a1e91b52bca4130b6ed9edd9fbcfd4671c37_sol_WhaleGiveaway1.hex",
+            "function": "Command(address,bytes)",
+            "name": "Integer Overflow"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "runtime",
+        "version": "2022/11/11"
+    }
+}

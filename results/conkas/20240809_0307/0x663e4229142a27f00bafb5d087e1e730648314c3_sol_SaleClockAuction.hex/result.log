@@ -1,0 +1,33 @@
+Analysing /sb/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_SaleClockAuction.hex...
+Vulnerability: Time Manipulation. Maybe in function: cancelAuction(uint256). PC: 0x1967. Line number: .
+Vulnerability: Time Manipulation. Maybe in function: cancelAuction(uint256). PC: 0x1756. Line number: .
+Vulnerability: Reentrancy. Maybe in function: createGen0Auction(uint256,uint256,uint256,uint256,address). PC: 0x14e0. Line number: .
+Vulnerability: Integer Underflow. Maybe in function: packageCount(). PC: 0x10b8. Line number: .
+If a = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+and b = 1
+Vulnerability: Integer Underflow. Maybe in function: createPanda(uint256,uint256). PC: 0xa6c. Line number: .
+If a = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+and b = 1
+Vulnerability: Integer Overflow. Maybe in function: createPanda(uint256,uint256). PC: 0xa76. Line number: .
+If a = 101051993584849178915136821395265346177868384823507754984078593667947067386055
+and b = 28948022309329048855892746252171976963317496166410141009864396001978282409984
+Vulnerability: Integer Overflow. Maybe in function: surprisePanda(). PC: 0x786. Line number: .
+If a = 1
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+Vulnerability: Time Manipulation. Maybe in function: cancelAuction(uint256). PC: 0x1b2a. Line number: .
+Vulnerability: Integer Underflow. Maybe in function: packageCount(). PC: 0x10c7. Line number: .
+If a = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+and b = 1
+Vulnerability: Reentrancy. Maybe in function: withdrawBalance(). PC: 0xc47. Line number: .
+Vulnerability: Time Manipulation. Maybe in function: createGen0Auction(uint256,uint256,uint256,uint256,address). PC: 0x167c. Line number: .
+Vulnerability: Unchecked Low Level Call. Maybe in function: withdrawBalance(). PC: 0xc47. Line number: .
+Vulnerability: Time Manipulation. Maybe in function: createGen0Auction(uint256,uint256,uint256,uint256,address). PC: 0x164d. Line number: .
+Vulnerability: Integer Underflow. Maybe in function: createPanda(uint256,uint256). PC: 0xa3b. Line number: .
+If a = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+and b = 1
+Vulnerability: Integer Underflow. Maybe in function: surprisePanda(). PC: 0x67f. Line number: .
+If a = 0
+and b = 1
+Vulnerability: Integer Overflow. Maybe in function: createPanda(uint256,uint256). PC: 0xa45. Line number: .
+If a = 660301456019777184113296434797620819555017468543624515662331739614079884729
+and b = 115131787781296418239457688573890287033714967197096939523795252268299049755207

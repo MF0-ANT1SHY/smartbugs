@@ -1,0 +1,36 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 390,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7_sol_keepMyEther.hex",
+            "function": "withdraw()",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 145,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7_sol_keepMyEther.hex",
+            "function": "_fallthrough",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 390,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7_sol_keepMyEther.hex",
+            "function": "withdraw()",
+            "name": "Transaction Ordering Dependence"
+        },
+        {
+            "address": 390,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7_sol_keepMyEther.hex",
+            "function": "withdraw()",
+            "name": "Unchecked Low Level Call"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "runtime",
+        "version": "2022/11/11"
+    }
+}

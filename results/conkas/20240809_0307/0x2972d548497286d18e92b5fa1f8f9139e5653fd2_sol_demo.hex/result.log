@@ -1,0 +1,6 @@
+Analysing /sb/0x2972d548497286d18e92b5fa1f8f9139e5653fd2_sol_demo.hex...
+Vulnerability: Reentrancy. Maybe in function: transfer(address,address,address[],uint256[]). PC: 0x2dc. Line number: .
+Vulnerability: Unchecked Low Level Call. Maybe in function: transfer(address,address,address[],uint256[]). PC: 0x2dc. Line number: .
+Vulnerability: Integer Overflow. Maybe in function: transfer(address,address,address[],uint256[]). PC: 0x13b. Line number: .
+If a = 32
+and b = 1

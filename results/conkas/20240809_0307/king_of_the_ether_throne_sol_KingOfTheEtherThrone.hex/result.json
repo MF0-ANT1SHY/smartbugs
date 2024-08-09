@@ -1,0 +1,156 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 155,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "_fallthrough",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 565,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "claimThrone(string)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 3451,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "_fallthrough",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 1385,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "_fallthrough",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 170,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "_fallthrough",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 580,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "claimThrone(string)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 1740,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "_fallthrough",
+            "name": "Time Manipulation"
+        },
+        {
+            "address": 1018,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "_fallthrough",
+            "name": "Unchecked Low Level Call"
+        },
+        {
+            "address": 2862,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "0x7842c52d",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 559,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "claimThrone(string)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 1094,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "_fallthrough",
+            "name": "Transaction Ordering Dependence"
+        },
+        {
+            "address": 164,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "_fallthrough",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 1094,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "_fallthrough",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 2605,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "sweepCommission(uint256)",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 1372,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "_fallthrough",
+            "name": "Integer Underflow"
+        },
+        {
+            "address": 1386,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "_fallthrough",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 2856,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "0x7842c52d",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 1337,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "_fallthrough",
+            "name": "Transaction Ordering Dependence"
+        },
+        {
+            "address": 1337,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "_fallthrough",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 2605,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "sweepCommission(uint256)",
+            "name": "Unchecked Low Level Call"
+        },
+        {
+            "address": 571,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "claimThrone(string)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 3465,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "_fallthrough",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 586,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "claimThrone(string)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 1018,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/king_of_the_ether_throne_sol_KingOfTheEtherThrone.hex",
+            "function": "_fallthrough",
+            "name": "Reentrancy"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "runtime",
+        "version": "2022/11/11"
+    }
+}

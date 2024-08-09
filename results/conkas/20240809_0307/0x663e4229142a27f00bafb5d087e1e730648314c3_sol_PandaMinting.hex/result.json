@@ -1,0 +1,54 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 6744,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_PandaMinting.hex",
+            "function": "setSiringAuctionAddress(address)",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 7596,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_PandaMinting.hex",
+            "function": "withdrawERC20Balance(address,address)",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 6948,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_PandaMinting.hex",
+            "function": "bidOnSiringAuction(uint256,uint256)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 6949,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_PandaMinting.hex",
+            "function": "bidOnSiringAuction(uint256,uint256)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 6952,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_PandaMinting.hex",
+            "function": "bidOnSiringAuction(uint256,uint256)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 6897,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_PandaMinting.hex",
+            "function": "totalSupply()",
+            "name": "Integer Underflow"
+        },
+        {
+            "address": 8099,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_PandaMinting.hex",
+            "function": "setGeneScienceAddress(address)",
+            "name": "Reentrancy"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "runtime",
+        "version": "2022/11/11"
+    }
+}

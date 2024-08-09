@@ -1,0 +1,54 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 6504,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_PandaAuction.hex",
+            "function": "transferFrom(address,address,uint256)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 6299,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_PandaAuction.hex",
+            "function": "setSiringAuctionAddress(address)",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 7647,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_PandaAuction.hex",
+            "function": "setGeneScienceAddress(address)",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 6503,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_PandaAuction.hex",
+            "function": "transferFrom(address,address,uint256)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 6452,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_PandaAuction.hex",
+            "function": "balanceOf(address)",
+            "name": "Integer Underflow"
+        },
+        {
+            "address": 6507,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_PandaAuction.hex",
+            "function": "transferFrom(address,address,uint256)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 7144,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_PandaAuction.hex",
+            "function": "withdrawERC20Balance(address,address)",
+            "name": "Reentrancy"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "runtime",
+        "version": "2022/11/11"
+    }
+}

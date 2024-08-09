@@ -1,0 +1,31 @@
+Analysing /sb/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_ERC721Metadata.hex...
+Vulnerability: Integer Overflow. Maybe in function: getMetadata(uint256,string). PC: 0x273. Line number: .
+If a = 32
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639713
+Vulnerability: Integer Overflow. Maybe in function: getMetadata(uint256,string). PC: 0x1db. Line number: .
+If a = 32
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639713
+Vulnerability: Integer Overflow. Maybe in function: getMetadata(uint256,string). PC: 0x72. Line number: .
+If a = 4
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639932
+Vulnerability: Integer Overflow. Maybe in function: getMetadata(uint256,string). PC: 0x8d. Line number: .
+If a = 128
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639745
+Vulnerability: Integer Overflow. Maybe in function: getMetadata(uint256,string). PC: 0x2b6. Line number: .
+If a = 64
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639681
+Vulnerability: Integer Overflow. Maybe in function: getMetadata(uint256,string). PC: 0x78. Line number: .
+If a = 32
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639900
+Vulnerability: Integer Overflow. Maybe in function: getMetadata(uint256,string). PC: 0x2f9. Line number: .
+If a = 96
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639649
+Vulnerability: Integer Overflow. Maybe in function: getMetadata(uint256,string). PC: 0xe9. Line number: .
+If a = 128
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639521
+Vulnerability: Integer Overflow. Maybe in function: getMetadata(uint256,string). PC: 0x87. Line number: .
+If a = 32
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639873
+Vulnerability: Integer Overflow. Maybe in function: getMetadata(uint256,string). PC: 0x7e. Line number: .
+If a = 31
+and b = 115792089237316195423570985008687907853269984665640564039457584007913129639905

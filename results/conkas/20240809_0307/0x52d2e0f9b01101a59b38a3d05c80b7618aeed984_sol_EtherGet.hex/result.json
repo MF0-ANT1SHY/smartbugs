@@ -1,0 +1,36 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 754,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x52d2e0f9b01101a59b38a3d05c80b7618aeed984_sol_EtherGet.hex",
+            "function": "withdrawTokens(address)",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 314,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x52d2e0f9b01101a59b38a3d05c80b7618aeed984_sol_EtherGet.hex",
+            "function": "getTokens(uint256,address)",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 919,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x52d2e0f9b01101a59b38a3d05c80b7618aeed984_sol_EtherGet.hex",
+            "function": "withdrawEther()",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 314,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x52d2e0f9b01101a59b38a3d05c80b7618aeed984_sol_EtherGet.hex",
+            "function": "getTokens(uint256,address)",
+            "name": "Unchecked Low Level Call"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "runtime",
+        "version": "2022/11/11"
+    }
+}

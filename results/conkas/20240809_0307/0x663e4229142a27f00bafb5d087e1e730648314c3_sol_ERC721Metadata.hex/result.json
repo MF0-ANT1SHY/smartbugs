@@ -1,0 +1,72 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 627,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_ERC721Metadata.hex",
+            "function": "getMetadata(uint256,string)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 475,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_ERC721Metadata.hex",
+            "function": "getMetadata(uint256,string)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 114,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_ERC721Metadata.hex",
+            "function": "getMetadata(uint256,string)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 141,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_ERC721Metadata.hex",
+            "function": "getMetadata(uint256,string)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 694,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_ERC721Metadata.hex",
+            "function": "getMetadata(uint256,string)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 120,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_ERC721Metadata.hex",
+            "function": "getMetadata(uint256,string)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 761,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_ERC721Metadata.hex",
+            "function": "getMetadata(uint256,string)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 233,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_ERC721Metadata.hex",
+            "function": "getMetadata(uint256,string)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 135,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_ERC721Metadata.hex",
+            "function": "getMetadata(uint256,string)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 126,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_ERC721Metadata.hex",
+            "function": "getMetadata(uint256,string)",
+            "name": "Integer Overflow"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "runtime",
+        "version": "2022/11/11"
+    }
+}

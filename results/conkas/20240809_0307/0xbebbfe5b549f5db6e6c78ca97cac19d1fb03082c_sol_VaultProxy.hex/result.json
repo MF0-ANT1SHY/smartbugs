@@ -1,0 +1,54 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 1283,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c_sol_VaultProxy.hex",
+            "function": "proxy(address,bytes)",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 1378,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c_sol_VaultProxy.hex",
+            "function": "Vault()",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 1283,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c_sol_VaultProxy.hex",
+            "function": "proxy(address,bytes)",
+            "name": "Unchecked Low Level Call"
+        },
+        {
+            "address": 494,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c_sol_VaultProxy.hex",
+            "function": "proxy(address,bytes)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 488,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c_sol_VaultProxy.hex",
+            "function": "proxy(address,bytes)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 482,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c_sol_VaultProxy.hex",
+            "function": "proxy(address,bytes)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 908,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xbebbfe5b549f5db6e6c78ca97cac19d1fb03082c_sol_VaultProxy.hex",
+            "function": "withdraw(uint256)",
+            "name": "Reentrancy"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "runtime",
+        "version": "2022/11/11"
+    }
+}

@@ -1,0 +1,8 @@
+Analysing /sb/0x663e4229142a27f00bafb5d087e1e730648314c3_sol_SaleClockAuctionERC20.hex...
+Vulnerability: Unchecked Low Level Call. Maybe in function: withdrawBalance(). PC: 0xc80. Line number: .
+Vulnerability: Time Manipulation. Maybe in function: createAuction(uint256,uint256,uint256,uint256,address). PC: 0x1946. Line number: .
+Vulnerability: Reentrancy. Maybe in function: withdrawBalance(). PC: 0xc80. Line number: .
+Vulnerability: Time Manipulation. Maybe in function: createAuction(uint256,uint256,uint256,uint256,address). PC: 0x1917. Line number: .
+Vulnerability: Reentrancy. Maybe in function: withdrawERC20Balance(address,address). PC: 0x900. Line number: .
+Vulnerability: Reentrancy. Maybe in function: createAuction(uint256,uint256,uint256,uint256,address). PC: 0x1657. Line number: .
+Vulnerability: Reentrancy. Maybe in function: createAuction(uint256,uint256,uint256,uint256,address). PC: 0x17aa. Line number: .

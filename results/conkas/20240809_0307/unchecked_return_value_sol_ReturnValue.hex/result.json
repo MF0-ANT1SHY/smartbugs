@@ -1,0 +1,30 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 255,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value_sol_ReturnValue.hex",
+            "function": "0x7536185e",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 312,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value_sol_ReturnValue.hex",
+            "function": "0xbf9bd6cb",
+            "name": "Unchecked Low Level Call"
+        },
+        {
+            "address": 312,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/unchecked_return_value_sol_ReturnValue.hex",
+            "function": "0xbf9bd6cb",
+            "name": "Reentrancy"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "runtime",
+        "version": "2022/11/11"
+    }
+}

@@ -1,0 +1,3 @@
+Analysing /sb/mishandled_sol_SendBack.hex...
+Vulnerability: Unchecked Low Level Call. Maybe in function: withdrawBalance(). PC: 0x114. Line number: .
+Vulnerability: Transaction Ordering Dependence. Maybe in function: withdrawBalance(). PC: 0x114. Line number: .

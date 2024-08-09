@@ -1,0 +1,5 @@
+Analysing /sb/0x52d2e0f9b01101a59b38a3d05c80b7618aeed984_sol_EtherGet.hex...
+Vulnerability: Reentrancy. Maybe in function: withdrawTokens(address). PC: 0x2f2. Line number: .
+Vulnerability: Reentrancy. Maybe in function: getTokens(uint256,address). PC: 0x13a. Line number: .
+Vulnerability: Reentrancy. Maybe in function: withdrawEther(). PC: 0x397. Line number: .
+Vulnerability: Unchecked Low Level Call. Maybe in function: getTokens(uint256,address). PC: 0x13a. Line number: .

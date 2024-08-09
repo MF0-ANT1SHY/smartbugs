@@ -1,0 +1,27 @@
+Analysing /sb/etherpot_lotto_sol_Lotto.hex...
+Vulnerability: Integer Overflow. Maybe in function: getBuyers(uint256,address). PC: 0x4f4. Line number: .
+If a = 32
+and b = 7237005577332262213973186563042994240829374041602535252466099000494570602492
+Vulnerability: Integer Overflow. Maybe in function: getBuyers(uint256,address). PC: 0x895. Line number: .
+If a = 32
+and b = 10855508365998393320959779844564491361244061062403802878699148500741855903739
+Vulnerability: Integer Overflow. Maybe in function: getBuyers(uint256,address). PC: 0x898. Line number: .
+If a = 32
+and b = 3618502788666131106986593281521497120414687020801267626233049500247285301247
+Vulnerability: Integer Overflow. Maybe in function: getBuyers(uint256,address). PC: 0x89e. Line number: .
+If a = 128
+and b = 3618502788666131106986593281521497120414687020801267626233049500247285301243
+Vulnerability: Integer Overflow. Maybe in function: getHashOfBlock(uint256). PC: 0xc56. Line number: .
+If a = 721572026681069673687326542609286778717987588265664544290002223872841010072
+and b = 101318078082651670995624611882601919371611236582435493534525386006923988430832
+Vulnerability: Unchecked Low Level Call. Maybe in function: _fallthrough. PC: 0x163. Line number: .
+Vulnerability: Integer Overflow. Maybe in function: getBuyers(uint256,address). PC: 0x8b7. Line number: .
+If a = 32
+and b = 10855508365998393320959779844564491361244061062403802878699148500741855903743
+Vulnerability: Reentrancy. Maybe in function: _fallthrough. PC: 0x163. Line number: .
+Vulnerability: Integer Overflow. Maybe in function: getHashOfBlock(uint256). PC: 0xc55. Line number: .
+If a = 481031124683791238428773313218135529896396885690302413798465452965620619287
+and b = 6800
+Vulnerability: Integer Overflow. Maybe in function: getBuyers(uint256,address). PC: 0x8b9. Line number: .
+If a = 160
+and b = 3618502788666131106986593281521497120414687020801267626233049500247285301247

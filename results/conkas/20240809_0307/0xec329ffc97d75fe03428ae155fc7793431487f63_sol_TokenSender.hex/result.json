@@ -1,0 +1,132 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 804,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "execute(address,uint256,bytes)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 2342,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "run()",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 1999,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "execute(address,uint256,bytes)",
+            "name": "Unchecked Low Level Call"
+        },
+        {
+            "address": 405,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "fill(uint256[])",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 2649,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "run()",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 1575,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "transfers(uint256)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 1999,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "execute(address,uint256,bytes)",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 430,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "fill(uint256[])",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 402,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "fill(uint256[])",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 816,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "execute(address,uint256,bytes)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 396,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "fill(uint256[])",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 2648,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "run()",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 810,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "execute(address,uint256,bytes)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 1574,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "transfers(uint256)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 1623,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "transfers(uint256)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 2652,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "run()",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 411,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "fill(uint256[])",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 390,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "fill(uint256[])",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 2950,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "fill(uint256[])",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 2946,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0xec329ffc97d75fe03428ae155fc7793431487f63_sol_TokenSender.hex",
+            "function": "fill(uint256[])",
+            "name": "Integer Overflow"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "runtime",
+        "version": "2022/11/11"
+    }
+}

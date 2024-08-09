@@ -1,0 +1,4 @@
+Analysing /sb/0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6_sol_Puppet.hex...
+Vulnerability: Reentrancy. Maybe in function: withdraw(). PC: 0x331. Line number: .
+Vulnerability: Reentrancy. Maybe in function: _fallthrough. PC: 0x11d. Line number: .
+Vulnerability: Unchecked Low Level Call. Maybe in function: _fallthrough. PC: 0x11d. Line number: .

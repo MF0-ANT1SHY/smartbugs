@@ -1,0 +1,54 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 683,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4_sol_HomeyJar.hex",
+            "function": "withdraw()",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 968,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4_sol_HomeyJar.hex",
+            "function": "Command(address,bytes)",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 968,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4_sol_HomeyJar.hex",
+            "function": "Command(address,bytes)",
+            "name": "Unchecked Low Level Call"
+        },
+        {
+            "address": 256,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4_sol_HomeyJar.hex",
+            "function": "Command(address,bytes)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 250,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4_sol_HomeyJar.hex",
+            "function": "Command(address,bytes)",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 1191,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4_sol_HomeyJar.hex",
+            "function": "0xe0b04521",
+            "name": "Reentrancy"
+        },
+        {
+            "address": 262,
+            "filename": "/home/shuo/repo/smartbugs-curated/dataset/unchecked_low_level_calls/0x70f9eddb3931491aab1aeafbc1e7f1ca2a012db4_sol_HomeyJar.hex",
+            "function": "Command(address,bytes)",
+            "name": "Integer Overflow"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "runtime",
+        "version": "2022/11/11"
+    }
+}
