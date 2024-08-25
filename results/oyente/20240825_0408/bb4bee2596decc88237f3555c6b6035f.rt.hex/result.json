@@ -1,0 +1,20 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "filename": "/home/shuo/repo/cgt/runtime/timestamp_dependency/t/bb4bee2596decc88237f3555c6b6035f.rt.hex",
+            "name": "Timestamp Dependency"
+        },
+        {
+            "filename": "/home/shuo/repo/cgt/runtime/timestamp_dependency/t/bb4bee2596decc88237f3555c6b6035f.rt.hex",
+            "name": "Transaction-Ordering Dependence (TOD)"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "oyente",
+        "mode": "runtime",
+        "version": "2023/02/27"
+    }
+}
