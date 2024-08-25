@@ -13,4 +13,4 @@ fi
 
 cd /oyente
 #/oyente/oyente/oyente.py $OPT_TIMEOUT -b -s "$FILENAME"
-/oyente/oyente/oyente.py $OPT_TIMEOUT -ll 30 -dl 150 -b -s "$FILENAME"
+/oyente/oyente/oyente.py $OPT_TIMEOUT -ll 60 -dl 300 -b -s "$FILENAME"
