@@ -12,4 +12,5 @@ if [ "$TIMEOUT" -gt 0 ]; then
 fi
 
 cd /oyente
-/oyente/oyente/oyente.py $OPT_TIMEOUT -b -s "$FILENAME"
+#/oyente/oyente/oyente.py $OPT_TIMEOUT -b -s "$FILENAME"
+/oyente/oyente/oyente.py $OPT_TIMEOUT -ll 30 -dl 150 -b -s "$FILENAME"
