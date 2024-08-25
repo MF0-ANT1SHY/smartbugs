@@ -1,0 +1,3 @@
+Arguments passed: ['/home/shuo/repo/smartbugs/sb/__main__.py', '-t', 'oyente', '-f', '/home/shuo/cgt/source/*.sol', '--processes', '48', '--mem-limit', '8g', '--timeout', '1800']
+Settings: {files: [(None, '/home/shuo/cgt/source/*.sol')], main: False, runtime: False, tools: ['oyente'], runid: 20240825_0326, overwrite: False, processes: 48, timeout: 1800, cpu_quota: None, mem_limit: 8g, results: results/${TOOL}/20240825_0326/${FILENAME}, log: results/logs/20240825_0326.log, json: False, sarif: False, quiet: False}
+Analysis completed in 0:00:03.

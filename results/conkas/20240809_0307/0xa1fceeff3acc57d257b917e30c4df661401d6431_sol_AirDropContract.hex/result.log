@@ -1,3 +1,0 @@
-Analysing /sb/0xa1fceeff3acc57d257b917e30c4df661401d6431_sol_AirDropContract.hex...
-Vulnerability: Reentrancy. Maybe in function: transfer(address,address[],uint256[]). PC: 0x355. Line number: .
-Vulnerability: Unchecked Low Level Call. Maybe in function: transfer(address,address[],uint256[]). PC: 0x355. Line number: .

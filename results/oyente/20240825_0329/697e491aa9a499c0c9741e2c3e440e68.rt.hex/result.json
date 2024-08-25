@@ -1,0 +1,22 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "filename": "/home/shuo/repo/cgt/runtime/697e491aa9a499c0c9741e2c3e440e68.rt.hex",
+            "name": "Callstack Depth Attack Vulnerability"
+        },
+        {
+            "filename": "/home/shuo/repo/cgt/runtime/697e491aa9a499c0c9741e2c3e440e68.rt.hex",
+            "name": "Timestamp Dependency"
+        }
+    ],
+    "infos": [
+        "incomplete push instruction"
+    ],
+    "parser": {
+        "id": "oyente",
+        "mode": "runtime",
+        "version": "2023/02/27"
+    }
+}

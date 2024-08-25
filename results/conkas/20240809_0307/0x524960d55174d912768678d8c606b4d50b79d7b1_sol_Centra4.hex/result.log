@@ -1,3 +1,0 @@
-Analysing /sb/0x524960d55174d912768678d8c606b4d50b79d7b1_sol_Centra4.hex...
-Vulnerability: Reentrancy. Maybe in function: transfer(). PC: 0x216. Line number: .
-Vulnerability: Unchecked Low Level Call. Maybe in function: transfer(). PC: 0x12a. Line number: .

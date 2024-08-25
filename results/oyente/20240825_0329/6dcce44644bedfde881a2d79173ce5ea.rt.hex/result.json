@@ -1,0 +1,22 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "filename": "/home/shuo/repo/cgt/runtime/6dcce44644bedfde881a2d79173ce5ea.rt.hex",
+            "name": "Callstack Depth Attack Vulnerability"
+        },
+        {
+            "filename": "/home/shuo/repo/cgt/runtime/6dcce44644bedfde881a2d79173ce5ea.rt.hex",
+            "name": "Transaction-Ordering Dependence (TOD)"
+        }
+    ],
+    "infos": [
+        "incomplete push instruction"
+    ],
+    "parser": {
+        "id": "oyente",
+        "mode": "runtime",
+        "version": "2023/02/27"
+    }
+}

@@ -1,0 +1,19 @@
+incomplete push instruction at 2141
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM Code Coverage: 			 74.5%
+Traceback (most recent call last):
+  File "/oyente/oyente/oyente.py", line 232, in <module>
+    main()
+  File "/oyente/oyente/oyente.py", line 221, in main
+    exit_code = analyze_bytecode()
+  File "/oyente/oyente/oyente.py", line 73, in analyze_bytecode
+    result, exit_code = symExec.run(disasm_file=inp['disasm_file'])
+  File "/oyente/oyente/symExec.py", line 2459, in run
+    ret = detect_vulnerabilities()
+  File "/oyente/oyente/symExec.py", line 2281, in detect_vulnerabilities
+    detect_callstack_attack()
+  File "/oyente/oyente/symExec.py", line 2202, in detect_callstack_attack
+    pcs = check_callstack_attack(instr)
+  File "/oyente/oyente/symExec.py", line 2171, in check_callstack_attack
+    swap_num = int(disasm[i+1][2])
+ValueError: invalid literal for int() with base 10: ''

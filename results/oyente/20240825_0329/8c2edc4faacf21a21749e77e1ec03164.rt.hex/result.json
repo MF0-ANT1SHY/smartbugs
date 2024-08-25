@@ -1,0 +1,20 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "filename": "/home/shuo/repo/cgt/runtime/8c2edc4faacf21a21749e77e1ec03164.rt.hex",
+            "name": "Re-Entrancy Vulnerability"
+        },
+        {
+            "filename": "/home/shuo/repo/cgt/runtime/8c2edc4faacf21a21749e77e1ec03164.rt.hex",
+            "name": "Timestamp Dependency"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "oyente",
+        "mode": "runtime",
+        "version": "2023/02/27"
+    }
+}

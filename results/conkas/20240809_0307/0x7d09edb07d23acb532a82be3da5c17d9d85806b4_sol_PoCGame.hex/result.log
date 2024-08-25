@@ -1,8 +1,0 @@
-Analysing /sb/0x7d09edb07d23acb532a82be3da5c17d9d85806b4_sol_PoCGame.hex...
-Vulnerability: Reentrancy. Maybe in function: donate(). PC: 0xdb9. Line number: .
-Vulnerability: Unchecked Low Level Call. Maybe in function: donate(). PC: 0xdb9. Line number: .
-Vulnerability: Reentrancy. Maybe in function: transferAnyERC20Token(address,address,uint256). PC: 0x9fe. Line number: .
-Vulnerability: Unchecked Low Level Call. Maybe in function: play(). PC: 0xc6a. Line number: .
-Vulnerability: Integer Overflow. Maybe in function: donate(). PC: 0xdc8. Line number: .
-If a = 1
-and b = 115792089237316195423570985008687907853269984665640564039457584007913129639935

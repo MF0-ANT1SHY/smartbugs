@@ -1,0 +1,22 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "filename": "/home/shuo/repo/cgt/runtime/17e8279e80451a8c6b4f08a15efeb7d0.rt.hex",
+            "name": "Re-Entrancy Vulnerability"
+        },
+        {
+            "filename": "/home/shuo/repo/cgt/runtime/17e8279e80451a8c6b4f08a15efeb7d0.rt.hex",
+            "name": "Transaction-Ordering Dependence (TOD)"
+        }
+    ],
+    "infos": [
+        "incomplete push instruction"
+    ],
+    "parser": {
+        "id": "oyente",
+        "mode": "runtime",
+        "version": "2023/02/27"
+    }
+}

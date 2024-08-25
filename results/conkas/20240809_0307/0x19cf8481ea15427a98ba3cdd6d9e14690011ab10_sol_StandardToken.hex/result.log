@@ -1,4 +1,0 @@
-Analysing /sb/0x19cf8481ea15427a98ba3cdd6d9e14690011ab10_sol_StandardToken.hex...
-Vulnerability: Integer Underflow. Maybe in function: transfer(address,uint256). PC: 0x9c0. Line number: .
-If a = 1369
-and b = 115792088805957048749160748294015666460955893887446253278955998262844907853307

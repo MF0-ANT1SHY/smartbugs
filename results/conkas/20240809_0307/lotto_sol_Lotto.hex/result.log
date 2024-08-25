@@ -1,5 +1,0 @@
-Analysing /sb/lotto_sol_Lotto.hex...
-Vulnerability: Unchecked Low Level Call. Maybe in function: 0x8f1c0585. PC: 0x229. Line number: .
-Vulnerability: Reentrancy. Maybe in function: 0x8f1c0585. PC: 0x229. Line number: .
-Vulnerability: Unchecked Low Level Call. Maybe in function: 0x1846f51a. PC: 0x1b2. Line number: .
-Vulnerability: Reentrancy. Maybe in function: 0x1846f51a. PC: 0x1b2. Line number: .

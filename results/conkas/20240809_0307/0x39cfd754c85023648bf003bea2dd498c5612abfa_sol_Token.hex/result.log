@@ -1,3 +1,0 @@
-Analysing /sb/0x39cfd754c85023648bf003bea2dd498c5612abfa_sol_Token.hex...
-Vulnerability: Reentrancy. Maybe in function: WithdrawToken(address,uint256,address). PC: 0x3b5. Line number: .
-Vulnerability: Unchecked Low Level Call. Maybe in function: WithdrawToken(address,uint256,address). PC: 0x3b5. Line number: .

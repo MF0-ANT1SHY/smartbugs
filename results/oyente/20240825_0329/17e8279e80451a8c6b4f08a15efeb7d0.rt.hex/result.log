@@ -1,0 +1,8 @@
+incomplete push instruction at 9856
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM Code Coverage: 			 19.0%
+INFO:symExec:	  Callstack Depth Attack Vulnerability:  False
+INFO:symExec:	  Transaction-Ordering Dependence (TOD): True
+INFO:symExec:	  Timestamp Dependency: 		 False
+INFO:symExec:	  Re-Entrancy Vulnerability: 		 True
+INFO:symExec:	====== Analysis Completed ======
