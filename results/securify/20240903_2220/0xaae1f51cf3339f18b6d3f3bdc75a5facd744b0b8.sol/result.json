@@ -1,0 +1,28 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_KILL_OOM"
+    ],
+    "findings": [
+        {
+            "filename": "/home/shuo/smartbugs-curated/dataset/reentrancy/0xaae1f51cf3339f18b6d3f3bdc75a5facd744b0b8.sol",
+            "name": "TODTransfer"
+        },
+        {
+            "filename": "/home/shuo/smartbugs-curated/dataset/reentrancy/0xaae1f51cf3339f18b6d3f3bdc75a5facd744b0b8.sol",
+            "name": "MissingInputValidation"
+        },
+        {
+            "filename": "/home/shuo/smartbugs-curated/dataset/reentrancy/0xaae1f51cf3339f18b6d3f3bdc75a5facd744b0b8.sol",
+            "name": "DAO"
+        }
+    ],
+    "infos": [
+        "analysis incomplete"
+    ],
+    "parser": {
+        "id": "securify",
+        "mode": "solidity",
+        "version": "2022/11/17"
+    }
+}

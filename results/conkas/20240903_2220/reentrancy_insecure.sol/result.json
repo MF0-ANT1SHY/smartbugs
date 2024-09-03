@@ -1,0 +1,42 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 173,
+            "contract": "Reentrancy_insecure",
+            "filename": "/home/shuo/smartbugs-curated/dataset/reentrancy/reentrancy_insecure.sol",
+            "function": "withdrawBalance()",
+            "line": 17,
+            "name": "Reentrancy"
+        },
+        {
+            "address": 202,
+            "contract": "Reentrancy_insecure",
+            "filename": "/home/shuo/smartbugs-curated/dataset/reentrancy/reentrancy_insecure.sol",
+            "function": "withdrawBalance()",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 199,
+            "contract": "Reentrancy_insecure",
+            "filename": "/home/shuo/smartbugs-curated/dataset/reentrancy/reentrancy_insecure.sol",
+            "function": "withdrawBalance()",
+            "name": "Integer Overflow"
+        },
+        {
+            "address": 173,
+            "contract": "Reentrancy_insecure",
+            "filename": "/home/shuo/smartbugs-curated/dataset/reentrancy/reentrancy_insecure.sol",
+            "function": "withdrawBalance()",
+            "line": 17,
+            "name": "Transaction Ordering Dependence"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "conkas",
+        "mode": "solidity",
+        "version": "2022/11/11"
+    }
+}

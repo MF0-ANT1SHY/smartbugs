@@ -1,0 +1,24 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "filename": "/home/shuo/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+            "name": "MissingInputValidation"
+        },
+        {
+            "filename": "/home/shuo/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+            "name": "DAO"
+        },
+        {
+            "filename": "/home/shuo/smartbugs-curated/dataset/reentrancy/simple_dao.sol",
+            "name": "UnhandledException"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "securify",
+        "mode": "solidity",
+        "version": "2022/11/17"
+    }
+}

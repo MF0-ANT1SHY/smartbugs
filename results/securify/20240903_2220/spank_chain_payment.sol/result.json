@@ -1,0 +1,16 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "filename": "/home/shuo/smartbugs-curated/dataset/reentrancy/spank_chain_payment.sol",
+            "name": "MissingInputValidation"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "securify",
+        "mode": "solidity",
+        "version": "2022/11/17"
+    }
+}

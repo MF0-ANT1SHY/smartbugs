@@ -1,0 +1,17 @@
+WARNING:root:You are using solc version 0.4.26, The latest supported version is 0.4.19
+INFO:CryticCompile:Compilation warnings/errors on /sb/reentrancy_bonus.sol:
+/sb/reentrancy_bonus.sol:19:9: Warning: Different number of components on the left hand side (2) than on the right hand side (1).
+        (bool success, ) = recipient.call.value(amountToWithdraw)("");
+        ^-----------------------------------------------------------^
+
+INFO:root:contract /sb/reentrancy_bonus.sol:Reentrancy_bonus:
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM Code Coverage: 			 81.2%
+INFO:symExec:	  Integer Underflow: 			 False
+INFO:symExec:	  Integer Overflow: 			 False
+INFO:symExec:	  Parity Multisig Bug 2: 		 False
+INFO:symExec:	  Callstack Depth Attack Vulnerability:  False
+INFO:symExec:	  Transaction-Ordering Dependence (TOD): False
+INFO:symExec:	  Timestamp Dependency: 		 False
+INFO:symExec:	  Re-Entrancy Vulnerability: 		 False
+INFO:symExec:	====== Analysis Completed ======

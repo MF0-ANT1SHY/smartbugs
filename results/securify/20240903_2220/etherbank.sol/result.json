@@ -1,0 +1,20 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "filename": "/home/shuo/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+            "name": "MissingInputValidation"
+        },
+        {
+            "filename": "/home/shuo/smartbugs-curated/dataset/reentrancy/etherbank.sol",
+            "name": "DAO"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "securify",
+        "mode": "solidity",
+        "version": "2022/11/17"
+    }
+}

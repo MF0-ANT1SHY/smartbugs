@@ -1,0 +1,51 @@
+{
+    "docker": {
+        "command": null,
+        "detach": true,
+        "entrypoint": "'/sb/bin/do_solidity.sh' '/sb/0xaae1f51cf3339f18b6d3f3bdc75a5facd744b0b8.sol' '/sb/bin'",
+        "image": "smartbugs/securify:usolc",
+        "mem_limit": "8g",
+        "user": 0,
+        "volumes": {
+            "/tmp/tmpj66a_wr0": {
+                "bind": "/sb",
+                "mode": "rw"
+            }
+        }
+    },
+    "filename": "/home/shuo/smartbugs-curated/dataset/reentrancy/0xaae1f51cf3339f18b6d3f3bdc75a5facd744b0b8.sol",
+    "platform": {
+        "cpu": "Intel(R) Xeon(R) Gold 5418Y",
+        "python": "3.10.12.final.0 (64 bit)",
+        "release": "5.15.0-105-generic",
+        "smartbugs": "2.0.10",
+        "system": "Linux",
+        "version": "#115-Ubuntu SMP Mon Apr 15 09:52:04 UTC 2024"
+    },
+    "result": {
+        "duration": 280.70106530189514,
+        "exit_code": 137,
+        "logs": "result.log",
+        "output": "result.tar",
+        "start": 1725403016.1984086
+    },
+    "runid": "20240903_2220",
+    "solc": "0.4.26",
+    "tool": {
+        "bin": "scripts",
+        "command": null,
+        "cpu_quota": null,
+        "entrypoint": "'$BIN/do_solidity.sh' '$FILENAME' '$BIN'",
+        "id": "securify",
+        "image": "smartbugs/securify:usolc",
+        "info": "Securify uses formal verification, also relying on static analysis checks. Securify's analysis consists of two steps. First, it symbolically analyzes the contract's dependency graph to extract precise semantic information from the code. Then, it checks compliance and violation patterns that capture sufficient conditions for proving if a property holds or not.",
+        "mem_limit": null,
+        "mode": "solidity",
+        "name": "Securify",
+        "origin": "https://github.com/eth-sri/securify",
+        "output": "/results/",
+        "parser": "parser.py",
+        "solc": true,
+        "version": null
+    }
+}
