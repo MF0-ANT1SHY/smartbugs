@@ -1,0 +1,123 @@
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Found 3 CALL instructions
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:CALL: (  428)  1ac:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->5c->68->107->165->1ac
+INFO:root:CALL: (  970)  3ca:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->73->1b6->1cc->218->2be->312->325->33c->355->35d->36b->3ca
+INFO:root:CALL: ( 1093)  445:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->73->1b6->1cc->218->2be->312->325->33c->355->3d6->3e6->445
+INFO:root:No DELEGATECALL instructions
+INFO:root:No CALLCODE instructions
+INFO:root:No SELFDESTRUCT instructions
+INFO:root:Found 3 RETURN and STOP instructions
+INFO:root:End: (  146)   92:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->73->1b6->1cc->218->2c6->91->92
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(2*Concat(0, Extract(7, 0, STORAGE_4[4])) ==
+        115792089237316195423570985008687907853269984665640564039457584007913129639935,
+        Concat(CALLDATA_4[4],
+               CALLDATA_4[5],
+               CALLDATA_4[6],
+               CALLDATA_4[7],
+               CALLDATA_4[8],
+               CALLDATA_4[9],
+               CALLDATA_4[10],
+               CALLDATA_4[11],
+               CALLDATA_4[12],
+               CALLDATA_4[13],
+               CALLDATA_4[14],
+               CALLDATA_4[15],
+               CALLDATA_4[16],
+               CALLDATA_4[17],
+               CALLDATA_4[18],
+               CALLDATA_4[19],
+               CALLDATA_4[20],
+               CALLDATA_4[21],
+               CALLDATA_4[22],
+               CALLDATA_4[23],
+               CALLDATA_4[24],
+               CALLDATA_4[25],
+               CALLDATA_4[26],
+               CALLDATA_4[27],
+               CALLDATA_4[28],
+               CALLDATA_4[29],
+               CALLDATA_4[30],
+               CALLDATA_4[31],
+               CALLDATA_4[32],
+               CALLDATA_4[33],
+               CALLDATA_4[34],
+               CALLDATA_4[35]),
+        If(2*Concat(0, Extract(7, 0, STORAGE_4[4])) == 0,
+           Concat(Extract(255,
+                          160,
+                          STORAGE_4[2*
+                            Concat(0,
+                                   Extract(7,
+                                        0,
+                                        STORAGE_4[4]))]),
+                  Extract(159, 0, CALLER_4)),
+           STORAGE_4[0])),
+     1) (300_4)
+INFO:root:End: (  146)   92:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->73->1b6->1cc->218->2be->312->325->33c->355->35d->36b->44d->47a->45a->2c5->2c6->91->92
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(2*Concat(0, Extract(7, 0, STORAGE_5[4])) == 1,
+        Concat(CALLDATA_5[4],
+               CALLDATA_5[5],
+               CALLDATA_5[6],
+               CALLDATA_5[7],
+               CALLDATA_5[8],
+               CALLDATA_5[9],
+               CALLDATA_5[10],
+               CALLDATA_5[11],
+               CALLDATA_5[12],
+               CALLDATA_5[13],
+               CALLDATA_5[14],
+               CALLDATA_5[15],
+               CALLDATA_5[16],
+               CALLDATA_5[17],
+               CALLDATA_5[18],
+               CALLDATA_5[19],
+               CALLDATA_5[20],
+               CALLDATA_5[21],
+               CALLDATA_5[22],
+               CALLDATA_5[23],
+               CALLDATA_5[24],
+               CALLDATA_5[25],
+               CALLDATA_5[26],
+               CALLDATA_5[27],
+               CALLDATA_5[28],
+               CALLDATA_5[29],
+               CALLDATA_5[30],
+               CALLDATA_5[31],
+               CALLDATA_5[32],
+               CALLDATA_5[33],
+               CALLDATA_5[34],
+               CALLDATA_5[35]),
+        If(2*Concat(0, Extract(7, 0, STORAGE_5[4])) == 2,
+           Concat(Extract(255,
+                          160,
+                          STORAGE_5[2*
+                            Concat(0,
+                                   Extract(7,
+                                        0,
+                                        STORAGE_5[4]))]),
+                  Extract(159, 0, CALLER_5)),
+           STORAGE_5[2])),
+     1) (301_5)
+INFO:root:End: (  146)   92:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->73->1b6->1cc->218->2be->312->325->33c->355->3d6->3e6->44d->47a->45a->2c5->2c6->91->92
+INFO:root:All ends: [<teether.evm.results.SymbolicResult object at 0x7fc1ee617c10>, <teether.evm.results.SymbolicResult object at 0x7fc1ee617a30>, <teether.evm.results.SymbolicResult object at 0x7fc1ee55a4f0>]
+INFO:root:Could not exploit any RETURN+CALL

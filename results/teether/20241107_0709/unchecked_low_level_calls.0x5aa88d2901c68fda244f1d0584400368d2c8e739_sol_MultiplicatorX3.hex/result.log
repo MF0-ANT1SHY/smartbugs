@@ -1,0 +1,31 @@
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Found 3 CALL instructions
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:CALL: (  480)  1e0:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->64->177->198->1e0
+INFO:root:CALL: (  702)  2be:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->9a->1fb->256->2be
+INFO:root:CALL: (  987)  3db:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->fb->2fc->357->382->39d->3ca->3db
+INFO:root:CALL: (  987)  3db:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->fb->2fc->357->382->39d->3b1->3ca->3db
+INFO:root:CALL: (  987)  3db:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->fb->2fc->357->382->38b->382->39d->3ca->3db
+INFO:root:CALL: (  987)  3db:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->fb->2fc->357->382->38b->382->39d->3b1->3ca->3db
+INFO:root:CALL: (  987)  3db:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->fb->2fc->357->382->38b->382->38b->382->39d->3ca->3db
+INFO:root:CALL: (  987)  3db:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->fb->2fc->357->382->38b->382->38b->382->39d->3b1->3ca->3db
+INFO:root:No DELEGATECALL instructions
+INFO:root:No CALLCODE instructions
+INFO:root:No SELFDESTRUCT instructions
+INFO:root:Found 5 RETURN and STOP instructions
+INFO:root:All ends: []
+INFO:root:Could not exploit any RETURN+CALL

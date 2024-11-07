@@ -1,0 +1,27 @@
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:13 paths that ended prematurely due to branches: 6d7: 2, 6e2: 2, 6b7: 3, 6c4: 3, 6ed: 1, dfa: 2
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:13 paths that ended prematurely due to branches: 11e9: 1, 6e2: 2, 6d7: 2, 6b7: 3, 6c4: 3, dfa: 2
+INFO:root:13 paths that ended prematurely due to branches: 11e9: 1, 6e2: 2, 6d7: 2, 6b7: 3, 6c4: 3, dfa: 2
+INFO:root:16 paths that ended prematurely due to branches: 6d7: 2, 6e2: 2, 6b7: 4, 6c4: 4, 6ed: 2, dfa: 2
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:13 paths that ended prematurely due to branches: 11e9: 1, 6e2: 2, 6d7: 2, 6b7: 3, 6c4: 3, dfa: 2
+INFO:root:Found 1 CALL instructions
+INFO:root:Finished all paths
+INFO:root:No DELEGATECALL instructions
+INFO:root:No CALLCODE instructions
+INFO:root:No SELFDESTRUCT instructions
+WARNING:root:No state-dependent critical path found, aborting

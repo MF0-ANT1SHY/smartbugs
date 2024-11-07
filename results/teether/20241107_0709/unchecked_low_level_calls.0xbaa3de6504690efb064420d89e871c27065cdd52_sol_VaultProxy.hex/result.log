@@ -1,0 +1,42 @@
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Found 2 CALL instructions
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:CALL: (  908)  38c:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->8f->9b->2b3->309->357->35d->38c
+INFO:root:CALL: (  908)  38c:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->8f->9b->2b3->309->313->357->35d->38c
+INFO:root:CALL: ( 1283)  503:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->1ad->47f->4aa->4c5->4f2->503
+INFO:root:CALL: ( 1283)  503:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->1ad->47f->4aa->4c5->4d9->4f2->503
+INFO:root:CALL: ( 1283)  503:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->1ad->47f->4aa->4b3->4aa->4c5->4f2->503
+INFO:root:CALL: ( 1283)  503:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->1ad->47f->4aa->4b3->4aa->4c5->4d9->4f2->503
+INFO:root:CALL: ( 1283)  503:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->1ad->47f->4aa->4b3->4aa->4b3->4aa->4c5->4f2->503
+INFO:root:CALL: ( 1283)  503:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->1ad->47f->4aa->4b3->4aa->4b3->4aa->4c5->4d9->4f2->503
+INFO:root:No DELEGATECALL instructions
+INFO:root:No CALLCODE instructions
+INFO:root:No SELFDESTRUCT instructions
+INFO:root:Found 8 RETURN and STOP instructions
+INFO:root:End: (  142)   8e:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->85->233->268->50c->56a->2b0->2b1->8d->8e
+INFO:root:End: (  142)   8e:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->85->233->268->50c->51d->56a->2b0->2b1->8d->8e
+INFO:root:End: (  341)  155:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->113->11f->3c0->416->456->154->155
+INFO:root:End: (  562)  232:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->229->50c->51d->56a->231->232
+INFO:root:All ends: [<teether.evm.results.SymbolicResult object at 0x7faeba97b820>, <teether.evm.results.SymbolicResult object at 0x7faeba96d3a0>, <teether.evm.results.SymbolicResult object at 0x7faeba96d8b0>, <teether.evm.results.SymbolicResult object at 0x7faeba963370>]
+INFO:root:Could not exploit any RETURN+CALL

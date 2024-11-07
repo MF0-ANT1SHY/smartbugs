@@ -1,0 +1,18 @@
+INFO:root:Finished all paths
+INFO:root:Found 1 CALL instructions
+INFO:root:Finished all paths
+INFO:root:CALL: (  244)   f4:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->46->50->60->a2->f4
+INFO:root:No DELEGATECALL instructions
+INFO:root:No CALLCODE instructions
+INFO:root:No SELFDESTRUCT instructions
+INFO:root:Found 1 RETURN and STOP instructions
+INFO:root:End: (   79)   4f:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->46->50->60->105->4e->4f
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(STORAGE_2[0], 1) (87_2)
+INFO:root:End: (   79)   4f:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->46->50->60->a2->104->105->4e->4f
+INFO:root:All ends: [<teether.evm.results.SymbolicResult object at 0x7ffbcfe3c880>, <teether.evm.results.SymbolicResult object at 0x7ffbcf73f0a0>]
+INFO:root:Could not exploit any RETURN+CALL

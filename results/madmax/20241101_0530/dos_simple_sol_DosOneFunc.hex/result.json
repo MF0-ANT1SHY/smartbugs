@@ -1,0 +1,32 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 163,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/dos_simple_sol_DosOneFunc.hex",
+            "name": "UnboundedMassOp"
+        },
+        {
+            "address": 516,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/dos_simple_sol_DosOneFunc.hex",
+            "name": "UnboundedMassOp"
+        },
+        {
+            "address": 163,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/dos_simple_sol_DosOneFunc.hex",
+            "name": "UnboundedMassOp"
+        },
+        {
+            "address": 543,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/dos_simple_sol_DosOneFunc.hex",
+            "name": "UnboundedMassOp"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "madmax",
+        "mode": "runtime",
+        "version": "2022/11/17"
+    }
+}

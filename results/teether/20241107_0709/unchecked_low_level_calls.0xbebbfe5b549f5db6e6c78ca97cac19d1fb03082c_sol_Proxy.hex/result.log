@@ -1,0 +1,20 @@
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Found 1 CALL instructions
+INFO:root:Finished all paths
+INFO:root:CALL: (  557)  22d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->94->1a9->1d4->1ef->21c->22d
+INFO:root:CALL: (  557)  22d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->94->1a9->1d4->1ef->203->21c->22d
+INFO:root:CALL: (  557)  22d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->94->1a9->1d4->1dd->1d4->1ef->21c->22d
+INFO:root:CALL: (  557)  22d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->94->1a9->1d4->1dd->1d4->1ef->203->21c->22d
+INFO:root:CALL: (  557)  22d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->94->1a9->1d4->1dd->1d4->1dd->1d4->1ef->21c->22d
+INFO:root:CALL: (  557)  22d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->94->1a9->1d4->1dd->1d4->1dd->1d4->1ef->203->21c->22d
+INFO:root:No DELEGATECALL instructions
+INFO:root:No CALLCODE instructions
+INFO:root:No SELFDESTRUCT instructions
+WARNING:root:No state-dependent critical path found, aborting

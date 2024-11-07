@@ -1,0 +1,26 @@
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Found 1 CALL instructions
+INFO:root:Finished all paths
+INFO:root:CALL: (  800)  320:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->f6->102->247->29d->2c7->2e2->30f->320
+INFO:root:CALL: (  800)  320:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->f6->102->247->29d->2c7->2e2->2f6->30f->320
+INFO:root:CALL: (  800)  320:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->f6->102->247->29d->2c7->2d0->2c7->2e2->30f->320
+INFO:root:CALL: (  800)  320:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->f6->102->247->29d->2c7->2d0->2c7->2e2->2f6->30f->320
+INFO:root:CALL: (  800)  320:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->f6->102->247->29d->2c7->2d0->2c7->2d0->2c7->2e2->30f->320
+INFO:root:CALL: (  800)  320:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->f6->102->247->29d->2c7->2d0->2c7->2d0->2c7->2e2->2f6->30f->320
+INFO:root:No DELEGATECALL instructions
+INFO:root:No CALLCODE instructions
+INFO:root:No SELFDESTRUCT instructions
+INFO:root:Found 3 RETURN and STOP instructions
+INFO:root:End: (  245)   f5:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->b3->bf->1ae->204->244->f4->f5
+INFO:root:All ends: [<teether.evm.results.SymbolicResult object at 0x7fb7df264b80>]
+INFO:root:Could not exploit any RETURN+CALL

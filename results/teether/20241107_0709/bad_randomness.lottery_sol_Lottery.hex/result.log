@@ -1,0 +1,21 @@
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Found 1 CALL instructions
+INFO:root:Finished all paths
+INFO:root:CALL: (  377)  179:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->69->75->ae->bd->14a->179
+INFO:root:No DELEGATECALL instructions
+INFO:root:No CALLCODE instructions
+INFO:root:Found 1 SELFDESTRUCT instructions
+INFO:root:Finished all paths
+INFO:root:SELFDESTRUCT: (  545)  221:	ff	-1 +0 = -1	SELFDESTRUCT
+INFO:root:Path: 0->d->41->80->8c->18d->1e8->221
+INFO:root:Found 3 RETURN and STOP instructions
+INFO:root:End: (  127)   7f:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->69->75->ae->bd->18a->7e->7f
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 & CALLER_3 (180_3)
+INFO:root:End: (  127)   7f:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->69->75->ae->bd->14a->189->18a->7e->7f
+INFO:root:All ends: [<teether.evm.results.SymbolicResult object at 0x7ff0bc7bc580>, <teether.evm.results.SymbolicResult object at 0x7ff0bc0cb070>]
+INFO:root:Could not exploit any RETURN+CALL

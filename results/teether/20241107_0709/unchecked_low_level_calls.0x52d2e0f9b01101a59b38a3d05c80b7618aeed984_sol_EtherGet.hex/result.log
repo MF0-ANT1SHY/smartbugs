@@ -1,0 +1,19 @@
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Found 4 CALL instructions
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:CALL: (  314)  13a:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->5c->68->103->109->112->13a
+INFO:root:CALL: (  919)  397:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->ec->f8->32f->397
+INFO:root:No DELEGATECALL instructions
+INFO:root:No CALLCODE instructions
+INFO:root:No SELFDESTRUCT instructions
+INFO:root:Found 3 RETURN and STOP instructions
+INFO:root:All ends: []
+INFO:root:Could not exploit any RETURN+CALL

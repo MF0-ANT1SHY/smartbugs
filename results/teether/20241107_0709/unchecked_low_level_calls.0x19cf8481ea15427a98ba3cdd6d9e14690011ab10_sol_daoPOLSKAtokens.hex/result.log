@@ -1,0 +1,271 @@
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:2 paths that ended prematurely due to branches: 1e1e: 1, 318b: 1
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:2 paths that ended prematurely due to branches: 1e1e: 1, 318b: 1
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Found 7 CALL instructions
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:CALL: ( 6555) 199b:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->782->78e->18d4->1930->199b
+INFO:root:CALL: ( 6702) 1a2e:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->7af->7bb->19a4->19c5->1a2e
+INFO:root:CALL: ( 7587) 1da3:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->7f3->7ff->1c88->1c9f->1d3b->1da3
+INFO:root:CALL: ( 9090) 2382:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->112->11d->128->133->a0d->a19->21e5->2202->221d->22af->2382
+INFO:root:No DELEGATECALL instructions
+INFO:root:No CALLCODE instructions
+INFO:root:No SELFDESTRUCT instructions
+INFO:root:Found 50 RETURN and STOP instructions
+INFO:root:End: (  836)  344:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->251->267->343->344
+INFO:root:End: ( 1081)  439:	f3	-2 +0 = -2	RETURN
+INFO:root:Path: 0->d->41->3d5->3e1->119f->420->439
+ERROR:root:Failed path due to exponentiation with symbolic exponent currently not supported :-/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 90, in get_constraints
+    yield ins, path, self.run_symbolic(path, inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 67, in run_symbolic
+    return run_symbolic(self.prg, path, self.code, inclusive=inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/evm/evm.py", line 412, in run_symbolic
+    raise SymbolicError('exponentiation with symbolic exponent currently not supported :-/')
+teether.evm.exceptions.SymbolicError: exponentiation with symbolic exponent currently not supported :-/
+INFO:root:End: ( 1578)  62a:	f3	-2 +0 = -2	RETURN
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->5a6->5b2->12f7->1343->13c4->144f->1455->15eb->611->62a
+INFO:root:End: ( 1578)  62a:	f3	-2 +0 = -2	RETURN
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->5a6->5b2->12f7->13c4->144f->1455->15eb->611->62a
+INFO:root:End: ( 1578)  62a:	f3	-2 +0 = -2	RETURN
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->5a6->5b2->12f7->13c4->13cb->144f->1455->15eb->611->62a
+INFO:root:End: ( 1578)  62a:	f3	-2 +0 = -2	RETURN
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->5a6->5b2->12f7->1343->13c4->13cb->144f->1455->15eb->611->62a
+ERROR:root:Failed path due to exponentiation with symbolic exponent currently not supported :-/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 90, in get_constraints
+    yield ins, path, self.run_symbolic(path, inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 67, in run_symbolic
+    return run_symbolic(self.prg, path, self.code, inclusive=inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/evm/evm.py", line 412, in run_symbolic
+    raise SymbolicError('exponentiation with symbolic exponent currently not supported :-/')
+teether.evm.exceptions.SymbolicError: exponentiation with symbolic exponent currently not supported :-/
+INFO:root:End: ( 1852)  73c:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->710->71c->1762->17b9->17cd->73b->73c
+INFO:root:End: ( 1921)  781:	f3	-2 +0 = -2	RETURN
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->73d->749->17d0->1820->768->781
+INFO:root:End: ( 2057)  809:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->7f3->7ff->1c88->1c9f->1daa->808->809
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(STORAGE_15[2], 1) (244_15)
+INFO:root:End: ( 2057)  809:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->7f3->7ff->1c88->1c9f->1d3b->1daa->808->809
+INFO:root:End: ( 2783)  adf:	f3	-2 +0 = -2	RETURN
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->112->11d->128->133->13e->149->a7b->a87->23e6->2436->24c1->ac6->adf
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+CALLER_17 (312_17)
+INFO:root:End: ( 2595)  a23:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->112->11d->128->133->a0d->a19->21e5->2202->221d->22af->2398->a22->a23
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->317f->3182->319d->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1ebd->1ecb->1edf->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->317f->3182->319d->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f40->1f4e->1f62->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1ebd->1ecb->1edf->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f40->1f4e->1f62->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->317f->3182->319d->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->317f->3182->318b->3182->319d->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 3067)  bfb:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->112->11d->128->133->13e->149->154->15f->16a->175->be5->bf1->2672->26ce->bfa->bfb
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f40->1f4e->1f62->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f40->1f4e->1f62->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->317f->3182->319d->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->317f->3182->319d->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1ebd->1ecb->1ecb->1edf->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->317f->3182->318b->3182->319d->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e1e->312f->3170->317f->3182->319d->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->317f->3182->319d->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->317f->3182->319d->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e35->1ea2->1ebd->1ecb->1edf->1ee8->1f6b->8b7->8b8
+INFO:root:Finished all paths
+INFO:root:Bad path: 0, d, 41, 4c, 57, 62, 6d, 78, 83, 8e, 99, a4, af, ba, c5, d0, db, e6, f1, fc, 107, 80a, 816, 1dac, 1e08, 312f, 3160, 319e, 31af, 31b5, 31cd, 31d1, 31ab, 1e1e, 312f, 3160, 319e, 31af, 31b5, 31cd, 31d1, 31ab, 1e35, 1e1e
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->317f->3182->319d->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->317f->3182->319d->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1ebd->1ecb->1edf->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->317f->3182->319d->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1ebd->1ecb->1edf->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f40->1f4e->1f4e->1f62->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->317f->3182->319d->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1ebd->1ecb->1edf->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f25->1f40->1f4e->1f62->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f25->1f40->1f4e->1f62->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e35->1ea2->1eaa->1ee8->1f25->1f2d->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->317f->3182->319d->319e->31af->31b5->31be->31b5->31cd->31d1->31ab->1e1e->312f->3170->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8
+INFO:root:End: ( 2232)  8b8:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->db->e6->f1->fc->107->80a->816->1dac->1e08->312f->3170->317f->3182->318b->3182->318b->3182->319d->319e->31af->31b5->31cd->31d1->31ab->1e1e->312f->3160->319e->31af->31b5->31cd->31d1->31ab->1e35->1ee8->1f6b->8b7->8b8

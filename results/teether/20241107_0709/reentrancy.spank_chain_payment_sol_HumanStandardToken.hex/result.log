@@ -1,0 +1,29 @@
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Found 1 CALL instructions
+INFO:root:Finished all paths
+INFO:root:CALL: ( 3838)  efe:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->466->472->c7b->ea1->ebc->ee9->efe
+INFO:root:CALL: ( 3838)  efe:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->466->472->c7b->ea1->ebc->ed0->ee9->efe
+INFO:root:CALL: ( 3838)  efe:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->466->472->c7b->ea1->eaa->ea1->ebc->ee9->efe
+INFO:root:CALL: ( 3838)  efe:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->466->472->c7b->ea1->eaa->ea1->ebc->ed0->ee9->efe
+INFO:root:CALL: ( 3838)  efe:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->466->472->c7b->ea1->eaa->ea1->eaa->ea1->ebc->ee9->efe
+INFO:root:CALL: ( 3838)  efe:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->466->472->c7b->ea1->eaa->ea1->eaa->ea1->ebc->ed0->ee9->efe
+INFO:root:No DELEGATECALL instructions
+INFO:root:No CALLCODE instructions
+INFO:root:No SELFDESTRUCT instructions
+WARNING:root:No state-dependent critical path found, aborting

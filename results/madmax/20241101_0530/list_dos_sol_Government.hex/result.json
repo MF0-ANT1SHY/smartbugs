@@ -1,0 +1,82 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 1756,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/list_dos_sol_Government.hex",
+            "name": "UnboundedMassOp"
+        },
+        {
+            "address": 3455,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/list_dos_sol_Government.hex",
+            "name": "UnboundedMassOp"
+        },
+        {
+            "address": 1756,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/list_dos_sol_Government.hex",
+            "name": "UnboundedMassOp"
+        },
+        {
+            "address": 3898,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/list_dos_sol_Government.hex",
+            "name": "UnboundedMassOp"
+        },
+        {
+            "address": 1756,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/list_dos_sol_Government.hex",
+            "name": "UnboundedMassOp"
+        },
+        {
+            "address": 3925,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/list_dos_sol_Government.hex",
+            "name": "UnboundedMassOp"
+        },
+        {
+            "address": 1873,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/list_dos_sol_Government.hex",
+            "name": "UnboundedMassOp"
+        },
+        {
+            "address": 3215,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/list_dos_sol_Government.hex",
+            "name": "UnboundedMassOp"
+        },
+        {
+            "address": 1873,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/list_dos_sol_Government.hex",
+            "name": "UnboundedMassOp"
+        },
+        {
+            "address": 3302,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/list_dos_sol_Government.hex",
+            "name": "UnboundedMassOp"
+        },
+        {
+            "address": 1873,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/list_dos_sol_Government.hex",
+            "name": "UnboundedMassOp"
+        },
+        {
+            "address": 3638,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/list_dos_sol_Government.hex",
+            "name": "UnboundedMassOp"
+        },
+        {
+            "address": 1873,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/list_dos_sol_Government.hex",
+            "name": "UnboundedMassOp"
+        },
+        {
+            "address": 3962,
+            "filename": "/home/shuo/smartbugs-curated/dataset/denial_of_service/list_dos_sol_Government.hex",
+            "name": "UnboundedMassOp"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "madmax",
+        "mode": "runtime",
+        "version": "2022/11/17"
+    }
+}

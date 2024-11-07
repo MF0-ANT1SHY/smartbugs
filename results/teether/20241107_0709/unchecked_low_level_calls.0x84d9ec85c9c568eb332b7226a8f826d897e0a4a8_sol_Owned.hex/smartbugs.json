@@ -1,0 +1,51 @@
+{
+    "docker": {
+        "command": "'/sb/unchecked_low_level_calls.0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8_sol_Owned.hex' 0x1234 0x1000 +1000",
+        "detach": true,
+        "entrypoint": null,
+        "image": "smartbugs/teether:04adf56",
+        "mem_limit": "8g",
+        "user": 0,
+        "volumes": {
+            "/tmp/tmpk09zv3ir": {
+                "bind": "/sb",
+                "mode": "rw"
+            }
+        }
+    },
+    "filename": "/home/shuo/smartbugs-curated/full/unchecked_low_level_calls.0x84d9ec85c9c568eb332b7226a8f826d897e0a4a8_sol_Owned.hex",
+    "platform": {
+        "cpu": "Intel(R) Xeon(R) Gold 5418Y",
+        "python": "3.10.12.final.0 (64 bit)",
+        "release": "5.15.0-105-generic",
+        "smartbugs": "2.0.10",
+        "system": "Linux",
+        "version": "#115-Ubuntu SMP Mon Apr 15 09:52:04 UTC 2024"
+    },
+    "result": {
+        "duration": 21.143704652786255,
+        "exit_code": 0,
+        "logs": "result.log",
+        "output": null,
+        "start": 1730963378.3562577
+    },
+    "runid": "20241107_0709",
+    "solc": null,
+    "tool": {
+        "bin": null,
+        "command": "'$FILENAME' 0x1234 0x1000 +1000",
+        "cpu_quota": null,
+        "entrypoint": null,
+        "id": "teether",
+        "image": "smartbugs/teether:04adf56",
+        "info": "Analysis and automatic exploitation framework for Ethereum smart contracts.",
+        "mem_limit": null,
+        "mode": "runtime",
+        "name": "teEther",
+        "origin": "https://github.com/nescio007/teether",
+        "output": null,
+        "parser": "parser.py",
+        "solc": null,
+        "version": "#04adf56"
+    }
+}

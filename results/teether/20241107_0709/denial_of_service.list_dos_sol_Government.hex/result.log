@@ -1,0 +1,1131 @@
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:2 paths that ended prematurely due to branches: e74: 1, efe: 1
+INFO:root:Finished all paths
+INFO:root:Found 7 CALL instructions
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:CALL: ( 1236)  4d4:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d0->dc->490->4a5->4d4
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 & CALLER_1 (58_1)
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(STORAGE_1[87903029871075914254377627908054574944891091886930582284385770809450030037082 +
+       STORAGE_1[3]],
+     1) (121_1)
+INFO:root:CALL: ( 1468)  5bc:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d0->dc->490->4a5->4f1->5bc
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 & CALLER_2 (58_2)
+INFO:root:CALL: ( 1357)  54d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d0->dc->490->4a5->4f1->54d
+INFO:root:CALL: ( 2876)  b3c:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d0->dc->490->6b7->b0c->b3c
+INFO:root:CALL: ( 2001)  7d1:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d0->dc->490->6b7->6c9->746->7bb->7d1
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_5[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_5[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_5[3]),
+                     If(STORAGE_5[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_5),
+                        Extract(255,
+                                160,
+                                STORAGE_5[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_5[3]]))),
+                  Extract(159, 0, CALLER_5)),
+           STORAGE_5[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_5, 100),
+        If(STORAGE_5[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_5[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_5[3]),
+                     If(STORAGE_5[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_5),
+                        Extract(255,
+                                160,
+                                STORAGE_5[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_5[3]]))),
+                  Extract(159, 0, CALLER_5)),
+           STORAGE_5[5])),
+     1) (192_5)
+INFO:root:CALL: ( 2553)  9f9:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d0->dc->490->6b7->6c9->746->7bb->80b->899->8a8->937->94a->96f->9d9->9f9
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_6[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_6[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_6[3]),
+                     If(STORAGE_6[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_6),
+                        Extract(255,
+                                160,
+                                STORAGE_6[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_6[3]]))),
+                  Extract(159, 0, CALLER_6)),
+           STORAGE_6[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_6, 100),
+        If(STORAGE_6[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_6[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_6[3]),
+                     If(STORAGE_6[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_6),
+                        Extract(255,
+                                160,
+                                STORAGE_6[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_6[3]]))),
+                  Extract(159, 0, CALLER_6)),
+           STORAGE_6[5])),
+     1) (192_6)
+ERROR:root:Failed path due to Precompiled contract 0 not implemented
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 90, in get_constraints
+    yield ins, path, self.run_symbolic(path, inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 67, in run_symbolic
+    return run_symbolic(self.prg, path, self.code, inclusive=inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/evm/evm.py", line 777, in run_symbolic
+    raise SymbolicError("Precompiled contract %d not implemented" % s1)
+teether.evm.exceptions.SymbolicError: Precompiled contract 0 not implemented
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_7[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_7[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_7[3]),
+                     If(STORAGE_7[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_7),
+                        Extract(255,
+                                160,
+                                STORAGE_7[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_7[3]]))),
+                  Extract(159, 0, CALLER_7)),
+           STORAGE_7[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_7, 100),
+        If(STORAGE_7[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_7[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_7[3]),
+                     If(STORAGE_7[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_7),
+                        Extract(255,
+                                160,
+                                STORAGE_7[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_7[3]]))),
+                  Extract(159, 0, CALLER_7)),
+           STORAGE_7[5])),
+     1) (192_7)
+INFO:root:CALL: ( 2553)  9f9:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d0->dc->490->6b7->6c9->746->7bb->7ec->7fa->80b->899->8a8->937->94a->96f->9d9->9f9
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_8[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_8[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_8[3]),
+                     If(STORAGE_8[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_8),
+                        Extract(255,
+                                160,
+                                STORAGE_8[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_8[3]]))),
+                  Extract(159, 0, CALLER_8)),
+           STORAGE_8[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_8, 100),
+        If(STORAGE_8[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_8[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_8[3]),
+                     If(STORAGE_8[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_8),
+                        Extract(255,
+                                160,
+                                STORAGE_8[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_8[3]]))),
+                  Extract(159, 0, CALLER_8)),
+           STORAGE_8[5])),
+     1) (192_8)
+ERROR:root:Failed path due to Precompiled contract 0 not implemented
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 90, in get_constraints
+    yield ins, path, self.run_symbolic(path, inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 67, in run_symbolic
+    return run_symbolic(self.prg, path, self.code, inclusive=inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/evm/evm.py", line 777, in run_symbolic
+    raise SymbolicError("Precompiled contract %d not implemented" % s1)
+teether.evm.exceptions.SymbolicError: Precompiled contract 0 not implemented
+INFO:root:CALL: ( 1236)  4d4:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->3c9->3d5->490->4a5->4d4
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+CALLER_10 (146_10)
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(STORAGE_10[87903029871075914254377627908054574944891091886930582284385770809450030037082 +
+       STORAGE_10[3]],
+     1) (209_10)
+INFO:root:CALL: ( 1468)  5bc:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->3c9->3d5->490->4a5->4f1->5bc
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+CALLER_11 (146_11)
+INFO:root:CALL: ( 1357)  54d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->3c9->3d5->490->4a5->4f1->54d
+INFO:root:CALL: ( 2876)  b3c:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->3c9->3d5->490->6b7->b0c->b3c
+INFO:root:CALL: ( 2001)  7d1:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->3c9->3d5->490->6b7->6c9->746->7bb->7d1
+INFO:root:CALL: ( 1236)  4d4:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->dc->490->4a5->4d4
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+CALLER_15 (135_15)
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(STORAGE_15[87903029871075914254377627908054574944891091886930582284385770809450030037082 +
+       STORAGE_15[3]],
+     1) (198_15)
+INFO:root:CALL: ( 1468)  5bc:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->dc->490->4a5->4f1->5bc
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+CALLER_16 (135_16)
+INFO:root:CALL: ( 1357)  54d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->dc->490->4a5->4f1->54d
+INFO:root:CALL: ( 2876)  b3c:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->dc->490->6b7->b0c->b3c
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_18[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_18[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_18[3]),
+                     If(STORAGE_18[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_18),
+                        Extract(255,
+                                160,
+                                STORAGE_18[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_18[3]]))),
+                  Extract(159, 0, CALLER_18)),
+           STORAGE_18[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_18, 100),
+        If(STORAGE_18[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_18[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_18[3]),
+                     If(STORAGE_18[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_18),
+                        Extract(255,
+                                160,
+                                STORAGE_18[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_18[3]]))),
+                  Extract(159, 0, CALLER_18)),
+           STORAGE_18[5])),
+     1) (280_18)
+INFO:root:CALL: ( 2194)  892:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->3c9->3d5->490->6b7->6c9->746->7bb->80b->854->87c->892
+INFO:root:CALL: ( 2001)  7d1:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->dc->490->6b7->6c9->746->7bb->7d1
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_20[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_20[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_20[3]),
+                     If(STORAGE_20[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_20),
+                        Extract(255,
+                                160,
+                                STORAGE_20[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_20[3]]))),
+                  Extract(159, 0, CALLER_20)),
+           STORAGE_20[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_20, 100),
+        If(STORAGE_20[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_20[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_20[3]),
+                     If(STORAGE_20[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_20),
+                        Extract(255,
+                                160,
+                                STORAGE_20[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_20[3]]))),
+                  Extract(159, 0, CALLER_20)),
+           STORAGE_20[5])),
+     1) (280_20)
+INFO:root:CALL: ( 2194)  892:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->3c9->3d5->490->6b7->6c9->746->7bb->7ec->7fa->80b->854->87c->892
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_21[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_21[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_21[3]),
+                     If(STORAGE_21[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_21),
+                        Extract(255,
+                                160,
+                                STORAGE_21[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_21[3]]))),
+                  Extract(159, 0, CALLER_21)),
+           STORAGE_21[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_21, 100),
+        If(STORAGE_21[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_21[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_21[3]),
+                     If(STORAGE_21[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_21),
+                        Extract(255,
+                                160,
+                                STORAGE_21[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_21[3]]))),
+                  Extract(159, 0, CALLER_21)),
+           STORAGE_21[5])),
+     1) (280_21)
+INFO:root:CALL: ( 2553)  9f9:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->3c9->3d5->490->6b7->6c9->746->7bb->80b->899->8a8->937->94a->96f->9d9->9f9
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_22[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_22[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_22[3]),
+                     If(STORAGE_22[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_22),
+                        Extract(255,
+                                160,
+                                STORAGE_22[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_22[3]]))),
+                  Extract(159, 0, CALLER_22)),
+           STORAGE_22[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_22, 100),
+        If(STORAGE_22[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_22[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_22[3]),
+                     If(STORAGE_22[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_22),
+                        Extract(255,
+                                160,
+                                STORAGE_22[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_22[3]]))),
+                  Extract(159, 0, CALLER_22)),
+           STORAGE_22[5])),
+     1) (280_22)
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(...,
+                                        ...),
+                                        ...[...]),
+                                        CALLDATA_22[18]),
+                                        CALLDATA_22[19]),
+                                        CALLDATA_22[20]),
+                                        CALLDATA_22[21]),
+                                        CALLDATA_22[22]),
+                                        CALLDATA_22[23]),
+                                        CALLDATA_22[24]),
+                                        CALLDATA_22[25]),
+                                        CALLDATA_22[26]),
+                                        CALLDATA_22[27]),
+                                        CALLDATA_22[28]),
+                                        CALLDATA_22[29]),
+                                        CALLDATA_22[30]),
+                                   CALLDATA_22[31]),
+                            CALLDATA_22[32]),
+                     CALLDATA_22[33]),
+              CALLDATA_22[34]),
+       CALLDATA_22[35]) (376_22)
+INFO:root:CALL: ( 2553)  9f9:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->3c9->3d5->490->6b7->6c9->746->7bb->7ec->7fa->80b->854->87c->899->8a8->937->94a->96f->9d9->9f9
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_23[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_23[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_23[3]),
+                     If(STORAGE_23[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_23),
+                        Extract(255,
+                                160,
+                                STORAGE_23[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_23[3]]))),
+                  Extract(159, 0, CALLER_23)),
+           STORAGE_23[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_23, 100),
+        If(STORAGE_23[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_23[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_23[3]),
+                     If(STORAGE_23[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_23),
+                        Extract(255,
+                                160,
+                                STORAGE_23[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_23[3]]))),
+                  Extract(159, 0, CALLER_23)),
+           STORAGE_23[5])),
+     1) (280_23)
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(Concat(...,
+                                        ...),
+                                        ...[...]),
+                                        CALLDATA_23[18]),
+                                        CALLDATA_23[19]),
+                                        CALLDATA_23[20]),
+                                        CALLDATA_23[21]),
+                                        CALLDATA_23[22]),
+                                        CALLDATA_23[23]),
+                                        CALLDATA_23[24]),
+                                        CALLDATA_23[25]),
+                                        CALLDATA_23[26]),
+                                        CALLDATA_23[27]),
+                                        CALLDATA_23[28]),
+                                        CALLDATA_23[29]),
+                                        CALLDATA_23[30]),
+                                   CALLDATA_23[31]),
+                            CALLDATA_23[32]),
+                     CALLDATA_23[33]),
+              CALLDATA_23[34]),
+       CALLDATA_23[35]) (352_23)
+INFO:root:CALL: ( 2553)  9f9:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->3c9->3d5->490->6b7->6c9->746->7bb->80b->854->87c->899->8a8->937->94a->96f->9d9->9f9
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_24[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_24[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_24[3]),
+                     If(STORAGE_24[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_24),
+                        Extract(255,
+                                160,
+                                STORAGE_24[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_24[3]]))),
+                  Extract(159, 0, CALLER_24)),
+           STORAGE_24[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_24, 100),
+        If(STORAGE_24[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_24[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_24[3]),
+                     If(STORAGE_24[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_24),
+                        Extract(255,
+                                160,
+                                STORAGE_24[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_24[3]]))),
+                  Extract(159, 0, CALLER_24)),
+           STORAGE_24[5])),
+     1) (280_24)
+INFO:root:CALL: ( 2553)  9f9:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->3c9->3d5->490->6b7->6c9->746->7bb->7ec->7fa->80b->899->8a8->937->94a->96f->9d9->9f9
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_25[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_25[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_25[3]),
+                     If(STORAGE_25[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_25),
+                        Extract(255,
+                                160,
+                                STORAGE_25[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_25[3]]))),
+                  Extract(159, 0, CALLER_25)),
+           STORAGE_25[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_25, 100),
+        If(STORAGE_25[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_25[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_25[3]),
+                     If(STORAGE_25[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_25),
+                        Extract(255,
+                                160,
+                                STORAGE_25[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_25[3]]))),
+                  Extract(159, 0, CALLER_25)),
+           STORAGE_25[5])),
+     1) (269_25)
+INFO:root:CALL: ( 2553)  9f9:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->dc->490->6b7->6c9->746->7bb->80b->899->8a8->937->94a->96f->9d9->9f9
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_26[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_26[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_26[3]),
+                     If(STORAGE_26[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_26),
+                        Extract(255,
+                                160,
+                                STORAGE_26[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_26[3]]))),
+                  Extract(159, 0, CALLER_26)),
+           STORAGE_26[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_26, 100),
+        If(STORAGE_26[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_26[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_26[3]),
+                     If(STORAGE_26[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_26),
+                        Extract(255,
+                                160,
+                                STORAGE_26[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_26[3]]))),
+                  Extract(159, 0, CALLER_26)),
+           STORAGE_26[5])),
+     1) (269_26)
+INFO:root:CALL: ( 2553)  9f9:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->dc->490->6b7->6c9->746->7bb->7ec->7fa->80b->899->8a8->937->94a->96f->9d9->9f9
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_27[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_27[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_27[3]),
+                     If(STORAGE_27[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_27),
+                        Extract(255,
+                                160,
+                                STORAGE_27[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_27[3]]))),
+                  Extract(159, 0, CALLER_27)),
+           STORAGE_27[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_27, 100),
+        If(STORAGE_27[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_27[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_27[3]),
+                     If(STORAGE_27[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_27),
+                        Extract(255,
+                                160,
+                                STORAGE_27[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_27[3]]))),
+                  Extract(159, 0, CALLER_27)),
+           STORAGE_27[5])),
+     1) (269_27)
+ERROR:root:Failed path due to Precompiled contract 0 not implemented
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 90, in get_constraints
+    yield ins, path, self.run_symbolic(path, inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 67, in run_symbolic
+    return run_symbolic(self.prg, path, self.code, inclusive=inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/evm/evm.py", line 777, in run_symbolic
+    raise SymbolicError("Precompiled contract %d not implemented" % s1)
+teether.evm.exceptions.SymbolicError: Precompiled contract 0 not implemented
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_28[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_28[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_28[3]),
+                     If(STORAGE_28[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_28),
+                        Extract(255,
+                                160,
+                                STORAGE_28[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_28[3]]))),
+                  Extract(159, 0, CALLER_28)),
+           STORAGE_28[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_28, 100),
+        If(STORAGE_28[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_28[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_28[3]),
+                     If(STORAGE_28[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_28),
+                        Extract(255,
+                                160,
+                                STORAGE_28[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_28[3]]))),
+                  Extract(159, 0, CALLER_28)),
+           STORAGE_28[5])),
+     1) (269_28)
+ERROR:root:Failed path due to Precompiled contract 0 not implemented
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 90, in get_constraints
+    yield ins, path, self.run_symbolic(path, inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 67, in run_symbolic
+    return run_symbolic(self.prg, path, self.code, inclusive=inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/evm/evm.py", line 777, in run_symbolic
+    raise SymbolicError("Precompiled contract %d not implemented" % s1)
+teether.evm.exceptions.SymbolicError: Precompiled contract 0 not implemented
+INFO:root:No DELEGATECALL instructions
+INFO:root:No CALLCODE instructions
+INFO:root:No SELFDESTRUCT instructions
+INFO:root:Found 15 RETURN and STOP instructions
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_29[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_29[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_29[3]),
+                     If(STORAGE_29[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_29),
+                        Extract(255,
+                                160,
+                                STORAGE_29[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_29[3]]))),
+                  Extract(159, 0, CALLER_29)),
+           STORAGE_29[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_29, 100),
+        If(STORAGE_29[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_29[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_29[3]),
+                     If(STORAGE_29[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_29),
+                        Extract(255,
+                                160,
+                                STORAGE_29[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_29[3]]))),
+                  Extract(159, 0, CALLER_29)),
+           STORAGE_29[5])),
+     1) (192_29)
+ERROR:root:Failed path due to Precompiled contract 0 not implemented
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 90, in get_constraints
+    yield ins, path, self.run_symbolic(path, inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 67, in run_symbolic
+    return run_symbolic(self.prg, path, self.code, inclusive=inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/evm/evm.py", line 777, in run_symbolic
+    raise SymbolicError("Precompiled contract %d not implemented" % s1)
+teether.evm.exceptions.SymbolicError: Precompiled contract 0 not implemented
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_30[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_30[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_30[3]),
+                     If(STORAGE_30[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_30),
+                        Extract(255,
+                                160,
+                                STORAGE_30[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_30[3]]))),
+                  Extract(159, 0, CALLER_30)),
+           STORAGE_30[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_30, 100),
+        If(STORAGE_30[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_30[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_30[3]),
+                     If(STORAGE_30[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_30),
+                        Extract(255,
+                                160,
+                                STORAGE_30[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_30[3]]))),
+                  Extract(159, 0, CALLER_30)),
+           STORAGE_30[5])),
+     1) (192_30)
+ERROR:root:Failed path due to Precompiled contract 0 not implemented
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 90, in get_constraints
+    yield ins, path, self.run_symbolic(path, inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 67, in run_symbolic
+    return run_symbolic(self.prg, path, self.code, inclusive=inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/evm/evm.py", line 777, in run_symbolic
+    raise SymbolicError("Precompiled contract %d not implemented" % s1)
+teether.evm.exceptions.SymbolicError: Precompiled contract 0 not implemented
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_31[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_31[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_31[3]),
+                     If(STORAGE_31[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_31),
+                        Extract(255,
+                                160,
+                                STORAGE_31[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_31[3]]))),
+                  Extract(159, 0, CALLER_31)),
+           STORAGE_31[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_31, 100),
+        If(STORAGE_31[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_31[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_31[3]),
+                     If(STORAGE_31[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_31),
+                        Extract(255,
+                                160,
+                                STORAGE_31[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_31[3]]))),
+                  Extract(159, 0, CALLER_31)),
+           STORAGE_31[5])),
+     1) (192_31)
+ERROR:root:Failed path due to Precompiled contract 0 not implemented
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 90, in get_constraints
+    yield ins, path, self.run_symbolic(path, inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 67, in run_symbolic
+    return run_symbolic(self.prg, path, self.code, inclusive=inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/evm/evm.py", line 777, in run_symbolic
+    raise SymbolicError("Precompiled contract %d not implemented" % s1)
+teether.evm.exceptions.SymbolicError: Precompiled contract 0 not implemented
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_32[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_32[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_32[3]),
+                     If(STORAGE_32[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_32),
+                        Extract(255,
+                                160,
+                                STORAGE_32[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_32[3]]))),
+                  Extract(159, 0, CALLER_32)),
+           STORAGE_32[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_32, 100),
+        If(STORAGE_32[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_32[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_32[3]),
+                     If(STORAGE_32[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_32),
+                        Extract(255,
+                                160,
+                                STORAGE_32[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_32[3]]))),
+                  Extract(159, 0, CALLER_32)),
+           STORAGE_32[5])),
+     1) (192_32)
+INFO:root:End: (  233)   e9:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d0->dc->490->6b7->6c9->746->7bb->80b->899->8a8->937->b03->b47->e7->e9
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_33[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_33[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_33[3]),
+                     If(STORAGE_33[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_33),
+                        Extract(255,
+                                160,
+                                STORAGE_33[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_33[3]]))),
+                  Extract(159, 0, CALLER_33)),
+           STORAGE_33[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_33, 100),
+        If(STORAGE_33[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_33[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_33[3]),
+                     If(STORAGE_33[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_33),
+                        Extract(255,
+                                160,
+                                STORAGE_33[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_33[3]]))),
+                  Extract(159, 0, CALLER_33)),
+           STORAGE_33[5])),
+     1) (192_33)
+ERROR:root:Failed path due to Precompiled contract 0 not implemented
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 90, in get_constraints
+    yield ins, path, self.run_symbolic(path, inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/project.py", line 67, in run_symbolic
+    return run_symbolic(self.prg, path, self.code, inclusive=inclusive)
+  File "/usr/local/lib/python3.8/site-packages/teether-0.1.10-py3.8.egg/teether/evm/evm.py", line 777, in run_symbolic
+    raise SymbolicError("Precompiled contract %d not implemented" % s1)
+teether.evm.exceptions.SymbolicError: Precompiled contract 0 not implemented
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_34[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_34[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_34[3]),
+                     If(STORAGE_34[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_34),
+                        Extract(255,
+                                160,
+                                STORAGE_34[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_34[3]]))),
+                  Extract(159, 0, CALLER_34)),
+           STORAGE_34[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_34, 100),
+        If(STORAGE_34[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_34[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_34[3]),
+                     If(STORAGE_34[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_34),
+                        Extract(255,
+                                160,
+                                STORAGE_34[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_34[3]]))),
+                  Extract(159, 0, CALLER_34)),
+           STORAGE_34[5])),
+     1) (192_34)
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(SHA3_11d_34 ==
+        87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+        Concat(0,
+               If(SHA3_11d_34 == 0,
+                  If(SHA3_11d_34 == 2,
+                     If(If(STORAGE_34[3] ==
+                           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+                           Concat(If(STORAGE_34[3] ==
+                                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                                     Extract(255,
+                                        160,
+                                        1 + STORAGE_34[3]),
+                                     If(STORAGE_34[3] ==
+                                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                                        Extract(255,
+                                        160,
+                                        TIMESTAMP_34),
+                                        Extract(255,
+                                        160,
+                                        STORAGE_34[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                        STORAGE_34[3]]))),
+                                  Extract(159, 0, CALLER_34)),
+                           STORAGE_34[4]) ==
+                        53278079350709166316280423202849322519190186591071851114874353210178472783463,
+                        Extract(31,
+                                0,
+                                bvudiv_i(110*CALLVALUE_34,
+                                        100)),
+                        If(STORAGE_34[3] ==
+                           27889059366240281169193357100633332908378892778709981755071813198463099602855,
+                           Extract(31, 0, CALLER_34),
+                           Extract(31, 0, STORAGE_34[2]))) +
+                     Extract(31,
+                             0,
+                             bvudiv_i(5*CALLVALUE_34, 100)),
+                     If(If(STORAGE_34[3] ==
+                           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+                           Concat(If(STORAGE_34[3] ==
+                                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                                     Extract(255,
+                                        160,
+                                        1 + STORAGE_34[3]),
+                                     If(STORAGE_34[3] ==
+                                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                                        Extract(255,
+                                        160,
+                                        TIMESTAMP_34),
+                                        Extract(255,
+                                        160,
+                                        STORAGE_34[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                        STORAGE_34[3]]))),
+                                  Extract(159, 0, CALLER_34)),
+                           STORAGE_34[4]) ==
+                        53278079350709166316280423202849322519190186591071851114874353210178472783461 +
+                        SHA3_11d_34,
+                        Extract(31,
+                                0,
+                                bvudiv_i(110*CALLVALUE_34,
+                                        100)),
+                        If(SHA3_11d_34 == 4,
+                           1 +
+                           If(STORAGE_34[3] ==
+                              27889059366240281169193357100633332908378892778709981755071813198463099602857,
+                              Extract(31, 0, CALLER_34),
+                              Extract(31, 0, STORAGE_34[4])),
+                           If(STORAGE_34[3] ==
+                              27889059366240281169193357100633332908378892778709981755071813198463099602853 +
+                              SHA3_11d_34,
+                              Extract(31, 0, CALLER_34),
+                              If(SHA3_11d_34 == 3,
+                                 1 +
+                                 Extract(31,
+                                        0,
+                                        STORAGE_34[3]),
+                                 If(SHA3_11d_34 == 1,
+                                    Extract(31,
+                                        0,
+                                        TIMESTAMP_34),
+                                    Extract(31,
+                                        0,
+                                        STORAGE_34[SHA3_11d_34]))))))) +
+                  Extract(31,
+                          0,
+                          bvudiv_i(110*CALLVALUE_34, 100)),
+                  If(If(STORAGE_34[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602857,
+                        Concat(If(STORAGE_34[3] ==
+                                  27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                                  Extract(255,
+                                        160,
+                                        1 + STORAGE_34[3]),
+                                  If(STORAGE_34[3] ==
+                                     27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                                     Extract(255,
+                                        160,
+                                        TIMESTAMP_34),
+                                     Extract(255,
+                                        160,
+                                        STORAGE_34[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                        STORAGE_34[3]]))),
+                               Extract(159, 0, CALLER_34)),
+                        STORAGE_34[4]) ==
+                     53278079350709166316280423202849322519190186591071851114874353210178472783461,
+                     Extract(31,
+                             0,
+                             bvudiv_i(110*CALLVALUE_34, 100)),
+                     If(STORAGE_34[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602853,
+                        Extract(31, 0, CALLER_34),
+                        Extract(31, 0, STORAGE_34[0]))))),
+        If(SHA3_11d_34 == 2,
+           If(If(STORAGE_34[3] ==
+                 27889059366240281169193357100633332908378892778709981755071813198463099602857,
+                 Concat(If(STORAGE_34[3] ==
+                           27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                           Extract(255,
+                                   160,
+                                   1 + STORAGE_34[3]),
+                           If(STORAGE_34[3] ==
+                              27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                              Extract(255,
+                                      160,
+                                      TIMESTAMP_34),
+                              Extract(255,
+                                      160,
+                                      STORAGE_34[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                        STORAGE_34[3]]))),
+                        Extract(159, 0, CALLER_34)),
+                 STORAGE_34[4]) ==
+              53278079350709166316280423202849322519190186591071851114874353210178472783463,
+              bvudiv_i(110*CALLVALUE_34, 100),
+              If(STORAGE_34[3] ==
+                 27889059366240281169193357100633332908378892778709981755071813198463099602855,
+                 Concat(If(STORAGE_34[3] ==
+                           27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                           Extract(255,
+                                   160,
+                                   1 + STORAGE_34[3]),
+                           If(STORAGE_34[3] ==
+                              27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                              Extract(255,
+                                      160,
+                                      TIMESTAMP_34),
+                              Extract(255,
+                                      160,
+                                      STORAGE_34[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                        STORAGE_34[3]]))),
+                        Extract(159, 0, CALLER_34)),
+                 STORAGE_34[2])) +
+           bvudiv_i(5*CALLVALUE_34, 100),
+           If(If(STORAGE_34[3] ==
+                 27889059366240281169193357100633332908378892778709981755071813198463099602857,
+                 Concat(If(STORAGE_34[3] ==
+                           27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                           Extract(255,
+                                   160,
+                                   1 + STORAGE_34[3]),
+                           If(STORAGE_34[3] ==
+                              27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                              Extract(255,
+                                      160,
+                                      TIMESTAMP_34),
+                              Extract(255,
+                                      160,
+                                      STORAGE_34[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                        STORAGE_34[3]]))),
+                        Extract(159, 0, CALLER_34)),
+                 STORAGE_34[4]) ==
+              53278079350709166316280423202849322519190186591071851114874353210178472783461 +
+              SHA3_11d_34,
+              bvudiv_i(110*CALLVALUE_34, 100),
+              If(SHA3_11d_34 == 4,
+                 1 +
+                 If(STORAGE_34[3] ==
+                    27889059366240281169193357100633332908378892778709981755071813198463099602857,
+                    Concat(If(STORAGE_34[3] ==
+                              27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                              Extract(255,
+                                      160,
+                                      1 + STORAGE_34[3]),
+                              If(STORAGE_34[3] ==
+                                 27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                                 Extract(255,
+                                        160,
+                                        TIMESTAMP_34),
+                                 Extract(255,
+                                        160,
+                                        STORAGE_34[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                        STORAGE_34[3]]))),
+                           Extract(159, 0, CALLER_34)),
+                    STORAGE_34[4]),
+                 If(STORAGE_34[3] ==
+                    27889059366240281169193357100633332908378892778709981755071813198463099602853 +
+                    SHA3_11d_34,
+                    Concat(If(STORAGE_34[3] ==
+                              27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                              Extract(255,
+                                      160,
+... (432_34)
+INFO:root:End: (  233)   e9:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d0->dc->490->6b7->6c9->746->7bb->7ec->7fa->80b->899->8a8->937->94a->96f->9d9->a25->a5a->b03->b47->e7->e9
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(If(STORAGE_35[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602857,
+           Concat(If(STORAGE_35[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_35[3]),
+                     If(STORAGE_35[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_35),
+                        Extract(255,
+                                160,
+                                STORAGE_35[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_35[3]]))),
+                  Extract(159, 0, CALLER_35)),
+           STORAGE_35[4]) ==
+        53278079350709166316280423202849322519190186591071851114874353210178472783466,
+        bvudiv_i(110*CALLVALUE_35, 100),
+        If(STORAGE_35[3] ==
+           27889059366240281169193357100633332908378892778709981755071813198463099602858,
+           Concat(If(STORAGE_35[3] ==
+                     27889059366240281169193357100633332908378892778709981755071813198463099602856,
+                     Extract(255, 160, 1 + STORAGE_35[3]),
+                     If(STORAGE_35[3] ==
+                        27889059366240281169193357100633332908378892778709981755071813198463099602854,
+                        Extract(255, 160, TIMESTAMP_35),
+                        Extract(255,
+                                160,
+                                STORAGE_35[87903029871075914254377627908054574944891091886930582284385770809450030037083 +
+                                  STORAGE_35[3]]))),
+                  Extract(159, 0, CALLER_35)),
+           STORAGE_35[5])),
+     1) (192_35)
+INFO:root:End: (  233)   e9:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d0->dc->490->6b7->6c9->746->7bb->7ec->7fa->80b->899->8a8->937->b03->b47->e7->e9

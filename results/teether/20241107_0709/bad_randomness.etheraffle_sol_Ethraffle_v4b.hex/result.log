@@ -1,0 +1,136 @@
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:7 paths that ended prematurely due to branches: 320: 3, fa4: 1, 919: 1, aa7: 2
+INFO:root:11 paths that ended prematurely due to branches: 320: 3, f8f: 1, fa4: 1, 482: 3, aa7: 2, 919: 1
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Found 6 CALL instructions
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:CALL: (  675)  2a3:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->274->2a3
+INFO:root:CALL: ( 3803)  edb:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->2bf->2c3->2e0->2f2->48c->498->be1->c10->c6b->d51->edb
+INFO:root:CALL: ( 3803)  edb:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->2bf->2c3->2e0->2eb->2f2->48c->498->be1->c10->c6b->d51->edb
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(STORAGE_3[SHA3_e4_3], 1) (373_3)
+INFO:root:CALL: ( 3914)  f4a:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->2bf->2c3->2e0->2f2->48c->498->be1->c10->c6b->d51->ef1->f4a
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(STORAGE_4[SHA3_e9_4], 1) (378_4)
+INFO:root:CALL: ( 3914)  f4a:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->2bf->2c3->2e0->2eb->2f2->48c->498->be1->c10->c6b->d51->ef1->f4a
+INFO:root:CALL: ( 1241)  4d9:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->2bf->2c3->2e0->2eb->2f2->48c->4a0->4aa->4d9
+INFO:root:CALL: ( 1241)  4d9:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->2bf->2c3->2e0->2f2->48c->4a0->4aa->4d9
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(STORAGE_7[SHA3_e4_7], 1) (373_7)
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(STORAGE_7[0], 1) (418_7)
+INFO:root:CALL: ( 1241)  4d9:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->2bf->2c3->2e0->2f2->48c->498->be1->c10->c6b->d51->ef1->f60->49f->4a0->4aa->4d9
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(STORAGE_8[SHA3_e9_8], 1) (378_8)
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(STORAGE_8[0], 1) (423_8)
+INFO:root:CALL: ( 1241)  4d9:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->2bf->2c3->2e0->2eb->2f2->48c->498->be1->c10->c6b->d51->ef1->f60->49f->4a0->4aa->4d9
+INFO:root:CALL: ( 3803)  edb:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->2bf->2c3->2e0->2f2->2f8->348->35c->482->2c3->2e0->2eb->2f2->48c->498->be1->c10->c6b->d51->edb
+INFO:root:CALL: ( 3803)  edb:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->2bf->2c3->2e0->2eb->2f2->2f8->348->35c->482->2c3->2e0->2f2->48c->498->be1->c10->c6b->d51->edb
+INFO:root:CALL: ( 3803)  edb:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->2bf->2c3->2e0->2f2->2f8->348->35c->482->2c3->2e0->2f2->48c->498->be1->c10->c6b->d51->edb
+INFO:root:1 paths that ended prematurely due to branches: 79a: 1
+INFO:root:Bad path: 5a0, 5ac, 7a7
+INFO:root:CALL: ( 3803)  edb:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->2bf->2c3->2e0->2eb->2f2->2f8->348->35c->482->2c3->2e0->2eb->2f2->48c->498->be1->c10->c6b->d51->edb
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(SHA3_7a_14 ==
+        115792089237316195423570985008687907853269984665640564039457584007913129639935 +
+        SHA3_19f_14,
+        STORAGE_14[1],
+        If(SHA3_7a_14 == SHA3_19f_14,
+           Concat(If(SHA3_7a_14 == 3,
+                     Extract(255, 160, 1 + STORAGE_14[3]),
+                     Extract(255,
+                             160,
+                             STORAGE_14[SHA3_7a_14])),
+                  Extract(159, 0, CALLER_14)),
+           If(SHA3_19f_14 == 3,
+              1 + STORAGE_14[3],
+              STORAGE_14[SHA3_19f_14]))),
+     1) (560_14)
+INFO:root:CALL: ( 3914)  f4a:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->2bf->2c3->2e0->2f2->2f8->348->35c->482->2c3->2e0->2eb->2f2->48c->498->be1->c10->c6b->d51->ef1->f4a
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(SHA3_7f_15 ==
+        115792089237316195423570985008687907853269984665640564039457584007913129639935 +
+        SHA3_1a4_15,
+        STORAGE_15[1],
+        If(SHA3_7f_15 == SHA3_1a4_15,
+           Concat(If(SHA3_7f_15 == 3,
+                     Extract(255, 160, 1 + STORAGE_15[3]),
+                     Extract(255,
+                             160,
+                             STORAGE_15[SHA3_7f_15])),
+                  Extract(159, 0, CALLER_15)),
+           If(SHA3_1a4_15 == 3,
+              1 + STORAGE_15[3],
+              STORAGE_15[SHA3_1a4_15]))),
+     1) (565_15)
+INFO:root:CALL: ( 3914)  f4a:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->2bf->2c3->2e0->2eb->2f2->2f8->348->35c->482->2c3->2e0->2eb->2f2->48c->498->be1->c10->c6b->d51->ef1->f4a
+INFO:root:CALL: ( 1241)  4d9:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->2bf->2c3->2e0->2f2->2f8->348->35c->482->2c3->2e0->2f2->48c->4a0->4aa->4d9
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(If(SHA3_7f_17 ==
+        115792089237316195423570985008687907853269984665640564039457584007913129639935 +
+        SHA3_19f_17,
+        STORAGE_17[1],
+        If(SHA3_7f_17 == SHA3_19f_17,
+           Concat(If(SHA3_7f_17 == 3,
+                     Extract(255, 160, 1 + STORAGE_17[3]),
+                     Extract(255,
+                             160,
+                             STORAGE_17[SHA3_7f_17])),
+                  Extract(159, 0, CALLER_17)),
+           If(SHA3_19f_17 == 3,
+              1 + STORAGE_17[3],
+              STORAGE_17[SHA3_19f_17]))),
+     1) (560_17)
+INFO:root:CALL: ( 3914)  f4a:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->ba->25b->2bf->2c3->2e0->2eb->2f2->2f8->348->35c->482->2c3->2e0->2f2->48c->498->be1->c10->c6b->d51->ef1->f4a

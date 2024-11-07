@@ -1,0 +1,111 @@
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Found 5 CALL instructions
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:Finished all paths
+INFO:root:CALL: ( 2151)  867:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->1c9->1d5->767->815->820->867
+INFO:root:CALL: ( 2151)  867:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->57->62->1c9->1d5->767->7e5->815->820->867
+INFO:root:CALL: ( 4477) 117d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->17a->6a4->702->1069->12f7->1092->109d->1373->13cc->1558->1568->158d->145e->10a6->10b7->1466->10e7->1148->117d
+INFO:root:CALL: ( 4477) 117d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->17a->6a4->702->1069->12f7->1092->109d->1373->13a5->13cc->1558->156f->1581->158d->145e->10a6->10b7->1466->10e7->1148->117d
+INFO:root:CALL: ( 4477) 117d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->17a->6a4->702->1069->12f7->1092->109d->1373->13a5->13cc->1558->1568->158d->145e->10a6->10b7->1466->10e7->1148->117d
+INFO:root:CALL: ( 4400) 1130:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->17a->6a4->702->1069->12f7->1092->109d->1373->13a5->13cc->1558->156f->1581->158d->145e->10a6->10b7->1466->10e7->10f1->153d->1550->10f9->1130
+INFO:root:CALL: ( 4400) 1130:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->17a->6a4->702->1069->12f7->1092->109d->1373->13a5->13cc->1558->1568->158d->145e->10a6->10b7->1466->10e7->10f1->153d->1550->10f9->1130
+INFO:root:CALL: ( 4477) 117d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->17a->6a4->702->1069->12f7->1092->109d->1373->13cc->1558->156f->1581->158d->145e->10a6->10b7->1466->10e7->1148->117d
+INFO:root:CALL: ( 4400) 1130:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->17a->6a4->702->1069->12f7->1092->109d->1373->13cc->1558->1568->158d->145e->10a6->10b7->1466->10e7->10f1->153d->1550->10f9->1130
+INFO:root:CALL: ( 4400) 1130:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->17a->6a4->702->1069->12f7->1092->109d->1373->13cc->1558->156f->1581->158d->145e->10a6->10b7->1466->10e7->10f1->153d->1550->10f9->1130
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(STORAGE_10[SHA3_5c_10], 1) (489_10)
+INFO:root:CALL: ( 4477) 117d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->17a->6a4->702->1069->12f7->1092->109d->1373->13cc->1558->1568->158d->145e->10a6->10b7->1466->10e7->10f1->153d->1550->10f9->1146->1148->117d
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(STORAGE_11[SHA3_5c_11], 1) (508_11)
+INFO:root:CALL: ( 4477) 117d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->17a->6a4->702->1069->12f7->1092->109d->1373->13a5->13cc->1558->1568->158d->145e->10a6->10b7->1466->10e7->10f1->153d->1550->10f9->1146->1148->117d
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(STORAGE_12[SHA3_5c_12], 1) (530_12)
+INFO:root:CALL: ( 4477) 117d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->17a->6a4->702->1069->12f7->1092->109d->1373->13a5->13cc->1558->156f->1581->158d->145e->10a6->10b7->1466->10e7->10f1->153d->1550->10f9->1146->1148->117d
+INFO:root:Calling contract 1461501637330902918203684832716283019655932542975 &
+1461501637330902918203684832716283019655932542975 &
+UDiv(STORAGE_13[SHA3_5c_13], 1) (511_13)
+INFO:root:CALL: ( 4477) 117d:	f1	-7 +1 = -6	CALL
+INFO:root:Path: 0->d->41->4c->17a->6a4->702->1069->12f7->1092->109d->1373->13cc->1558->156f->1581->158d->145e->10a6->10b7->1466->10e7->10f1->153d->1550->10f9->1146->1148->117d
+INFO:root:No DELEGATECALL instructions
+INFO:root:No CALLCODE instructions
+INFO:root:No SELFDESTRUCT instructions
+INFO:root:Found 15 RETURN and STOP instructions
+INFO:root:End: (  377)  179:	f3	-2 +0 = -2	RETURN
+INFO:root:Path: 0->d->41->14b->157->5df->63c->657->160->179
+INFO:root:End: (  753)  2f1:	f3	-2 +0 = -2	RETURN
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->2c3->2cf->9ae->a0b->a27->2d8->2f1
+INFO:root:End: ( 1149)  47d:	00	-0 +0 = 0	STOP
+INFO:root:Path: 0->d->41->4c->57->62->6d->78->83->8e->99->a4->af->ba->c5->d0->43b->447->c6b->cc6->cfd->d3d->47c->47d
+INFO:root:All ends: [<teether.evm.results.SymbolicResult object at 0x7f42994be070>, <teether.evm.results.SymbolicResult object at 0x7f4299366b20>, <teether.evm.results.SymbolicResult object at 0x7f42992b69a0>]
+INFO:root:Could not exploit any RETURN+CALL
