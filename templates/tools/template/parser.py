@@ -16,7 +16,9 @@ FINDINGS: set[str] = set()
 
 def parse(
     exit_code: Optional[int], log: list[str], output: bytes
-) -> tuple[list[dict[str, object]], set[str], set[str], set[str]]:
+) -> tuple[
+    list[dict[str, object]], set[str], set[str], set[str]
+]:
     """
     Analyse the result of the tool tun.
 
@@ -34,7 +36,9 @@ def parse(
 
     findings: list[dict[str, object]] = []
     infos: set[str] = set()
-    errors, fails = sb.parse_utils.errors_fails(exit_code, log)
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, log
+    )
     # Parses the output for common Python/Java/shell exceptions (returned in 'fails')
 
     for line in log:
@@ -42,10 +46,14 @@ def parse(
         ...
 
     try:
-        with io.BytesIO(output) as o, tarfile.open(fileobj=o) as tar:
-
+        with (
+            io.BytesIO(output) as o,
+            tarfile.open(fileobj=o) as tar,
+        ):
             # access specific file
-            _contents_of_some_file = tar.extractfile("name_of_some_file").read()
+            _contents_of_some_file = tar.extractfile(
+                "name_of_some_file"
+            ).read()
 
             # iterate over all files:
             for f in tar.getmembers():

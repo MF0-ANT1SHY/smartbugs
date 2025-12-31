@@ -1,0 +1,7 @@
+name: AChecker
+image: achecker:latest
+origin: https://github.com/DependableSystemsLab/AChecker
+version: '#e4e47ef'
+info: Achecker
+runtime:
+    command: "-f '$FILENAME' -b -m 8"

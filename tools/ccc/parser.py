@@ -40,7 +40,9 @@ def parse(
 
     findings: list[dict] = []
     infos: set[str] = set()
-    errors, fails = sb.parse_utils.errors_fails(exit_code, log)
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, log
+    )
     # Parses the output for common Python/Java/shell exceptions (returned in 'fails')
 
     current_contract = None
@@ -49,25 +51,41 @@ def parse(
         # analyse stdout/stderr of the Docker run
         if " ERROR de.fraunhofer.aisec.cpg" in line:
             info = line.split(": ")[-1]
-            if info.endswith(". Falling back to the default (current) scope"):
+            if info.endswith(
+                ". Falling back to the default (current) scope"
+            ):
                 info = info[:-45]
             infos.add(info)
         elif line.startswith("File:"):
-            current_contract = line[5:].strip()  # removes "File:"
+            current_contract = line[
+                5:
+            ].strip()  # removes "File:"
         elif current_contract is not None:
             if line.startswith("- "):
                 # parse each line
                 msg = line[2:].strip()  # removes "- "
-                vulnerability, coded_location = msg.split(", ", 1)
-                location = parse_location(coded_location.strip())
+                vulnerability, coded_location = msg.split(
+                    ", ", 1
+                )
+                location = parse_location(
+                    coded_location.strip()
+                )
 
                 finding = {
                     "name": vulnerability,
                     "filename": current_contract,
-                    "line": location["region"]["start_line"],
-                    "line_end": location["region"]["end_line"],
-                    "column": location["region"]["start_column"],
-                    "column_end": location["region"]["end_column"],
+                    "line": location["region"][
+                        "start_line"
+                    ],
+                    "line_end": location["region"][
+                        "end_line"
+                    ],
+                    "column": location["region"][
+                        "start_column"
+                    ],
+                    "column_end": location["region"][
+                        "end_column"
+                    ],
                 }
 
                 findings.append(finding)

@@ -90,7 +90,9 @@ def parse(
 ) -> tuple[list[dict], set[str], set[str], set[str]]:
     findings: list[dict] = []
     infos: set[str] = set()
-    errors, fails = sb.parse_utils.errors_fails(exit_code, log)
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, log
+    )
     errors.discard("EXIT_CODE_1")
 
     for line in log:

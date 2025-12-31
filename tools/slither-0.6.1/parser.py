@@ -104,14 +104,21 @@ def parse(
 ) -> tuple[list[dict], set[str], set[str], set[str]]:
     findings: list[dict] = []
     infos: set[str] = set()
-    errors, fails = sb.parse_utils.errors_fails(exit_code, log)
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, log
+    )
 
     # for line in log:
     #    pass
 
     try:
-        with io.BytesIO(output) as o, tarfile.open(fileobj=o) as tar:
-            output_json = tar.extractfile("output.json").read()
+        with (
+            io.BytesIO(output) as o,
+            tarfile.open(fileobj=o) as tar,
+        ):
+            output_json = tar.extractfile(
+                "output.json"
+            ).read()
             issues = json.loads(output_json)
     except Exception as e:
         fails.add(f"error parsing results: {e}")
@@ -128,7 +135,9 @@ def parse(
             finding[f] = issue[i]
         elements = issue.get("elements", [])
         m = LOCATION.search(finding["message"])
-        finding["message"] = finding["message"].replace("/sb/", "")
+        finding["message"] = finding["message"].replace(
+            "/sb/", ""
+        )
         if m:
             finding["filename"] = m[1]
             if "-" in m[2]:
@@ -137,7 +146,10 @@ def parse(
                 finding["line_end"] = int(end)
             else:
                 finding["line"] = int(m[2])
-        elif len(elements) > 0 and "source_mapping" in elements[0]:
+        elif (
+            len(elements) > 0
+            and "source_mapping" in elements[0]
+        ):
             source_mapping = elements[0]["source_mapping"]
             lines = sorted(source_mapping["lines"])
             if len(lines) > 0:
@@ -148,7 +160,9 @@ def parse(
         for element in elements:
             if element.get("type") == "function":
                 finding["function"] = element["name"]
-                finding["contract"] = element["contract"]["name"]
+                finding["contract"] = element["contract"][
+                    "name"
+                ]
                 break
         findings.append(finding)
 

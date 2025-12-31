@@ -1,0 +1,7 @@
+name: eTainter
+image: etainter:latest
+origin: https://github.com/DependableSystemsLab/eTainter
+version: '#2735caf'
+info: eTainter
+runtime:
+    command: "-f '$FILENAME' -b -m 8"

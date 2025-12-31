@@ -12,7 +12,9 @@ from sb.tools import Tool
 class TestTaskCreation:
     """Test Task object creation and initialization."""
 
-    def test_task_creation_with_all_attributes(self, mock_tool, mock_settings):
+    def test_task_creation_with_all_attributes(
+        self, mock_tool, mock_settings
+    ):
         """Test creating a Task with all attributes specified."""
         task = Task(
             absfn="/home/user/project/test.sol",
@@ -26,13 +28,18 @@ class TestTaskCreation:
 
         assert task.absfn == "/home/user/project/test.sol"
         assert task.relfn == "test.sol"
-        assert task.rdir == "/home/user/results/mythril/test_run/test.sol"
+        assert (
+            task.rdir
+            == "/home/user/results/mythril/test_run/test.sol"
+        )
         assert task.solc_version == "0.8.0"
         assert task.solc_path == "/usr/bin/solc"
         assert task.tool == mock_tool
         assert task.settings == mock_settings
 
-    def test_task_creation_with_none_solc(self, mock_tool, mock_settings):
+    def test_task_creation_with_none_solc(
+        self, mock_tool, mock_settings
+    ):
         """Test creating a Task with None solc_version and solc_path."""
         task = Task(
             absfn="/home/user/project/bytecode.hex",
@@ -44,12 +51,16 @@ class TestTaskCreation:
             settings=mock_settings,
         )
 
-        assert task.absfn == "/home/user/project/bytecode.hex"
+        assert (
+            task.absfn == "/home/user/project/bytecode.hex"
+        )
         assert task.relfn == "bytecode.hex"
         assert task.solc_version is None
         assert task.solc_path is None
 
-    def test_task_creation_minimal(self, mock_tool, mock_settings):
+    def test_task_creation_minimal(
+        self, mock_tool, mock_settings
+    ):
         """Test creating a Task with minimal required attributes."""
         task = Task(
             absfn="/test.sol",
@@ -71,7 +82,9 @@ class TestTaskCreation:
 class TestTaskAttributeAccess:
     """Test Task attribute access and modification."""
 
-    def test_attribute_access(self, mock_tool, mock_settings):
+    def test_attribute_access(
+        self, mock_tool, mock_settings
+    ):
         """Test accessing Task attributes."""
         task = Task(
             absfn="/home/user/contracts/SimpleDAO.sol",
@@ -84,9 +97,15 @@ class TestTaskAttributeAccess:
         )
 
         # Test file paths
-        assert task.absfn == "/home/user/contracts/SimpleDAO.sol"
+        assert (
+            task.absfn
+            == "/home/user/contracts/SimpleDAO.sol"
+        )
         assert task.relfn == "contracts/SimpleDAO.sol"
-        assert task.rdir == "/home/user/results/slither/run_001/SimpleDAO.sol"
+        assert (
+            task.rdir
+            == "/home/user/results/slither/run_001/SimpleDAO.sol"
+        )
 
         # Test solc attributes
         assert task.solc_version == "0.7.6"
@@ -96,7 +115,9 @@ class TestTaskAttributeAccess:
         assert isinstance(task.tool, Tool)
         assert isinstance(task.settings, Settings)
 
-    def test_attribute_modification(self, mock_tool, mock_settings):
+    def test_attribute_modification(
+        self, mock_tool, mock_settings
+    ):
         """Test modifying Task attributes after creation."""
         task = Task(
             absfn="/test.sol",
@@ -115,7 +136,9 @@ class TestTaskAttributeAccess:
         assert task.absfn == "/new/path/test.sol"
         assert task.solc_version == "0.8.1"
 
-    def test_tool_attribute_access(self, mock_tool, mock_settings):
+    def test_tool_attribute_access(
+        self, mock_tool, mock_settings
+    ):
         """Test accessing nested tool attributes through Task."""
         task = Task(
             absfn="/test.sol",
@@ -129,9 +152,13 @@ class TestTaskAttributeAccess:
 
         assert task.tool.id == "test_tool"
         assert task.tool.mode == "solidity"
-        assert task.tool.image == "smartbugs/test_tool:latest"
+        assert (
+            task.tool.image == "smartbugs/test_tool:latest"
+        )
 
-    def test_settings_attribute_access(self, mock_tool, mock_settings):
+    def test_settings_attribute_access(
+        self, mock_tool, mock_settings
+    ):
         """Test accessing nested settings attributes through Task."""
         task = Task(
             absfn="/test.sol",
@@ -151,7 +178,9 @@ class TestTaskAttributeAccess:
 class TestTaskStringRepresentation:
     """Test Task string representation."""
 
-    def test_str_representation_with_solc(self, mock_tool, mock_settings):
+    def test_str_representation_with_solc(
+        self, mock_tool, mock_settings
+    ):
         """Test __str__ method with solc information."""
         task = Task(
             absfn="/home/user/test.sol",
@@ -174,7 +203,9 @@ class TestTaskStringRepresentation:
         assert "tool:" in str_repr
         assert "settings:" in str_repr
 
-    def test_str_representation_without_solc(self, mock_tool, mock_settings):
+    def test_str_representation_without_solc(
+        self, mock_tool, mock_settings
+    ):
         """Test __str__ method without solc information."""
         task = Task(
             absfn="/home/user/bytecode.hex",
@@ -192,7 +223,9 @@ class TestTaskStringRepresentation:
         assert "solc_version: None" in str_repr
         assert "solc_path: None" in str_repr
 
-    def test_str_representation_format(self, mock_tool, mock_settings):
+    def test_str_representation_format(
+        self, mock_tool, mock_settings
+    ):
         """Test that __str__ returns properly formatted string."""
         task = Task(
             absfn="/test.sol",
@@ -232,7 +265,9 @@ class TestTaskEquality:
         # Same object reference
         assert task is task
 
-    def test_task_different_instances_same_values(self, mock_tool, mock_settings):
+    def test_task_different_instances_same_values(
+        self, mock_tool, mock_settings
+    ):
         """Test that two tasks with same values are different objects."""
         task1 = Task(
             absfn="/test.sol",
@@ -260,7 +295,9 @@ class TestTaskEquality:
         assert task1.relfn == task2.relfn
         assert task1.solc_version == task2.solc_version
 
-    def test_task_different_files(self, mock_tool, mock_settings):
+    def test_task_different_files(
+        self, mock_tool, mock_settings
+    ):
         """Test tasks with different files are distinguishable."""
         task1 = Task(
             absfn="/test1.sol",
@@ -288,7 +325,9 @@ class TestTaskEquality:
 class TestTaskResultDirectory:
     """Test Task result directory path generation."""
 
-    def test_result_directory_path(self, mock_tool, mock_settings):
+    def test_result_directory_path(
+        self, mock_tool, mock_settings
+    ):
         """Test that result directory path is correctly set."""
         rdir = "/home/user/results/mythril/20250101_1030/test.sol"
         task = Task(
@@ -303,7 +342,9 @@ class TestTaskResultDirectory:
 
         assert task.rdir == rdir
 
-    def test_result_directory_with_nested_path(self, mock_tool, mock_settings):
+    def test_result_directory_with_nested_path(
+        self, mock_tool, mock_settings
+    ):
         """Test result directory with nested file path."""
         task = Task(
             absfn="/home/user/project/contracts/token/ERC20.sol",
@@ -315,10 +356,15 @@ class TestTaskResultDirectory:
             settings=mock_settings,
         )
 
-        assert task.rdir == "/results/slither/run_001/ERC20.sol"
+        assert (
+            task.rdir
+            == "/results/slither/run_001/ERC20.sol"
+        )
         assert task.relfn == "contracts/token/ERC20.sol"
 
-    def test_result_directory_modification(self, mock_tool, mock_settings):
+    def test_result_directory_modification(
+        self, mock_tool, mock_settings
+    ):
         """Test modifying result directory after Task creation."""
         task = Task(
             absfn="/test.sol",
@@ -437,7 +483,9 @@ class TestTaskWithDifferentSettings:
         assert task.settings.processes == 4
         assert task.settings.mem_limit == "8g"
 
-    def test_task_with_output_format_settings(self, mock_tool):
+    def test_task_with_output_format_settings(
+        self, mock_tool
+    ):
         """Test Task with JSON and SARIF output enabled."""
         settings = Settings()
         settings.json = True
@@ -481,7 +529,9 @@ class TestTaskWithDifferentSettings:
 class TestTaskEdgeCases:
     """Test Task with edge cases and special scenarios."""
 
-    def test_task_with_empty_strings(self, mock_tool, mock_settings):
+    def test_task_with_empty_strings(
+        self, mock_tool, mock_settings
+    ):
         """Test Task with empty string values (edge case)."""
         task = Task(
             absfn="",
@@ -499,7 +549,9 @@ class TestTaskEdgeCases:
         assert task.solc_version == ""
         assert task.solc_path == ""
 
-    def test_task_with_unicode_paths(self, mock_tool, mock_settings):
+    def test_task_with_unicode_paths(
+        self, mock_tool, mock_settings
+    ):
         """Test Task with Unicode characters in file paths."""
         task = Task(
             absfn="/home/用户/合约/测试.sol",
@@ -515,7 +567,9 @@ class TestTaskEdgeCases:
         assert task.relfn == "合约/测试.sol"
         assert task.rdir == "/results/测试.sol"
 
-    def test_task_with_special_characters_in_paths(self, mock_tool, mock_settings):
+    def test_task_with_special_characters_in_paths(
+        self, mock_tool, mock_settings
+    ):
         """Test Task with special characters in paths."""
         task = Task(
             absfn="/home/user/contracts (v2)/test-contract_2024.sol",
@@ -531,7 +585,9 @@ class TestTaskEdgeCases:
         assert "test-contract_2024" in task.relfn
         assert "+commit" in task.solc_path
 
-    def test_task_with_windows_style_paths(self, mock_tool, mock_settings):
+    def test_task_with_windows_style_paths(
+        self, mock_tool, mock_settings
+    ):
         """Test Task with Windows-style paths."""
         task = Task(
             absfn=r"C:\Users\user\contracts\test.sol",
@@ -543,12 +599,24 @@ class TestTaskEdgeCases:
             settings=mock_settings,
         )
 
-        assert task.absfn == r"C:\Users\user\contracts\test.sol"
-        assert task.solc_path == r"C:\Program Files\solc\solc.exe"
+        assert (
+            task.absfn
+            == r"C:\Users\user\contracts\test.sol"
+        )
+        assert (
+            task.solc_path
+            == r"C:\Program Files\solc\solc.exe"
+        )
 
-    def test_task_with_very_long_paths(self, mock_tool, mock_settings):
+    def test_task_with_very_long_paths(
+        self, mock_tool, mock_settings
+    ):
         """Test Task with very long file paths."""
-        long_path = "/home/user/" + "very_long_directory_name/" * 20 + "test.sol"
+        long_path = (
+            "/home/user/"
+            + "very_long_directory_name/" * 20
+            + "test.sol"
+        )
         task = Task(
             absfn=long_path,
             relfn="test.sol",
@@ -566,7 +634,9 @@ class TestTaskEdgeCases:
 class TestTaskWithRealWorldScenarios:
     """Test Task with real-world usage scenarios."""
 
-    def test_task_for_simple_contract_analysis(self, mock_settings):
+    def test_task_for_simple_contract_analysis(
+        self, mock_settings
+    ):
         """Test Task setup for analyzing a simple contract."""
         tool_config = {
             "id": "slither",
@@ -605,7 +675,9 @@ class TestTaskWithRealWorldScenarios:
         assert "SimpleStorage.sol" in task.relfn
         assert "slither" in task.rdir
 
-    def test_task_for_bytecode_analysis(self, mock_settings):
+    def test_task_for_bytecode_analysis(
+        self, mock_settings
+    ):
         """Test Task setup for analyzing bytecode."""
         tool_config = {
             "id": "mythril",
@@ -643,7 +715,9 @@ class TestTaskWithRealWorldScenarios:
         assert task.solc_path is None
         assert task.absfn.endswith(".hex")
 
-    def test_task_for_multi_contract_project(self, mock_settings):
+    def test_task_for_multi_contract_project(
+        self, mock_settings
+    ):
         """Test Task for analyzing one file in a multi-contract project."""
         tool_config = {
             "id": "mythril",

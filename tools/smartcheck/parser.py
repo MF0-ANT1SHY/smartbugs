@@ -58,7 +58,9 @@ def parse(
 ) -> tuple[list[dict], set[str], set[str], set[str]]:
     findings: list[dict] = []
     infos: set[str] = set()
-    errors, fails = sb.parse_utils.errors_fails(exit_code, log)
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, log
+    )
 
     finding: dict = {}
     for line in log:
@@ -74,6 +76,8 @@ def parse(
                 finding = {"name": v}
                 findings.append(finding)
             elif k in ("severity", "line", "column"):
-                finding[k] = v_int if v_int is not None else v
+                finding[k] = (
+                    v_int if v_int is not None else v
+                )
 
     return findings, infos, errors, fails

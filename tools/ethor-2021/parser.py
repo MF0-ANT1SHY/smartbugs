@@ -11,11 +11,17 @@ UNKNOWN_BYTECODE = "Encountered an unknown bytecode"
 
 FAILS = (
     re.compile("OpenJDK.* failed; error='([^']+)'"),
-    re.compile("(Floating-point arithmetic exception) signal in rule"),
-    re.compile(".*(Undefined relation [a-zA-Z0-9]+) in file .*dl at line"),
+    re.compile(
+        "(Floating-point arithmetic exception) signal in rule"
+    ),
+    re.compile(
+        ".*(Undefined relation [a-zA-Z0-9]+) in file .*dl at line"
+    ),
 )
 
-UNSUPPORTED_OP = re.compile(".*(java.lang.UnsupportedOperationException: [^)]*)\)")
+UNSUPPORTED_OP = re.compile(
+    ".*(java.lang.UnsupportedOperationException: [^)]*)\)"
+)
 
 COMPLETED = re.compile("^(.*) (secure|insecure|unknown)$")
 
@@ -25,9 +31,16 @@ def parse(
 ) -> tuple[list[dict], set[str], set[str], set[str]]:
     findings: list[dict] = []
     infos: set[str] = set()
-    errors, fails = sb.parse_utils.errors_fails(exit_code, log)
-    errors.discard("EXIT_CODE_1")  # redundant: exit code 1 is reflected in other errors
-    if "DOCKER_TIMEOUT" in fails or "DOCKER_KILL_OOM" in fails:
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, log
+    )
+    errors.discard(
+        "EXIT_CODE_1"
+    )  # redundant: exit code 1 is reflected in other errors
+    if (
+        "DOCKER_TIMEOUT" in fails
+        or "DOCKER_KILL_OOM" in fails
+    ):
         fails.discard("exception (Killed)")
     # "Unsupported Op" is a regular, checked-for errors, not an unexpected fails
     for e in list(fails):
@@ -41,7 +54,9 @@ def parse(
         if UNKNOWN_BYTECODE in line:
             infos.add(UNKNOWN_BYTECODE)
             continue
-        if sb.parse_utils.add_match(fails, line, list(FAILS)):
+        if sb.parse_utils.add_match(
+            fails, line, list(FAILS)
+        ):
             continue
         if line.endswith(" unknown"):
             analysis_complete = True
@@ -50,7 +65,9 @@ def parse(
         if m:
             analysis_complete = True
             if m[2] in FINDINGS:
-                findings.append({"filename": m[1], "name": m[2]})
+                findings.append(
+                    {"filename": m[1], "name": m[2]}
+                )
             continue
     if "DOCKER_SEGV" in fails:
         fails.discard("exception (Segmentation fault)")

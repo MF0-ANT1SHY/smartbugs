@@ -87,18 +87,29 @@ def sample_info_finding() -> dict[str, Any]:
 class TestSarify:
     """Tests for the main sarify() function."""
 
-    def test_sarify_basic_structure(self, sample_tool_config: dict[str, Any]) -> None:
+    def test_sarify_basic_structure(
+        self, sample_tool_config: dict[str, Any]
+    ) -> None:
         """Test that sarify creates valid SARIF document structure."""
-        findings = [{"name": "reentrancy", "filename": "test.sol"}]
-        result = sb.sarif.sarify(sample_tool_config, findings)
+        findings = [
+            {"name": "reentrancy", "filename": "test.sol"}
+        ]
+        result = sb.sarif.sarify(
+            sample_tool_config, findings
+        )
 
-        assert result["$schema"] == "https://json.schemastore.org/sarif-2.1.0.json"
+        assert (
+            result["$schema"]
+            == "https://json.schemastore.org/sarif-2.1.0.json"
+        )
         assert result["version"] == "2.1.0"
         assert "runs" in result
         assert len(result["runs"]) == 1
         assert isinstance(result["runs"], list)
 
-    def test_sarify_empty_findings(self, sample_tool_config: dict[str, Any]) -> None:
+    def test_sarify_empty_findings(
+        self, sample_tool_config: dict[str, Any]
+    ) -> None:
         """Test SARIF generation with no findings."""
         result = sb.sarif.sarify(sample_tool_config, [])
 
@@ -106,14 +117,18 @@ class TestSarify:
         assert len(result["runs"]) == 1
         assert result["runs"][0]["results"] == []
 
-    def test_sarify_multiple_findings(self, sample_tool_config: dict[str, Any]) -> None:
+    def test_sarify_multiple_findings(
+        self, sample_tool_config: dict[str, Any]
+    ) -> None:
         """Test SARIF generation with multiple findings."""
         findings = [
             {"name": "reentrancy", "filename": "test.sol"},
             {"name": "overflow", "filename": "test.sol"},
             {"name": "reentrancy", "filename": "other.sol"},
         ]
-        result = sb.sarif.sarify(sample_tool_config, findings)
+        result = sb.sarif.sarify(
+            sample_tool_config, findings
+        )
 
         assert len(result["runs"][0]["results"]) == 3
         # Should have 2 unique rule IDs (reentrancy and overflow)
@@ -126,10 +141,16 @@ class TestSarify:
 class TestRunInfo:
     """Tests for run_info() function."""
 
-    def test_run_info_structure(self, sample_tool_config: dict[str, Any]) -> None:
+    def test_run_info_structure(
+        self, sample_tool_config: dict[str, Any]
+    ) -> None:
         """Test run info contains tool and results sections."""
-        findings = [{"name": "test", "filename": "test.sol"}]
-        result = sb.sarif.run_info(sample_tool_config, findings)
+        findings = [
+            {"name": "test", "filename": "test.sol"}
+        ]
+        result = sb.sarif.run_info(
+            sample_tool_config, findings
+        )
 
         assert "tool" in result
         assert "results" in result
@@ -144,7 +165,9 @@ class TestRunInfo:
             {"name": "reentrancy", "filename": "b.sol"},
             {"name": "overflow", "filename": "c.sol"},
         ]
-        result = sb.sarif.run_info(sample_tool_config, findings)
+        result = sb.sarif.run_info(
+            sample_tool_config, findings
+        )
 
         rules = result["tool"]["driver"]["rules"]
         rule_names = {rule["name"] for rule in rules}
@@ -157,7 +180,11 @@ class TestToolInfo:
 
     def test_tool_info_basic_fields(self) -> None:
         """Test tool info contains required fields."""
-        tool = {"id": "slither", "name": "Slither", "version": "0.9.0"}
+        tool = {
+            "id": "slither",
+            "name": "Slither",
+            "version": "0.9.0",
+        }
         fnames = {"reentrancy", "overflow"}
         result = sb.sarif.tool_info(tool, fnames)
 
@@ -168,7 +195,9 @@ class TestToolInfo:
         assert "rules" in driver
         assert len(driver["rules"]) == 2
 
-    def test_tool_info_uses_id_when_name_missing(self) -> None:
+    def test_tool_info_uses_id_when_name_missing(
+        self,
+    ) -> None:
         """Test tool info falls back to ID when name is not provided."""
         tool = {"id": "mythril"}
         result = sb.sarif.tool_info(tool, set())
@@ -184,10 +213,16 @@ class TestToolInfo:
 
     def test_tool_info_optional_origin(self) -> None:
         """Test tool info includes origin as informationUri when present."""
-        tool = {"id": "tool1", "origin": "https://example.com/tool"}
+        tool = {
+            "id": "tool1",
+            "origin": "https://example.com/tool",
+        }
         result = sb.sarif.tool_info(tool, set())
 
-        assert result["driver"]["informationUri"] == "https://example.com/tool"
+        assert (
+            result["driver"]["informationUri"]
+            == "https://example.com/tool"
+        )
 
     def test_tool_info_no_origin(self) -> None:
         """Test tool info omits informationUri when origin is missing."""
@@ -201,7 +236,9 @@ class TestRuleInfo:
     """Tests for rule_info() function."""
 
     @patch("sb.tools.info_finding")
-    def test_rule_info_basic_structure(self, mock_info_finding: MagicMock) -> None:
+    def test_rule_info_basic_structure(
+        self, mock_info_finding: MagicMock
+    ) -> None:
         """Test rule info contains required fields."""
         mock_info_finding.return_value = {}
         result = sb.sarif.rule_info("mythril", "reentrancy")
@@ -209,10 +246,14 @@ class TestRuleInfo:
         assert result["name"] == "reentrancy"
         assert "id" in result
         assert result["id"] == "mythril_reentrancy"
-        mock_info_finding.assert_called_once_with("mythril", "reentrancy")
+        mock_info_finding.assert_called_once_with(
+            "mythril", "reentrancy"
+        )
 
     @patch("sb.tools.info_finding")
-    def test_rule_info_with_descriptions(self, mock_info_finding: MagicMock) -> None:
+    def test_rule_info_with_descriptions(
+        self, mock_info_finding: MagicMock
+    ) -> None:
         """Test rule info includes descriptions when available."""
         mock_info_finding.return_value = {
             "descr_short": "Short description",
@@ -220,11 +261,19 @@ class TestRuleInfo:
         }
         result = sb.sarif.rule_info("tool", "vuln")
 
-        assert result["shortDescription"]["text"] == "Short description"
-        assert "Long description" in result["fullDescription"]["text"]
+        assert (
+            result["shortDescription"]["text"]
+            == "Short description"
+        )
+        assert (
+            "Long description"
+            in result["fullDescription"]["text"]
+        )
 
     @patch("sb.tools.info_finding")
-    def test_rule_info_with_classification_and_method(self, mock_info_finding: MagicMock) -> None:
+    def test_rule_info_with_classification_and_method(
+        self, mock_info_finding: MagicMock
+    ) -> None:
         """Test rule info includes classification and detection method in full description."""
         mock_info_finding.return_value = {
             "descr_short": "Vuln",
@@ -235,10 +284,15 @@ class TestRuleInfo:
 
         full_desc = result["fullDescription"]["text"]
         assert "Classification: SWC-107." in full_desc
-        assert "Detection method: Symbolic execution" in full_desc
+        assert (
+            "Detection method: Symbolic execution"
+            in full_desc
+        )
 
     @patch("sb.tools.info_finding")
-    def test_rule_info_help_text(self, mock_info_finding: MagicMock) -> None:
+    def test_rule_info_help_text(
+        self, mock_info_finding: MagicMock
+    ) -> None:
         """Test rule info help text prefers long description."""
         mock_info_finding.return_value = {
             "descr_short": "Short",
@@ -249,23 +303,33 @@ class TestRuleInfo:
         assert result["help"]["text"] == "Long"
 
     @patch("sb.tools.info_finding")
-    def test_rule_info_help_text_fallback(self, mock_info_finding: MagicMock) -> None:
+    def test_rule_info_help_text_fallback(
+        self, mock_info_finding: MagicMock
+    ) -> None:
         """Test rule info help text falls back to short description."""
-        mock_info_finding.return_value = {"descr_short": "Short"}
+        mock_info_finding.return_value = {
+            "descr_short": "Short"
+        }
         result = sb.sarif.rule_info("tool", "vuln")
 
         assert result["help"]["text"] == "Short"
 
     @patch("sb.tools.info_finding")
-    def test_rule_info_security_severity_numeric(self, mock_info_finding: MagicMock) -> None:
+    def test_rule_info_security_severity_numeric(
+        self, mock_info_finding: MagicMock
+    ) -> None:
         """Test rule info converts numeric severity to float."""
         mock_info_finding.return_value = {"severity": "8.5"}
         result = sb.sarif.rule_info("tool", "vuln")
 
-        assert result["properties"]["security-severity"] == 8.5
+        assert (
+            result["properties"]["security-severity"] == 8.5
+        )
 
     @patch("sb.tools.info_finding")
-    def test_rule_info_security_severity_text(self, mock_info_finding: MagicMock) -> None:
+    def test_rule_info_security_severity_text(
+        self, mock_info_finding: MagicMock
+    ) -> None:
         """Test rule info converts text severity to numeric values."""
         test_cases = [
             ("low", "2.0"),
@@ -273,26 +337,40 @@ class TestRuleInfo:
             ("high", "8.0"),
         ]
         for severity, expected in test_cases:
-            mock_info_finding.return_value = {"severity": severity}
+            mock_info_finding.return_value = {
+                "severity": severity
+            }
             result = sb.sarif.rule_info("tool", "vuln")
-            assert result["properties"]["security-severity"] == expected
+            assert (
+                result["properties"]["security-severity"]
+                == expected
+            )
 
         # Test unknown severity (returns empty string, no properties added)
-        mock_info_finding.return_value = {"severity": "unknown"}
+        mock_info_finding.return_value = {
+            "severity": "unknown"
+        }
         result = sb.sarif.rule_info("tool", "vuln")
         assert "properties" not in result
 
     @patch("sb.tools.info_finding")
-    def test_rule_info_problem_severity(self, mock_info_finding: MagicMock) -> None:
+    def test_rule_info_problem_severity(
+        self, mock_info_finding: MagicMock
+    ) -> None:
         """Test rule info includes problem severity when present."""
-        mock_info_finding.return_value = {"level": "warning"}
+        mock_info_finding.return_value = {
+            "level": "warning"
+        }
         result = sb.sarif.rule_info("tool", "vuln")
 
         # Note: Based on code, security-severity overwrites properties dict
         # So we need to check if level exists when severity doesn't
         mock_info_finding.return_value = {"level": "error"}
         result = sb.sarif.rule_info("tool", "vuln")
-        assert result["properties"]["problem"]["severity"] == "error"
+        assert (
+            result["properties"]["problem"]["severity"]
+            == "error"
+        )
 
 
 class TestResultInfo:
@@ -300,28 +378,41 @@ class TestResultInfo:
 
     @patch("sb.tools.info_finding")
     def test_result_info_basic_structure(
-        self, mock_info_finding: MagicMock, sample_finding: dict[str, Any]
+        self,
+        mock_info_finding: MagicMock,
+        sample_finding: dict[str, Any],
     ) -> None:
         """Test result info contains required fields."""
         mock_info_finding.return_value = {}
-        result = sb.sarif.result_info("mythril", sample_finding)
+        result = sb.sarif.result_info(
+            "mythril", sample_finding
+        )
 
         assert result["ruleId"] == "mythril_reentrancy"
         assert "locations" in result
         assert len(result["locations"]) == 1
         assert (
-            result["locations"][0]["physicalLocation"]["artifactLocation"]["uri"] == "/sb/test.sol"
+            result["locations"][0]["physicalLocation"][
+                "artifactLocation"
+            ]["uri"]
+            == "/sb/test.sol"
         )
 
     @patch("sb.tools.info_finding")
     def test_result_info_with_line_numbers(
-        self, mock_info_finding: MagicMock, sample_finding: dict[str, Any]
+        self,
+        mock_info_finding: MagicMock,
+        sample_finding: dict[str, Any],
     ) -> None:
         """Test result info includes region with line numbers."""
         mock_info_finding.return_value = {}
-        result = sb.sarif.result_info("tool", sample_finding)
+        result = sb.sarif.result_info(
+            "tool", sample_finding
+        )
 
-        region = result["locations"][0]["physicalLocation"]["region"]
+        region = result["locations"][0]["physicalLocation"][
+            "region"
+        ]
         assert region["startLine"] == 42
         assert region["endLine"] == 45
         assert region["startColumn"] == 5
@@ -329,57 +420,94 @@ class TestResultInfo:
 
     @patch("sb.tools.info_finding")
     def test_result_info_without_line_numbers(
-        self, mock_info_finding: MagicMock, sample_finding_minimal: dict[str, Any]
+        self,
+        mock_info_finding: MagicMock,
+        sample_finding_minimal: dict[str, Any],
     ) -> None:
         """Test result info handles findings without line numbers."""
         mock_info_finding.return_value = {}
-        result = sb.sarif.result_info("tool", sample_finding_minimal)
+        result = sb.sarif.result_info(
+            "tool", sample_finding_minimal
+        )
 
         # Region should not be present if no line information
-        assert "region" not in result["locations"][0]["physicalLocation"]
+        assert (
+            "region"
+            not in result["locations"][0][
+                "physicalLocation"
+            ]
+        )
 
     @patch("sb.tools.info_finding")
     def test_result_info_message_from_finding(
-        self, mock_info_finding: MagicMock, sample_finding: dict[str, Any]
+        self,
+        mock_info_finding: MagicMock,
+        sample_finding: dict[str, Any],
     ) -> None:
         """Test result message uses finding message and severity."""
         mock_info_finding.return_value = {}
-        result = sb.sarif.result_info("tool", sample_finding)
+        result = sb.sarif.result_info(
+            "tool", sample_finding
+        )
 
-        assert "Potential reentrancy vulnerability detected" in result["message"]["text"]
+        assert (
+            "Potential reentrancy vulnerability detected"
+            in result["message"]["text"]
+        )
         assert "Severity: high" in result["message"]["text"]
 
     @patch("sb.tools.info_finding")
     def test_result_info_message_fallback(
-        self, mock_info_finding: MagicMock, sample_finding_minimal: dict[str, Any]
+        self,
+        mock_info_finding: MagicMock,
+        sample_finding_minimal: dict[str, Any],
     ) -> None:
         """Test result message falls back to finding name when no message."""
-        mock_info_finding.return_value = {"descr_short": "Integer overflow vulnerability"}
-        result = sb.sarif.result_info("tool", sample_finding_minimal)
+        mock_info_finding.return_value = {
+            "descr_short": "Integer overflow vulnerability"
+        }
+        result = sb.sarif.result_info(
+            "tool", sample_finding_minimal
+        )
 
-        assert result["message"]["text"] == "Integer overflow vulnerability"
+        assert (
+            result["message"]["text"]
+            == "Integer overflow vulnerability"
+        )
 
     @patch("sb.tools.info_finding")
     def test_result_info_level_valid(
-        self, mock_info_finding: MagicMock, sample_finding: dict[str, Any]
+        self,
+        mock_info_finding: MagicMock,
+        sample_finding: dict[str, Any],
     ) -> None:
         """Test result level is included when valid."""
         mock_info_finding.return_value = {}
-        result = sb.sarif.result_info("tool", sample_finding)
+        result = sb.sarif.result_info(
+            "tool", sample_finding
+        )
 
         assert result["level"] == "warning"
 
     @patch("sb.tools.info_finding")
-    def test_result_info_level_invalid(self, mock_info_finding: MagicMock) -> None:
+    def test_result_info_level_invalid(
+        self, mock_info_finding: MagicMock
+    ) -> None:
         """Test result level is omitted when invalid."""
         mock_info_finding.return_value = {}
-        finding = {"name": "test", "filename": "test.sol", "level": "invalid"}
+        finding = {
+            "name": "test",
+            "filename": "test.sol",
+            "level": "invalid",
+        }
         result = sb.sarif.result_info("tool", finding)
 
         assert "level" not in result
 
     @patch("sb.tools.info_finding")
-    def test_result_info_location_message(self, mock_info_finding: MagicMock) -> None:
+    def test_result_info_location_message(
+        self, mock_info_finding: MagicMock
+    ) -> None:
         """Test result includes location message with contract/function info."""
         mock_info_finding.return_value = {}
         finding = {
@@ -390,19 +518,33 @@ class TestResultInfo:
         }
         result = sb.sarif.result_info("tool", finding)
 
-        assert result["locations"][0]["message"]["text"] == "contract Token, function transfer"
+        assert (
+            result["locations"][0]["message"]["text"]
+            == "contract Token, function transfer"
+        )
 
     @patch("sb.tools.info_finding")
-    def test_result_info_location_message_contract_only(self, mock_info_finding: MagicMock) -> None:
+    def test_result_info_location_message_contract_only(
+        self, mock_info_finding: MagicMock
+    ) -> None:
         """Test result location message with contract only."""
         mock_info_finding.return_value = {}
-        finding = {"name": "vuln", "filename": "test.sol", "contract": "Token"}
+        finding = {
+            "name": "vuln",
+            "filename": "test.sol",
+            "contract": "Token",
+        }
         result = sb.sarif.result_info("tool", finding)
 
-        assert result["locations"][0]["message"]["text"] == "contract Token"
+        assert (
+            result["locations"][0]["message"]["text"]
+            == "contract Token"
+        )
 
     @patch("sb.tools.info_finding")
-    def test_result_info_with_address_mapping(self, mock_info_finding: MagicMock) -> None:
+    def test_result_info_with_address_mapping(
+        self, mock_info_finding: MagicMock
+    ) -> None:
         """Test result handles bytecode address to position mapping."""
         mock_info_finding.return_value = {}
         finding = {
@@ -413,7 +555,9 @@ class TestResultInfo:
         }
         result = sb.sarif.result_info("tool", finding)
 
-        region = result["locations"][0]["physicalLocation"]["region"]
+        region = result["locations"][0]["physicalLocation"][
+            "region"
+        ]
         # Address mapping: line=1, column=1+2*address
         assert region["startLine"] == 1
         assert region["startColumn"] == 201  # 1 + 2*100
@@ -421,10 +565,16 @@ class TestResultInfo:
         assert region["endColumn"] == 301  # 1 + 2*150
 
     @patch("sb.tools.info_finding")
-    def test_result_info_without_message(self, mock_info_finding: MagicMock) -> None:
+    def test_result_info_without_message(
+        self, mock_info_finding: MagicMock
+    ) -> None:
         """Test result handles findings with no message content."""
         mock_info_finding.return_value = {}
-        finding = {"name": "", "filename": "test.sol", "message": ""}
+        finding = {
+            "name": "",
+            "filename": "test.sol",
+            "message": "",
+        }
         result = sb.sarif.result_info("tool", finding)
 
         # Should not have message field when message is empty
@@ -441,13 +591,17 @@ class TestRuleId:
 
     def test_rule_id_with_special_chars(self) -> None:
         """Test rule ID sanitizes special characters."""
-        result = sb.sarif.rule_id("my-tool", "integer-overflow")
+        result = sb.sarif.rule_id(
+            "my-tool", "integer-overflow"
+        )
         # str2label should convert hyphens to underscores
         assert result == "my_tool_integer_overflow"
 
     def test_rule_id_with_spaces(self) -> None:
         """Test rule ID handles spaces."""
-        result = sb.sarif.rule_id("tool name", "finding name")
+        result = sb.sarif.rule_id(
+            "tool name", "finding name"
+        )
         assert result == "tool_name_finding_name"
 
 
@@ -489,7 +643,10 @@ class TestRuleDescriptions:
 
     def test_rule_full_description_partial(self) -> None:
         """Test full description with only some fields."""
-        info = {"descr_short": "Short", "classification": "SWC-107"}
+        info = {
+            "descr_short": "Short",
+            "classification": "SWC-107",
+        }
         result = sb.sarif.rule_full_description(info)
 
         assert "Short" in result
@@ -498,7 +655,10 @@ class TestRuleDescriptions:
 
     def test_rule_help_prefers_long(self) -> None:
         """Test help text prefers long description."""
-        info = {"descr_short": "Short", "descr_long": "Long"}
+        info = {
+            "descr_short": "Short",
+            "descr_long": "Long",
+        }
         result = sb.sarif.rule_help(info)
         assert result == "Long"
 
@@ -572,7 +732,10 @@ class TestResultMessage:
 
     def test_result_message_with_both(self) -> None:
         """Test result message with both message and severity."""
-        finding = {"message": "Test message", "severity": "high"}
+        finding = {
+            "message": "Test message",
+            "severity": "high",
+        }
         info = {}
         result = sb.sarif.result_message(finding, info)
 
@@ -622,7 +785,9 @@ class TestResultMessage:
         # Empty message should trigger fallback
         assert result == "Description"
 
-    def test_result_message_returns_empty_string(self) -> None:
+    def test_result_message_returns_empty_string(
+        self,
+    ) -> None:
         """Test result message can return empty string when all fields empty."""
         finding = {"message": "", "name": ""}
         info = {}
@@ -651,7 +816,13 @@ class TestResultLevel:
 
     def test_result_level_invalid(self) -> None:
         """Test result level returns None for invalid values."""
-        invalid_levels = ["critical", "info", "high", "low", "unknown"]
+        invalid_levels = [
+            "critical",
+            "info",
+            "high",
+            "low",
+            "unknown",
+        ]
         for level in invalid_levels:
             finding = {"level": level}
             result = sb.sarif.result_level(finding)
@@ -669,17 +840,24 @@ class TestResultLocationMessage:
 
     def test_result_location_message_both(self) -> None:
         """Test location message with both contract and function."""
-        finding = {"contract": "Token", "function": "transfer"}
+        finding = {
+            "contract": "Token",
+            "function": "transfer",
+        }
         result = sb.sarif.result_location_message(finding)
         assert result == "contract Token, function transfer"
 
-    def test_result_location_message_contract_only(self) -> None:
+    def test_result_location_message_contract_only(
+        self,
+    ) -> None:
         """Test location message with contract only."""
         finding = {"contract": "Token"}
         result = sb.sarif.result_location_message(finding)
         assert result == "contract Token"
 
-    def test_result_location_message_function_only(self) -> None:
+    def test_result_location_message_function_only(
+        self,
+    ) -> None:
         """Test location message with function only."""
         finding = {"function": "transfer"}
         result = sb.sarif.result_location_message(finding)
@@ -697,7 +875,12 @@ class TestResultRegion:
 
     def test_result_region_with_lines(self) -> None:
         """Test region mapping with line and column information."""
-        finding = {"line": 10, "line_end": 15, "column": 5, "column_end": 20}
+        finding = {
+            "line": 10,
+            "line_end": 15,
+            "column": 5,
+            "column_end": 20,
+        }
         result = sb.sarif.result_region(finding)
 
         assert result == {
@@ -740,7 +923,10 @@ class TestResultRegion:
         result = sb.sarif.result_region(finding)
 
         # Address mapping: line=1, column=1+2*address
-        assert result == {"startLine": 1, "startColumn": 201}
+        assert result == {
+            "startLine": 1,
+            "startColumn": 201,
+        }
 
     def test_result_region_with_address_range(self) -> None:
         """Test region mapping from bytecode address range."""
@@ -754,14 +940,18 @@ class TestResultRegion:
             "endColumn": 151,  # 1 + 2*75
         }
 
-    def test_result_region_with_address_end_only(self) -> None:
+    def test_result_region_with_address_end_only(
+        self,
+    ) -> None:
         """Test region mapping with only end address."""
         finding = {"address_end": 100}
         result = sb.sarif.result_region(finding)
 
         assert result == {"endLine": 1, "endColumn": 201}
 
-    def test_result_region_prefers_line_over_address(self) -> None:
+    def test_result_region_prefers_line_over_address(
+        self,
+    ) -> None:
         """Test region prefers line information over address when both present."""
         finding = {
             "line": 10,
@@ -771,7 +961,10 @@ class TestResultRegion:
 
         # Should use line information
         assert result == {"startLine": 10}
-        assert "startColumn" not in result or result["startColumn"] != 201
+        assert (
+            "startColumn" not in result
+            or result["startColumn"] != 201
+        )
 
     def test_result_region_string_conversion(self) -> None:
         """Test region converts string numbers to integers."""
@@ -791,7 +984,9 @@ class TestSarifSchemaValidation:
     """
 
     def test_sarif_schema_validation_basic(
-        self, sample_tool_config: dict[str, Any], sample_finding: dict[str, Any]
+        self,
+        sample_tool_config: dict[str, Any],
+        sample_finding: dict[str, Any],
     ) -> None:
         """Test that generated SARIF validates against schema."""
         pytest.importorskip("jsonschema")
@@ -801,23 +996,36 @@ class TestSarifSchemaValidation:
         import requests
 
         findings = [sample_finding]
-        sarif_doc = sb.sarif.sarify(sample_tool_config, findings)
+        sarif_doc = sb.sarif.sarify(
+            sample_tool_config, findings
+        )
 
         # Fetch SARIF 2.1.0 schema
-        schema_url = "https://json.schemastore.org/sarif-2.1.0"
+        schema_url = (
+            "https://json.schemastore.org/sarif-2.1.0"
+        )
         try:
             response = requests.get(schema_url, timeout=5)
             response.raise_for_status()
             schema = response.json()
 
             # Validate
-            jsonschema.validate(instance=sarif_doc, schema=schema)
-        except (requests.RequestException, json.JSONDecodeError):
-            pytest.skip("Could not fetch SARIF schema for validation")
+            jsonschema.validate(
+                instance=sarif_doc, schema=schema
+            )
+        except (
+            requests.RequestException,
+            json.JSONDecodeError,
+        ):
+            pytest.skip(
+                "Could not fetch SARIF schema for validation"
+            )
 
     @patch("sb.tools.info_finding")
     def test_sarif_schema_validation_complex(
-        self, mock_info_finding: MagicMock, sample_tool_config: dict[str, Any]
+        self,
+        mock_info_finding: MagicMock,
+        sample_tool_config: dict[str, Any],
     ) -> None:
         """Test complex SARIF document validates against schema."""
         pytest.importorskip("jsonschema")
@@ -851,19 +1059,30 @@ class TestSarifSchemaValidation:
                 "address": 100,
             },
         ]
-        sarif_doc = sb.sarif.sarify(sample_tool_config, findings)
+        sarif_doc = sb.sarif.sarify(
+            sample_tool_config, findings
+        )
 
         # Fetch SARIF 2.1.0 schema
-        schema_url = "https://json.schemastore.org/sarif-2.1.0.json"
+        schema_url = (
+            "https://json.schemastore.org/sarif-2.1.0.json"
+        )
         try:
             response = requests.get(schema_url, timeout=5)
             response.raise_for_status()
             schema = response.json()
 
             # Validate
-            jsonschema.validate(instance=sarif_doc, schema=schema)
-        except (requests.RequestException, json.JSONDecodeError):
-            pytest.skip("Could not fetch SARIF schema for validation")
+            jsonschema.validate(
+                instance=sarif_doc, schema=schema
+            )
+        except (
+            requests.RequestException,
+            json.JSONDecodeError,
+        ):
+            pytest.skip(
+                "Could not fetch SARIF schema for validation"
+            )
 
 
 class TestEdgeCases:
@@ -885,22 +1104,34 @@ class TestEdgeCases:
     def test_empty_tool_config(self) -> None:
         """Test SARIF generation with minimal tool config."""
         tool = {"id": "test"}
-        findings = [{"name": "vuln", "filename": "test.sol"}]
+        findings = [
+            {"name": "vuln", "filename": "test.sol"}
+        ]
         result = sb.sarif.sarify(tool, findings)
 
         assert result["version"] == "2.1.0"
         assert len(result["runs"]) == 1
 
     @patch("sb.tools.info_finding")
-    def test_missing_finding_info(self, mock_info_finding: MagicMock) -> None:
+    def test_missing_finding_info(
+        self, mock_info_finding: MagicMock
+    ) -> None:
         """Test handling when finding info is not available."""
         mock_info_finding.return_value = {}
-        finding = {"name": "unknown", "filename": "test.sol"}
+        finding = {
+            "name": "unknown",
+            "filename": "test.sol",
+        }
         result = sb.sarif.result_info("tool", finding)
 
         # Should still create valid result with minimal info
         assert result["ruleId"] == "tool_unknown"
-        assert result["locations"][0]["physicalLocation"]["artifactLocation"]["uri"] == "test.sol"
+        assert (
+            result["locations"][0]["physicalLocation"][
+                "artifactLocation"
+            ]["uri"]
+            == "test.sol"
+        )
 
     def test_unicode_in_messages(self) -> None:
         """Test handling of unicode characters in messages."""
@@ -913,7 +1144,9 @@ class TestEdgeCases:
 
         assert "\u2713" in result  # Check mark
         assert "\u00e9" in result  # é
-        assert "\u4e2d\u6587" in result  # Chinese characters
+        assert (
+            "\u4e2d\u6587" in result
+        )  # Chinese characters
 
     def test_very_large_line_numbers(self) -> None:
         """Test handling of very large line numbers."""
@@ -939,20 +1172,38 @@ class TestEdgeCases:
         mock_info_finding.return_value = {}
         tool = {"id": "tool"}
         findings = [
-            {"name": "vuln", "filename": "a.sol", "line": 10},
-            {"name": "vuln", "filename": "a.sol", "line": 20},
-            {"name": "vuln", "filename": "b.sol", "line": 30},
+            {
+                "name": "vuln",
+                "filename": "a.sol",
+                "line": 10,
+            },
+            {
+                "name": "vuln",
+                "filename": "a.sol",
+                "line": 20,
+            },
+            {
+                "name": "vuln",
+                "filename": "b.sol",
+                "line": 30,
+            },
         ]
 
         sarif = sb.sarif.sarify(tool, findings)
 
         # Should have 3 results but only 1 rule
         assert len(sarif["runs"][0]["results"]) == 3
-        assert len(sarif["runs"][0]["tool"]["driver"]["rules"]) == 1
+        assert (
+            len(sarif["runs"][0]["tool"]["driver"]["rules"])
+            == 1
+        )
 
     def test_whitespace_handling(self) -> None:
         """Test handling of whitespace in severity and level values."""
-        info = {"severity": "  high  ", "level": "  warning  "}
+        info = {
+            "severity": "  high  ",
+            "level": "  warning  ",
+        }
         severity = sb.sarif.rule_security_severity(info)
         level = sb.sarif.rule_problem_severity(info)
 
@@ -968,6 +1219,8 @@ class TestEdgeCases:
         result = sb.sarif.result_info("tool", finding)
 
         assert (
-            result["locations"][0]["physicalLocation"]["artifactLocation"]["uri"]
+            result["locations"][0]["physicalLocation"][
+                "artifactLocation"
+            ]["uri"]
             == "/path/to/my-contract (v2).sol"
         )

@@ -21,7 +21,9 @@ _locks: dict[str, Union["UnixLock", "WindowsLock"]] = {}
 _base_lock = threading.Lock()
 
 
-def get_process_lock(lock_id: str) -> Union["UnixLock", "WindowsLock"]:
+def get_process_lock(
+    lock_id: str,
+) -> Union["UnixLock", "WindowsLock"]:
     with _base_lock:
         if lock_id not in _locks:
             if sys.platform == "win32":
@@ -38,7 +40,9 @@ class _ProcessLock:
 
     def __init__(self, lock_id: str) -> None:
         self._lock = threading.Lock()
-        self._lock_path = Path(tempfile.gettempdir()).joinpath(
+        self._lock_path = Path(
+            tempfile.gettempdir()
+        ).joinpath(
             f".solcx-lock-{getpass.getuser()}-{lock_id}"
         )
         self._lock_file = self._lock_path.open("w")
@@ -55,7 +59,10 @@ class UnixLock(_ProcessLock):
         if not self._lock.acquire(blocking):
             return False
         try:
-            fcntl.flock(self._lock_file, BLOCKING if blocking else NON_BLOCKING)
+            fcntl.flock(
+                self._lock_file,
+                BLOCKING if blocking else NON_BLOCKING,
+            )
         except BlockingIOError:
             self._lock.release()
             return False
@@ -80,7 +87,11 @@ class WindowsLock(_ProcessLock):
             try:
                 fd = os.open(self._lock_path, OPEN_MODE)  # type: ignore
                 msvcrt.locking(  # type: ignore
-                    fd, msvcrt.LK_LOCK if blocking else msvcrt.LK_NBLCK, 1  # type: ignore
+                    fd,
+                    msvcrt.LK_LOCK
+                    if blocking
+                    else msvcrt.LK_NBLCK,
+                    1,  # type: ignore
                 )
                 self._fd = fd
                 return True

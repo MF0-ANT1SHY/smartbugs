@@ -41,7 +41,9 @@ def read_lines(fn: Union[str, Path]) -> list[str]:
         raise sb.errors.SmartBugsError(e)
 
 
-def write_txt(fn: Union[str, Path], output: Union[str, list[str]]) -> None:
+def write_txt(
+    fn: Union[str, Path], output: Union[str, list[str]]
+) -> None:
     try:
         with open(fn, "w", encoding="utf-8") as f:
             if isinstance(output, str):

@@ -15,16 +15,30 @@ FINDINGS = {
 }
 
 ERRORS = (
-    re.compile("([A-Z0-9]+ instruction needs return value)"),
-    re.compile("([A-Z0-9]+ instruction needs [0-9]+ arguments but [0-9]+ was given)"),
-    re.compile("([A-Z0-9]+ instruction need arguments but [0-9]+ was given)"),
-    re.compile("([A-Z0-9]+ instruction needs a concrete argument)"),
-    re.compile("([A-Z0-9]+ instruction should not be reached)"),
-    re.compile("([A-Z0-9]+ instruction is not implemented)"),
+    re.compile(
+        "([A-Z0-9]+ instruction needs return value)"
+    ),
+    re.compile(
+        "([A-Z0-9]+ instruction needs [0-9]+ arguments but [0-9]+ was given)"
+    ),
+    re.compile(
+        "([A-Z0-9]+ instruction need arguments but [0-9]+ was given)"
+    ),
+    re.compile(
+        "([A-Z0-9]+ instruction needs a concrete argument)"
+    ),
+    re.compile(
+        "([A-Z0-9]+ instruction should not be reached)"
+    ),
+    re.compile(
+        "([A-Z0-9]+ instruction is not implemented)"
+    ),
     re.compile(
         r"(Cannot get source map runtime\. Check if solc is in your path environment variable)"
     ),
-    re.compile("(Vulnerability module checker initialized without traces)"),
+    re.compile(
+        "(Vulnerability module checker initialized without traces)"
+    ),
     re.compile(".*(solcx.exceptions.SolcError:.*)"),
 )
 
@@ -44,27 +58,43 @@ def parse(
     findings: list[dict] = []
     infos: set[str] = set()
     cleaned_log = list(filter(is_relevant, log))
-    errors, fails = sb.parse_utils.errors_fails(exit_code, cleaned_log)
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, cleaned_log
+    )
 
-    for f in list(fails):  # iterate over a copy of "fails" such that it can be modified
-        if f.startswith("exception (KeyError: <SSABasicBlock"):
+    for f in list(
+        fails
+    ):  # iterate over a copy of "fails" such that it can be modified
+        if f.startswith(
+            "exception (KeyError: <SSABasicBlock"
+        ):
             fails.remove(f)
-            fails.add("exception (KeyError: <SSABasicBlock ...>)")
+            fails.add(
+                "exception (KeyError: <SSABasicBlock ...>)"
+            )
         if f.startswith(
             "exception (RecursionError: maximum recursion depth exceeded while calling a Python object)"
         ):
             # Normalize two types of recursion errors to the shorter one.
             fails.remove(f)
-            fails.add("exception (RecursionError: maximum recursion depth exceeded)")
+            fails.add(
+                "exception (RecursionError: maximum recursion depth exceeded)"
+            )
 
     filename, contract = None, None
     for line in log:
-        if sb.parse_utils.add_match(errors, line, list(ERRORS)):
+        if sb.parse_utils.add_match(
+            errors, line, list(ERRORS)
+        ):
             fails.discard("exception (Exception)")
             continue
         m = ANALYSING.match(line)
         if m:
-            filename, contract = m[1].split(":") if ":" in m[1] else (m[1], None)
+            filename, contract = (
+                m[1].split(":")
+                if ":" in m[1]
+                else (m[1], None)
+            )
         m = VULNERABILITY.match(line)
         if m:
             finding = {"name": m[1]}

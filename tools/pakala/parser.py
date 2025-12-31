@@ -6,19 +6,35 @@ import sb.parse_utils
 
 VERSION = "2023/02/27"
 
-FINDINGS = {"delegatecall bug", "selfdestruct bug", "call bug"}
+FINDINGS = {
+    "delegatecall bug",
+    "selfdestruct bug",
+    "call bug",
+}
 
-FINDING = re.compile(".*pakala\\.analyzer\\[.*\\] INFO Found (.* bug)\\.")
-COVERAGE = re.compile("Symbolic execution finished with coverage (.*).")
-FINISHED = re.compile("Nothing to report.|======> Bug found! Need .* transactions. <======")
-TRANSACTION = re.compile("Transaction [0-9]+, example solution:")
+FINDING = re.compile(
+    ".*pakala\\.analyzer\\[.*\\] INFO Found (.* bug)\\."
+)
+COVERAGE = re.compile(
+    "Symbolic execution finished with coverage (.*)."
+)
+FINISHED = re.compile(
+    "Nothing to report.|======> Bug found! Need .* transactions. <======"
+)
+TRANSACTION = re.compile(
+    "Transaction [0-9]+, example solution:"
+)
 
 
 def is_relevant(line: str) -> bool:
     return not (
         line.startswith("Analyzing contract at")
-        or line.startswith("Starting symbolic execution step...")
-        or line.startswith("Symbolic execution finished with coverage")
+        or line.startswith(
+            "Starting symbolic execution step..."
+        )
+        or line.startswith(
+            "Symbolic execution finished with coverage"
+        )
         or line.startswith("Outcomes: ")
     )
 
@@ -29,8 +45,12 @@ def parse(
     findings: list[dict] = []
     infos: set[str] = set()
     cleaned_log = list(filter(is_relevant, log))
-    errors, fails = sb.parse_utils.errors_fails(exit_code, cleaned_log)
-    errors.discard("EXIT_CODE_1")  # there will be an exception in fails anyway
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, cleaned_log
+    )
+    errors.discard(
+        "EXIT_CODE_1"
+    )  # there will be an exception in fails anyway
 
     analysis_completed = False
     in_tx = False

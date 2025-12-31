@@ -15,8 +15,9 @@ if TYPE_CHECKING:
     from sb.settings import Settings
 
 
-def cli_args(defaults: "Settings") -> tuple[Optional[str], dict[str, Any]]:
-
+def cli_args(
+    defaults: "Settings",
+) -> tuple[Optional[str], dict[str, Any]]:
     def fmt_default(defval: Any) -> str:
         formatted = (
             "yes"
@@ -31,7 +32,9 @@ def cli_args(defaults: "Settings") -> tuple[Optional[str], dict[str, Any]]:
                         "none"
                         if not defval
                         else (
-                            " ".join([str(dv) for dv in defval])
+                            " ".join(
+                                [str(dv) for dv in defval]
+                            )
                             if isinstance(defval, list)
                             or isinstance(defval, tuple)
                             or isinstance(defval, set)
@@ -114,8 +117,7 @@ def cli_args(defaults: "Settings") -> tuple[Optional[str], dict[str, Any]]:
         type=str,
         metavar="MEM",
         help=(
-            f"memory quota for docker containers, like 512m or 1g"
-            f"{fmt_default(defaults.mem_limit)}"
+            f"memory quota for docker containers, like 512m or 1g{fmt_default(defaults.mem_limit)}"
         ),
     )
     exec.add_argument(
@@ -139,7 +141,10 @@ def cli_args(defaults: "Settings") -> tuple[Optional[str], dict[str, Any]]:
         help=f"folder for the results{fmt_default(defaults.results)}",
     )
     output.add_argument(
-        "--log", type=str, metavar="FILE", help=f"file for log messages{fmt_default(defaults.log)}"
+        "--log",
+        type=str,
+        metavar="FILE",
+        help=f"file for log messages{fmt_default(defaults.log)}",
     )
     output.add_argument(
         "--overwrite",
@@ -170,7 +175,12 @@ def cli_args(defaults: "Settings") -> tuple[Optional[str], dict[str, Any]]:
     )
 
     info = parser.add_argument_group("information options")
-    info.add_argument("-v", "--version", action="store_true", help="show version and exit")
+    info.add_argument(
+        "-v",
+        "--version",
+        action="store_true",
+        help="show version and exit",
+    )
     info.add_argument(
         "-h",
         "--help",
@@ -178,7 +188,11 @@ def cli_args(defaults: "Settings") -> tuple[Optional[str], dict[str, Any]]:
         default=argparse.SUPPRESS,
         help="show this help message and exit",
     )
-    info.add_argument("--debug", action="store_true", help="print debugging infos")
+    info.add_argument(
+        "--debug",
+        action="store_true",
+        help="print debugging infos",
+    )
 
     if len(sys.argv) == 1:
         parser.print_help(sys.stderr)
@@ -202,14 +216,20 @@ def cli_args(defaults: "Settings") -> tuple[Optional[str], dict[str, Any]]:
 
     cfg_file = args["configuration"]
 
-    del args["version"], args["configuration"], args["debug"]
+    del (
+        args["version"],
+        args["configuration"],
+        args["debug"],
+    )
     for k in [k for k, v in args.items() if v is None]:
         del args[k]
 
     return cfg_file, args
 
 
-def cli(site_cfg: Optional[str] = sb.cfg.SITE_CFG) -> "Settings":
+def cli(
+    site_cfg: Optional[str] = sb.cfg.SITE_CFG,
+) -> "Settings":
     settings = sb.settings.Settings()
 
     if site_cfg and os.path.exists(site_cfg):
@@ -225,7 +245,9 @@ def cli(site_cfg: Optional[str] = sb.cfg.SITE_CFG) -> "Settings":
 def main() -> None:
     try:
         settings = cli()
-        sb.logging.message(None, f"Arguments passed: {sys.argv}")
+        sb.logging.message(
+            None, f"Arguments passed: {sys.argv}"
+        )
         sb.smartbugs.main(settings)
     except sb.errors.SmartBugsError as e:
         sb.logging.message(sb.colors.error(e))

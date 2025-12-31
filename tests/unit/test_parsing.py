@@ -25,7 +25,11 @@ def mock_parser_module() -> ModuleType:
     """
     module = ModuleType("mock_parser")
     module.VERSION = "2025/01/01"
-    module.FINDINGS = {"vulnerability1", "vulnerability2", "reentrancy"}
+    module.FINDINGS = {
+        "vulnerability1",
+        "vulnerability2",
+        "reentrancy",
+    }
 
     def parse_func(exit_code, log, output):
         findings = [
@@ -57,7 +61,13 @@ def mock_parser_no_findings() -> ModuleType:
     module.FINDINGS = None
 
     def parse_func(exit_code, log, output):
-        findings = [{"name": "anything-goes", "message": "No validation", "line": 5}]
+        findings = [
+            {
+                "name": "anything-goes",
+                "message": "No validation",
+                "line": 5,
+            }
+        ]
         return findings, set(), set(), set()
 
     module.parse = parse_func
@@ -90,7 +100,11 @@ def sample_task_log() -> dict[str, Any]:
         A dictionary representing task metadata with tool info and filename.
     """
     return {
-        "tool": {"id": "test_tool", "mode": "solidity", "parser": "parser.py"},
+        "tool": {
+            "id": "test_tool",
+            "mode": "solidity",
+            "parser": "parser.py",
+        },
         "filename": "/path/to/test.sol",
         "result": {"exit_code": 0},
     }
@@ -114,7 +128,9 @@ def sample_tool_log() -> list[str]:
 class TestGetParser:
     """Tests for get_parser function - parser loading by tool ID."""
 
-    def test_load_parser_success(self, mock_parser_module: ModuleType, tmp_path: Path):
+    def test_load_parser_success(
+        self, mock_parser_module: ModuleType, tmp_path: Path
+    ):
         """Test successful parser loading from file."""
         # Create a temporary parser file
         tool_dir = tmp_path / "test_tool"
@@ -130,9 +146,15 @@ def parse(exit_code, log, output):
 """
         )
 
-        tool = {"id": "test_tool", "mode": "solidity", "parser": "parser.py"}
+        tool = {
+            "id": "test_tool",
+            "mode": "solidity",
+            "parser": "parser.py",
+        }
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             parser = sb.parsing.get_parser(tool)
             assert parser is not None
             assert hasattr(parser, "VERSION")
@@ -140,7 +162,9 @@ def parse(exit_code, log, output):
             assert hasattr(parser, "parse")
             assert parser.VERSION == "2025/01/01"
 
-    def test_parser_caching(self, mock_parser_module: ModuleType, tmp_path: Path):
+    def test_parser_caching(
+        self, mock_parser_module: ModuleType, tmp_path: Path
+    ):
         """Test that parsers are cached and not reloaded."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -154,9 +178,15 @@ def parse(exit_code, log, output):
 """
         )
 
-        tool = {"id": "test_tool", "mode": "solidity", "parser": "parser.py"}
+        tool = {
+            "id": "test_tool",
+            "mode": "solidity",
+            "parser": "parser.py",
+        }
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             # Clear the cache first
             sb.parsing.tool_parsers.clear()
 
@@ -169,7 +199,9 @@ def parse(exit_code, log, output):
             # Should be the same object (cached)
             assert parser1 is parser2
 
-    def test_different_modes_different_parsers(self, tmp_path: Path):
+    def test_different_modes_different_parsers(
+        self, tmp_path: Path
+    ):
         """Test that different modes for the same tool are cached separately."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -183,10 +215,20 @@ def parse(exit_code, log, output):
 """
         )
 
-        tool_solidity = {"id": "test_tool", "mode": "solidity", "parser": "parser.py"}
-        tool_bytecode = {"id": "test_tool", "mode": "bytecode", "parser": "parser.py"}
+        tool_solidity = {
+            "id": "test_tool",
+            "mode": "solidity",
+            "parser": "parser.py",
+        }
+        tool_bytecode = {
+            "id": "test_tool",
+            "mode": "bytecode",
+            "parser": "parser.py",
+        }
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             # Clear the cache first
             sb.parsing.tool_parsers.clear()
 
@@ -194,14 +236,26 @@ def parse(exit_code, log, output):
             sb.parsing.get_parser(tool_bytecode)
 
             # Should be cached under different keys
-            assert ("test_tool", "solidity") in sb.parsing.tool_parsers
-            assert ("test_tool", "bytecode") in sb.parsing.tool_parsers
+            assert (
+                "test_tool",
+                "solidity",
+            ) in sb.parsing.tool_parsers
+            assert (
+                "test_tool",
+                "bytecode",
+            ) in sb.parsing.tool_parsers
 
     def test_parser_not_found(self):
         """Test error handling when parser file doesn't exist."""
-        tool = {"id": "nonexistent_tool", "mode": "solidity", "parser": "parser.py"}
+        tool = {
+            "id": "nonexistent_tool",
+            "mode": "solidity",
+            "parser": "parser.py",
+        }
 
-        with pytest.raises(sb.errors.SmartBugsError) as exc_info:
+        with pytest.raises(
+            sb.errors.SmartBugsError
+        ) as exc_info:
             sb.parsing.get_parser(tool)
 
         assert "Cannot load parser" in str(exc_info.value)
@@ -212,18 +266,32 @@ def parse(exit_code, log, output):
         tool_dir = tmp_path / "bad_tool"
         tool_dir.mkdir()
         parser_file = tool_dir / "parser.py"
-        parser_file.write_text("def parse( invalid syntax here")
+        parser_file.write_text(
+            "def parse( invalid syntax here"
+        )
 
-        tool = {"id": "bad_tool", "mode": "solidity", "parser": "parser.py"}
+        tool = {
+            "id": "bad_tool",
+            "mode": "solidity",
+            "parser": "parser.py",
+        }
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
-            with pytest.raises(sb.errors.SmartBugsError) as exc_info:
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
+            with pytest.raises(
+                sb.errors.SmartBugsError
+            ) as exc_info:
                 sb.parsing.get_parser(tool)
 
-            assert "Cannot load parser" in str(exc_info.value)
+            assert "Cannot load parser" in str(
+                exc_info.value
+            )
             assert "bad_tool" in str(exc_info.value)
 
-    def test_parser_missing_parse_function(self, tmp_path: Path):
+    def test_parser_missing_parse_function(
+        self, tmp_path: Path
+    ):
         """Test that parser loads even if parse function is missing (will fail later)."""
         tool_dir = tmp_path / "incomplete_tool"
         tool_dir.mkdir()
@@ -235,9 +303,15 @@ FINDINGS = set()
 """
         )
 
-        tool = {"id": "incomplete_tool", "mode": "solidity", "parser": "parser.py"}
+        tool = {
+            "id": "incomplete_tool",
+            "mode": "solidity",
+            "parser": "parser.py",
+        }
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             # Parser loads successfully
             parser = sb.parsing.get_parser(tool)
             assert parser is not None
@@ -248,7 +322,12 @@ FINDINGS = set()
 class TestParse:
     """Tests for parse function - main parser invocation and validation."""
 
-    def test_parse_success(self, sample_task_log: dict, sample_tool_log: list[str], tmp_path: Path):
+    def test_parse_success(
+        self,
+        sample_task_log: dict,
+        sample_tool_log: list[str],
+        tmp_path: Path,
+    ):
         """Test successful parsing with valid findings."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -266,9 +345,13 @@ def parse(exit_code, log, output):
 """
         )
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
-            result = sb.parsing.parse(sample_task_log, sample_tool_log, None)
+            result = sb.parsing.parse(
+                sample_task_log, sample_tool_log, None
+            )
 
             assert "findings" in result
             assert "infos" in result
@@ -277,9 +360,15 @@ def parse(exit_code, log, output):
             assert "parser" in result
 
             assert len(result["findings"]) == 1
-            assert result["findings"][0]["name"] == "vulnerability1"
+            assert (
+                result["findings"][0]["name"]
+                == "vulnerability1"
+            )
             # Filename should be replaced with external path
-            assert result["findings"][0]["filename"] == "/path/to/test.sol"
+            assert (
+                result["findings"][0]["filename"]
+                == "/path/to/test.sol"
+            )
 
             assert result["infos"] == ["info"]
             assert result["errors"] == ["error"]
@@ -287,9 +376,13 @@ def parse(exit_code, log, output):
 
             assert result["parser"]["id"] == "test_tool"
             assert result["parser"]["mode"] == "solidity"
-            assert result["parser"]["version"] == "2025/01/01"
+            assert (
+                result["parser"]["version"] == "2025/01/01"
+            )
 
-    def test_parse_with_none_findings(self, sample_task_log: dict, tmp_path: Path):
+    def test_parse_with_none_findings(
+        self, sample_task_log: dict, tmp_path: Path
+    ):
         """Test parsing with parser that has FINDINGS = None (no validation)."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -307,14 +400,23 @@ def parse(exit_code, log, output):
 """
         )
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
-            result = sb.parsing.parse(sample_task_log, None, None)
+            result = sb.parsing.parse(
+                sample_task_log, None, None
+            )
 
             assert len(result["findings"]) == 1
-            assert result["findings"][0]["name"] == "anything-goes"
+            assert (
+                result["findings"][0]["name"]
+                == "anything-goes"
+            )
 
-    def test_parse_with_empty_findings_set(self, sample_task_log: dict, tmp_path: Path):
+    def test_parse_with_empty_findings_set(
+        self, sample_task_log: dict, tmp_path: Path
+    ):
         """Test parsing with parser that has empty FINDINGS set."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -330,13 +432,19 @@ def parse(exit_code, log, output):
 """
         )
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
-            result = sb.parsing.parse(sample_task_log, None, None)
+            result = sb.parsing.parse(
+                sample_task_log, None, None
+            )
 
             assert result["findings"] == []
 
-    def test_parse_invalid_finding_name(self, sample_task_log: dict, tmp_path: Path):
+    def test_parse_invalid_finding_name(
+        self, sample_task_log: dict, tmp_path: Path
+    ):
         """Test that invalid finding names are caught and raise error."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -354,16 +462,28 @@ def parse(exit_code, log, output):
 """
         )
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
-            with pytest.raises(sb.errors.SmartBugsError) as exc_info:
-                sb.parsing.parse(sample_task_log, None, None)
+            with pytest.raises(
+                sb.errors.SmartBugsError
+            ) as exc_info:
+                sb.parsing.parse(
+                    sample_task_log, None, None
+                )
 
-            assert "invalid_vulnerability" in str(exc_info.value)
-            assert "not among the findings" in str(exc_info.value)
+            assert "invalid_vulnerability" in str(
+                exc_info.value
+            )
+            assert "not among the findings" in str(
+                exc_info.value
+            )
             assert "test_tool" in str(exc_info.value)
 
-    def test_parse_filename_replacement(self, sample_task_log: dict, tmp_path: Path):
+    def test_parse_filename_replacement(
+        self, sample_task_log: dict, tmp_path: Path
+    ):
         """Test that Docker internal filenames are replaced with external paths."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -383,15 +503,24 @@ def parse(exit_code, log, output):
 """
         )
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
-            result = sb.parsing.parse(sample_task_log, None, None)
+            result = sb.parsing.parse(
+                sample_task_log, None, None
+            )
 
             # All findings should have the external filename
             for finding in result["findings"]:
-                assert finding["filename"] == "/path/to/test.sol"
+                assert (
+                    finding["filename"]
+                    == "/path/to/test.sol"
+                )
 
-    def test_parse_filename_mismatch(self, sample_task_log: dict, tmp_path: Path):
+    def test_parse_filename_mismatch(
+        self, sample_task_log: dict, tmp_path: Path
+    ):
         """Test that mismatched filenames raise assertion error."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -409,12 +538,18 @@ def parse(exit_code, log, output):
 """
         )
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
             with pytest.raises(AssertionError):
-                sb.parsing.parse(sample_task_log, None, None)
+                sb.parsing.parse(
+                    sample_task_log, None, None
+                )
 
-    def test_parse_no_filename_in_finding(self, sample_task_log: dict, tmp_path: Path):
+    def test_parse_no_filename_in_finding(
+        self, sample_task_log: dict, tmp_path: Path
+    ):
         """Test that findings without filename field are handled correctly."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -432,14 +567,23 @@ def parse(exit_code, log, output):
 """
         )
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
-            result = sb.parsing.parse(sample_task_log, None, None)
+            result = sb.parsing.parse(
+                sample_task_log, None, None
+            )
 
             # Finding should still have filename added
-            assert result["findings"][0]["filename"] == "/path/to/test.sol"
+            assert (
+                result["findings"][0]["filename"]
+                == "/path/to/test.sol"
+            )
 
-    def test_parse_with_exit_code(self, sample_task_log: dict, tmp_path: Path):
+    def test_parse_with_exit_code(
+        self, sample_task_log: dict, tmp_path: Path
+    ):
         """Test that exit code is passed to parser correctly."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -461,19 +605,27 @@ def parse(exit_code, log, output):
         task_log_success = sample_task_log.copy()
         task_log_success["result"]["exit_code"] = 0
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
-            result = sb.parsing.parse(task_log_success, None, None)
+            result = sb.parsing.parse(
+                task_log_success, None, None
+            )
             assert result["errors"] == []
 
             # Test with non-zero exit code
             sb.parsing.tool_parsers.clear()
             task_log_fail = sample_task_log.copy()
             task_log_fail["result"]["exit_code"] = 1
-            result = sb.parsing.parse(task_log_fail, None, None)
+            result = sb.parsing.parse(
+                task_log_fail, None, None
+            )
             assert "Tool failed" in result["errors"]
 
-    def test_parse_with_tool_log(self, sample_task_log: dict, tmp_path: Path):
+    def test_parse_with_tool_log(
+        self, sample_task_log: dict, tmp_path: Path
+    ):
         """Test that tool log is passed as list of strings to parser."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -496,12 +648,18 @@ def parse(exit_code, log, output):
 
         tool_log = ["line1", "line2", "line3"]
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
-            result = sb.parsing.parse(sample_task_log, tool_log, None)
+            result = sb.parsing.parse(
+                sample_task_log, tool_log, None
+            )
             assert "Processed 3 lines" in result["infos"]
 
-    def test_parse_with_tool_output(self, sample_task_log: dict, tmp_path: Path):
+    def test_parse_with_tool_output(
+        self, sample_task_log: dict, tmp_path: Path
+    ):
         """Test that tool output is passed as bytes to parser."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -522,12 +680,18 @@ def parse(exit_code, log, output):
 
         tool_output = b"Binary output data here"
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
-            result = sb.parsing.parse(sample_task_log, None, tool_output)
+            result = sb.parsing.parse(
+                sample_task_log, None, tool_output
+            )
             assert "Output size: 23" in result["infos"]
 
-    def test_parse_sorts_infos_errors_fails(self, sample_task_log: dict, tmp_path: Path):
+    def test_parse_sorts_infos_errors_fails(
+        self, sample_task_log: dict, tmp_path: Path
+    ):
         """Test that infos, errors, and fails are sorted in the result."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -545,16 +709,30 @@ def parse(exit_code, log, output):
 """
         )
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
-            result = sb.parsing.parse(sample_task_log, None, None)
+            result = sb.parsing.parse(
+                sample_task_log, None, None
+            )
 
             # Should be sorted
-            assert result["infos"] == ["apple", "mango", "zebra"]
-            assert result["errors"] == ["error1", "error2", "error3"]
+            assert result["infos"] == [
+                "apple",
+                "mango",
+                "zebra",
+            ]
+            assert result["errors"] == [
+                "error1",
+                "error2",
+                "error3",
+            ]
             assert result["fails"] == ["fail_a", "fail_z"]
 
-    def test_parse_multiple_findings(self, sample_task_log: dict, tmp_path: Path):
+    def test_parse_multiple_findings(
+        self, sample_task_log: dict, tmp_path: Path
+    ):
         """Test parsing with multiple findings."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -574,16 +752,30 @@ def parse(exit_code, log, output):
 """
         )
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
-            result = sb.parsing.parse(sample_task_log, None, None)
+            result = sb.parsing.parse(
+                sample_task_log, None, None
+            )
 
             assert len(result["findings"]) == 3
-            assert result["findings"][0]["name"] == "reentrancy"
-            assert result["findings"][1]["name"] == "overflow"
-            assert result["findings"][2]["name"] == "delegatecall"
+            assert (
+                result["findings"][0]["name"]
+                == "reentrancy"
+            )
+            assert (
+                result["findings"][1]["name"] == "overflow"
+            )
+            assert (
+                result["findings"][2]["name"]
+                == "delegatecall"
+            )
 
-    def test_parse_preserves_finding_fields(self, sample_task_log: dict, tmp_path: Path):
+    def test_parse_preserves_finding_fields(
+        self, sample_task_log: dict, tmp_path: Path
+    ):
         """Test that all finding fields are preserved (line, column, message, etc.)."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -613,9 +805,13 @@ def parse(exit_code, log, output):
 """
         )
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
-            result = sb.parsing.parse(sample_task_log, None, None)
+            result = sb.parsing.parse(
+                sample_task_log, None, None
+            )
 
             finding = result["findings"][0]
             assert finding["line"] == 42
@@ -632,7 +828,9 @@ def parse(exit_code, log, output):
 class TestParserVersionHandling:
     """Tests for parser VERSION constant handling."""
 
-    def test_parse_includes_parser_version(self, sample_task_log: dict, tmp_path: Path):
+    def test_parse_includes_parser_version(
+        self, sample_task_log: dict, tmp_path: Path
+    ):
         """Test that parser version is included in result."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -647,13 +845,21 @@ def parse(exit_code, log, output):
 """
         )
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
-            result = sb.parsing.parse(sample_task_log, None, None)
+            result = sb.parsing.parse(
+                sample_task_log, None, None
+            )
 
-            assert result["parser"]["version"] == "2025/12/31"
+            assert (
+                result["parser"]["version"] == "2025/12/31"
+            )
 
-    def test_parser_missing_version(self, sample_task_log: dict, tmp_path: Path):
+    def test_parser_missing_version(
+        self, sample_task_log: dict, tmp_path: Path
+    ):
         """Test handling when parser is missing VERSION constant."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -667,11 +873,15 @@ def parse(exit_code, log, output):
 """
         )
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
             # Should raise AttributeError when accessing VERSION
             with pytest.raises(AttributeError):
-                sb.parsing.parse(sample_task_log, None, None)
+                sb.parsing.parse(
+                    sample_task_log, None, None
+                )
 
 
 class TestParserModuleCache:
@@ -691,10 +901,20 @@ def parse(exit_code, log, output):
 """
         )
 
-        tool1 = {"id": "test_tool", "mode": "solidity", "parser": "parser.py"}
-        tool2 = {"id": "test_tool", "mode": "bytecode", "parser": "parser.py"}
+        tool1 = {
+            "id": "test_tool",
+            "mode": "solidity",
+            "parser": "parser.py",
+        }
+        tool2 = {
+            "id": "test_tool",
+            "mode": "bytecode",
+            "parser": "parser.py",
+        }
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
 
             sb.parsing.get_parser(tool1)
@@ -702,10 +922,18 @@ def parse(exit_code, log, output):
 
             # Should be two entries in cache
             assert len(sb.parsing.tool_parsers) == 2
-            assert ("test_tool", "solidity") in sb.parsing.tool_parsers
-            assert ("test_tool", "bytecode") in sb.parsing.tool_parsers
+            assert (
+                "test_tool",
+                "solidity",
+            ) in sb.parsing.tool_parsers
+            assert (
+                "test_tool",
+                "bytecode",
+            ) in sb.parsing.tool_parsers
 
-    def test_cache_persists_across_calls(self, tmp_path: Path):
+    def test_cache_persists_across_calls(
+        self, tmp_path: Path
+    ):
         """Test that parser cache persists across multiple parse calls."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -724,12 +952,18 @@ def parse(exit_code, log, output):
         )
 
         sample_task_log = {
-            "tool": {"id": "test_tool", "mode": "solidity", "parser": "parser.py"},
+            "tool": {
+                "id": "test_tool",
+                "mode": "solidity",
+                "parser": "parser.py",
+            },
             "filename": "/path/to/test.sol",
             "result": {"exit_code": 0},
         }
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
 
             # First parse call - loads parser
@@ -744,7 +978,9 @@ def parse(exit_code, log, output):
 class TestErrorHandling:
     """Tests for error handling in parsing framework."""
 
-    def test_parse_parser_exception(self, sample_task_log: dict, tmp_path: Path):
+    def test_parse_parser_exception(
+        self, sample_task_log: dict, tmp_path: Path
+    ):
         """Test handling when parser.parse() raises an exception."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -759,14 +995,22 @@ def parse(exit_code, log, output):
 """
         )
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
             # Exception should propagate (not caught by parse function)
             with pytest.raises(RuntimeError) as exc_info:
-                sb.parsing.parse(sample_task_log, None, None)
-            assert "Parser internal error" in str(exc_info.value)
+                sb.parsing.parse(
+                    sample_task_log, None, None
+                )
+            assert "Parser internal error" in str(
+                exc_info.value
+            )
 
-    def test_parse_parser_returns_wrong_type(self, sample_task_log: dict, tmp_path: Path):
+    def test_parse_parser_returns_wrong_type(
+        self, sample_task_log: dict, tmp_path: Path
+    ):
         """Test handling when parser returns wrong data structure."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -782,10 +1026,14 @@ def parse(exit_code, log, output):
 """
         )
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
             with pytest.raises(ValueError):
-                sb.parsing.parse(sample_task_log, None, None)
+                sb.parsing.parse(
+                    sample_task_log, None, None
+                )
 
     def test_get_parser_import_error(self, tmp_path: Path):
         """Test handling when parser module has import errors."""
@@ -793,14 +1041,26 @@ def parse(exit_code, log, output):
         tool_dir.mkdir()
         parser_file = tool_dir / "parser.py"
         # Write parser that imports non-existent module
-        parser_file.write_text("import nonexistent_module\nVERSION = '1.0.0'\nFINDINGS = None")
+        parser_file.write_text(
+            "import nonexistent_module\nVERSION = '1.0.0'\nFINDINGS = None"
+        )
 
-        tool = {"id": "test_tool", "mode": "solidity", "parser": "parser.py"}
+        tool = {
+            "id": "test_tool",
+            "mode": "solidity",
+            "parser": "parser.py",
+        }
 
-        with patch.object(sb.cfg, "TOOLS_HOME", str(tmp_path)):
+        with patch.object(
+            sb.cfg, "TOOLS_HOME", str(tmp_path)
+        ):
             sb.parsing.tool_parsers.clear()
-            with pytest.raises(sb.errors.SmartBugsError) as exc_info:
+            with pytest.raises(
+                sb.errors.SmartBugsError
+            ) as exc_info:
                 sb.parsing.get_parser(tool)
 
-            assert "Cannot load parser" in str(exc_info.value)
+            assert "Cannot load parser" in str(
+                exc_info.value
+            )
             assert "test_tool" in str(exc_info.value)

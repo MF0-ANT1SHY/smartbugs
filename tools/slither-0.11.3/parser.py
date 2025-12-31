@@ -121,22 +121,35 @@ def parse(
 ) -> tuple[list[dict], set[str], set[str], set[str]]:
     findings: list[dict] = []
     infos: set[str] = set()
-    errors, fails = sb.parse_utils.errors_fails(exit_code, log)
-    errors.discard("EXIT_CODE_255")  # this code seems to be returned in any case
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, log
+    )
+    errors.discard(
+        "EXIT_CODE_255"
+    )  # this code seems to be returned in any case
 
     try:
-        with io.BytesIO(output) as o, tarfile.open(fileobj=o) as tar:
-            output_json = tar.extractfile("output.json").read()
+        with (
+            io.BytesIO(output) as o,
+            tarfile.open(fileobj=o) as tar,
+        ):
+            output_json = tar.extractfile(
+                "output.json"
+            ).read()
             output_dict = json.loads(output_json)
     except Exception as e:
         fails.add(f"error parsing results: {e}")
         output_dict = {}
 
     if not output_dict.get("success", False):
-        fails.add("analysis unsuccessful, check output.json")
+        fails.add(
+            "analysis unsuccessful, check output.json"
+        )
 
     if output_dict.get("error", None):
-        errors.add("analysis reports errors, check output.json")
+        errors.add(
+            "analysis reports errors, check output.json"
+        )
 
     results = output_dict.get("results", {})
     issues = results.get("detectors", [])
@@ -152,7 +165,9 @@ def parse(
             finding[f] = issue[i]
         elements = issue.get("elements", [])
         m = LOCATION.search(finding["message"])
-        finding["message"] = finding["message"].replace("../../sb/", "")
+        finding["message"] = finding["message"].replace(
+            "../../sb/", ""
+        )
         if m:
             finding["filename"] = m[1]
             if "-" in m[2]:
@@ -161,21 +176,32 @@ def parse(
                 finding["line_end"] = int(end)
             else:
                 finding["line"] = int(m[2])
-        elif len(elements) > 0 and "source_mapping" in elements[0]:
+        elif (
+            len(elements) > 0
+            and "source_mapping" in elements[0]
+        ):
             source_mapping = elements[0]["source_mapping"]
             lines = sorted(source_mapping["lines"])
             if len(lines) > 0:
                 finding["line"] = lines[0]
                 if len(lines) > 1:
                     finding["line_end"] = lines[-1]
-            finding["filename"] = source_mapping["filename_absolute"].replace("/sb/", "")
+            finding["filename"] = source_mapping[
+                "filename_absolute"
+            ].replace("/sb/", "")
         for element in elements:
             if element.get("type") == "function":
                 finding["function"] = element["name"]
-                type_specific_fields = element.get("type_specific_fields", {})
-                parent = type_specific_fields.get("parent", {})
+                type_specific_fields = element.get(
+                    "type_specific_fields", {}
+                )
+                parent = type_specific_fields.get(
+                    "parent", {}
+                )
                 if parent.get("type", None) == "contract":
-                    finding["contract"] = parent.get("name", "")
+                    finding["contract"] = parent.get(
+                        "name", ""
+                    )
                 break
         findings.append(finding)
 

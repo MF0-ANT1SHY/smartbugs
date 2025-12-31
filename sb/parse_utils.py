@@ -19,22 +19,36 @@ DOCKER_CODES: dict[int, str] = {
 ANSI: Pattern[str] = re.compile("\x1b\\[[^m]*m")
 
 
-def discard_ansi(lines: Iterable[str]) -> Generator[str, None, None]:
+def discard_ansi(
+    lines: Iterable[str],
+) -> Generator[str, None, None]:
     return (ANSI.sub("", line) for line in lines)
 
 
 def truncate_message(m: str, length: int = 205) -> str:
     half_length = (length - 5) // 2
-    return m if len(m) <= length else m[:half_length] + " ... " + m[-half_length:]
+    return (
+        m
+        if len(m) <= length
+        else m[:half_length] + " ... " + m[-half_length:]
+    )
 
 
-TRACEBACK: str = "Traceback (most recent call last):"  # Python
+TRACEBACK: str = (
+    "Traceback (most recent call last):"  # Python
+)
 
 EXCEPTIONS: tuple[Pattern[str], ...] = (
-    re.compile(".*line [0-9: ]*(Segmentation fault|Killed)"),  # Shell
+    re.compile(
+        ".*line [0-9: ]*(Segmentation fault|Killed)"
+    ),  # Shell
     re.compile('Exception in thread "[^"]*" (.*)'),  # Java
-    re.compile(r"^(?:[a-zA-Z0-9]+\.)+[a-zA-Z0-9]*Exception: (.*)$"),  # Java
-    re.compile("thread '[^']*' panicked at '([^']*)'"),  # Rust
+    re.compile(
+        r"^(?:[a-zA-Z0-9]+\.)+[a-zA-Z0-9]*Exception: (.*)$"
+    ),  # Java
+    re.compile(
+        "thread '[^']*' panicked at '([^']*)'"
+    ),  # Rust
 )
 
 
@@ -55,7 +69,11 @@ def exceptions(lines: list[str]) -> set[str]:
     return exceptions
 
 
-def add_match(matches: set[str], line: str, patterns: list[Pattern[str]]) -> bool:
+def add_match(
+    matches: set[str],
+    line: str,
+    patterns: list[Pattern[str]],
+) -> bool:
     for pattern in patterns:
         m = pattern.match(line)
         if m:
@@ -65,9 +83,13 @@ def add_match(matches: set[str], line: str, patterns: list[Pattern[str]]) -> boo
 
 
 def errors_fails(
-    exit_code: Optional[int], log: Optional[list[str]], log_expected: bool = True
+    exit_code: Optional[int],
+    log: Optional[list[str]],
+    log_expected: bool = True,
 ) -> tuple[set[str], set[str]]:
-    errors = set()  # errors detected and handled by the tool
+    errors = (
+        set()
+    )  # errors detected and handled by the tool
     fails = set()  # exceptions not caught by the tool, or outside events leading to abortion
     if exit_code is None:
         fails.add("DOCKER_TIMEOUT")
@@ -80,7 +102,9 @@ def errors_fails(
     elif exit_code in DOCKER_CODES:
         fails.add(DOCKER_CODES[exit_code])
     elif 128 <= exit_code <= 128 + 64:
-        fails.add(f"DOCKER_RECEIVED_SIGNAL_{exit_code-128}")
+        fails.add(
+            f"DOCKER_RECEIVED_SIGNAL_{exit_code - 128}"
+        )
     else:
         # remove it for individual signals and tools, where it is not an error
         errors.add(f"EXIT_CODE_{exit_code}")

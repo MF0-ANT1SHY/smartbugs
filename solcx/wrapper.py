@@ -6,21 +6,34 @@ from typing import Any, Union
 from semantic_version import Version
 
 from solcx import install
-from solcx.exceptions import SolcError, UnknownOptionError, UnknownValueError
+from solcx.exceptions import (
+    SolcError,
+    UnknownOptionError,
+    UnknownValueError,
+)
 
 
 # (major.minor.patch)(nightly)(commit)
 VERSION_REGEX = r"(\d+\.\d+\.\d+)(?:-nightly.\d+.\d+.\d+|)(\+commit.\w+)"
 
 
-def _get_solc_version(solc_binary: Union[Path, str], with_commit_hash: bool = False) -> Version:
+def _get_solc_version(
+    solc_binary: Union[Path, str],
+    with_commit_hash: bool = False,
+) -> Version:
     # private wrapper function to get `solc` version
-    stdout_data = subprocess.check_output([str(solc_binary), "--version"], encoding="utf8")
+    stdout_data = subprocess.check_output(
+        [str(solc_binary), "--version"], encoding="utf8"
+    )
     try:
-        match = next(re.finditer(VERSION_REGEX, stdout_data))
+        match = next(
+            re.finditer(VERSION_REGEX, stdout_data)
+        )
         version_str = "".join(match.groups())
     except StopIteration:
-        raise SolcError("Could not determine the solc binary version")
+        raise SolcError(
+            "Could not determine the solc binary version"
+        )
 
     version = Version.coerce(version_str)
     if with_commit_hash:
@@ -38,7 +51,9 @@ def _to_string(key: str, value: Any) -> str:
     elif isinstance(value, (list, tuple)):
         return ",".join(_to_string(key, i) for i in value)
     else:
-        raise TypeError(f"Invalid type for {key}: {type(value)}")
+        raise TypeError(
+            f"Invalid type for {key}: {type(value)}"
+        )
 
 
 def solc_wrapper(
@@ -104,16 +119,26 @@ def solc_wrapper(
 
     if source_files is not None:
         if isinstance(source_files, (str, Path)):
-            command.append(_to_string("source_files", source_files))
+            command.append(
+                _to_string("source_files", source_files)
+            )
         else:
-            command.extend([_to_string("source_files", i) for i in source_files])
+            command.extend(
+                [
+                    _to_string("source_files", i)
+                    for i in source_files
+                ]
+            )
 
     if import_remappings is not None:
         if isinstance(import_remappings, str):
             command.append(import_remappings)
         else:
             if isinstance(import_remappings, dict):
-                import_remappings = [f"{k}={v}" for k, v in import_remappings.items()]
+                import_remappings = [
+                    f"{k}={v}"
+                    for k, v in import_remappings.items()
+                ]
             command.extend(import_remappings)
 
     for key, value in kwargs.items():
@@ -147,7 +172,9 @@ def solc_wrapper(
         if stderrdata.startswith("unrecognised option"):
             # unrecognised option '<FLAG>'
             flag = stderrdata.split("'")[1]
-            raise UnknownOptionError(f"solc {solc_version} does not support the '{flag}' option'")
+            raise UnknownOptionError(
+                f"solc {solc_version} does not support the '{flag}' option'"
+            )
         if stderrdata.startswith("Invalid option"):
             # Invalid option to <FLAG>: <OPTION>
             flag, option = stderrdata.split(": ")

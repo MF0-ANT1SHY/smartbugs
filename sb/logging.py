@@ -11,7 +11,10 @@ if TYPE_CHECKING:
 
 
 def logger_process(
-    logfn: str, overwrite: bool, queue: "Queue[Optional[str]]", prolog: list[str]
+    logfn: str,
+    overwrite: bool,
+    queue: "Queue[Optional[str]]",
+    prolog: list[str],
 ) -> None:
     log_parent_folder = os.path.dirname(logfn)
     if log_parent_folder:
@@ -31,9 +34,14 @@ __prolog: list[str] = []
 logger: Optional[threading.Thread] = None
 
 
-def start(logfn: str, append: bool, queue: "Queue[Optional[str]]") -> None:
+def start(
+    logfn: str, append: bool, queue: "Queue[Optional[str]]"
+) -> None:
     global logger
-    logger = threading.Thread(target=logger_process, args=(logfn, append, queue, __prolog))
+    logger = threading.Thread(
+        target=logger_process,
+        args=(logfn, append, queue, __prolog),
+    )
     logger.start()
 
 

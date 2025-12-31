@@ -37,5 +37,8 @@ class Task:
         self.settings = settings
 
     def __str__(self) -> str:
-        s = [f"{k}: {str(v)}" for k, v in self.__dict__.items()]
+        s = [
+            f"{k}: {str(v)}"
+            for k, v in self.__dict__.items()
+        ]
         return f"{{{', '.join(s)}}}"

@@ -26,14 +26,19 @@ FINDINGS = {
 def parse(
     exit_code: int, log: list[str], output: bytes
 ) -> tuple[list[dict], set[str], set[str], set[str]]:
-
     findings, infos = [], set()
-    errors, fails = sb.parse_utils.errors_fails(exit_code, log)
-    errors.discard("EXIT_CODE_1")  # exit code = 1 just means that a weakness has been found
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, log
+    )
+    errors.discard(
+        "EXIT_CODE_1"
+    )  # exit code = 1 just means that a weakness has been found
 
     # Mythril catches all exceptions, prints a message "please report", and then prints the traceback.
     # So we consider all exceptions as fails (= non-intended interruptions)
-    for f in list(fails):  # iterate over a copy of 'fails' such that it can be modified
+    for f in list(
+        fails
+    ):  # iterate over a copy of 'fails' such that it can be modified
         if f.startswith(
             "exception (mythril.laser.ethereum.transaction.transaction_models.TransactionEndSignal"
         ):
@@ -72,10 +77,16 @@ def parse(
                 if i in issue:
                     finding[f] = issue[i]
             if "swc-id" in issue:
-                finding["name"] += f" (SWC {issue['swc-id']})"
-                classification = f"Classification: SWC-{issue['swc-id']}"
+                finding["name"] += (
+                    f" (SWC {issue['swc-id']})"
+                )
+                classification = (
+                    f"Classification: SWC-{issue['swc-id']}"
+                )
                 if finding.get("message"):
-                    finding["message"] += f"\n{classification}"
+                    finding["message"] += (
+                        f"\n{classification}"
+                    )
                 else:
                     finding["message"] = classification
             findings.append(finding)

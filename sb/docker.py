@@ -27,7 +27,11 @@ def client() -> docker.DockerClient:
             _client = docker.from_env()
             _client.info()
         except Exception:
-            details = f"\n{traceback.format_exc()}" if sb.cfg.DEBUG else ""
+            details = (
+                f"\n{traceback.format_exc()}"
+                if sb.cfg.DEBUG
+                else ""
+            )
             raise sb.errors.SmartBugsError(
                 f"Docker: Cannot connect to service. Is it installed and running?{details}"
             )
@@ -43,7 +47,9 @@ def is_loaded(image: str) -> bool:
     try:
         image_list = client().images.list(image)
     except Exception as e:
-        raise sb.errors.SmartBugsError(f"Docker: checking for image {image} failed.\n{e}")
+        raise sb.errors.SmartBugsError(
+            f"Docker: checking for image {image} failed.\n{e}"
+        )
     if image_list:
         images_loaded.add(image)
         return True
@@ -54,7 +60,9 @@ def load(image: str) -> None:
     try:
         client().images.pull(image)
     except Exception as e:
-        raise sb.errors.SmartBugsError(f"Docker: Loading image {image} failed.\n{e}")
+        raise sb.errors.SmartBugsError(
+            f"Docker: Loading image {image} failed.\n{e}"
+        )
     images_loaded.add(image)
 
 
@@ -81,8 +89,14 @@ def __docker_volume(task: "sb.tasks.Task") -> str:
     return sbdir
 
 
-def __docker_args(task: "sb.tasks.Task", sbdir: str) -> dict[str, Any]:
-    args = {"volumes": {sbdir: {"bind": "/sb", "mode": "rw"}}, "detach": True, "user": 0}
+def __docker_args(
+    task: "sb.tasks.Task", sbdir: str
+) -> dict[str, Any]:
+    args = {
+        "volumes": {sbdir: {"bind": "/sb", "mode": "rw"}},
+        "detach": True,
+        "user": 0,
+    }
     for k in ("image", "cpu_quota", "mem_limit"):
         v = getattr(task.tool, k, None)
         if v is not None:
@@ -94,23 +108,42 @@ def __docker_args(task: "sb.tasks.Task", sbdir: str) -> dict[str, Any]:
     filename = f"/sb/{os.path.split(task.absfn)[1]}"  # path in Linux Docker image
     timeout = task.settings.timeout or 0
     main = "1" if task.settings.main else "0"
-    args["command"] = task.tool.command(filename, timeout, "/sb/bin", main)
-    args["entrypoint"] = task.tool.entrypoint(filename, timeout, "/sb/bin", main)
+    args["command"] = task.tool.command(
+        filename, timeout, "/sb/bin", main
+    )
+    args["entrypoint"] = task.tool.entrypoint(
+        filename, timeout, "/sb/bin", main
+    )
     return args
 
 
 def execute(
     task: "sb.tasks.Task",
-) -> tuple[Optional[int], list[str], Optional[bytes], dict[str, Any]]:
+) -> tuple[
+    Optional[int],
+    list[str],
+    Optional[bytes],
+    dict[str, Any],
+]:
     sbdir = __docker_volume(task)
     args = __docker_args(task, sbdir)
-    exit_code, logs, output, container = None, [], None, None
+    exit_code, logs, output, container = (
+        None,
+        [],
+        None,
+        None,
+    )
     try:
         container = client().containers.run(**args)
         try:
-            result = container.wait(timeout=task.settings.timeout)
+            result = container.wait(
+                timeout=task.settings.timeout
+            )
             exit_code = result["StatusCode"]
-        except (requests.exceptions.ReadTimeout, requests.exceptions.ConnectionError):
+        except (
+            requests.exceptions.ReadTimeout,
+            requests.exceptions.ConnectionError,
+        ):
             try:
                 container.stop(timeout=10)
             except docker.errors.APIError:
@@ -118,13 +151,17 @@ def execute(
         logs = container.logs().decode("utf8").splitlines()
         if task.tool.output:
             try:
-                output, _ = container.get_archive(task.tool.output)
+                output, _ = container.get_archive(
+                    task.tool.output
+                )
                 output = b"".join(output)
             except docker.errors.NotFound:
                 pass
 
     except Exception as e:
-        raise sb.errors.SmartBugsError(f"Problem running Docker container: {e})")
+        raise sb.errors.SmartBugsError(
+            f"Problem running Docker container: {e})"
+        )
 
     finally:
         try:

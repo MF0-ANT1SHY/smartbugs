@@ -19,19 +19,23 @@ FINDINGS = (
 )
 
 
-FILENAME = re.compile("\\[ \\] Compiling Solidity contract from the file (.*/.*) \\.\\.\\.")
+FILENAME = re.compile(
+    "\\[ \\] Compiling Solidity contract from the file (.*/.*) \\.\\.\\."
+)
 MISSING_ABI_BIN = re.compile(
     "\\[-\\] Some of the files is missing or empty: \\|(.*)\\.abi\\|=[0-9]+  \\|(.*)\\.bin\\|=[0-9]+"
 )
-CONTRACT = re.compile("\\[ \\] Contract address saved in file: (?:.*/)?(.*)\\.address")
+CONTRACT = re.compile(
+    "\\[ \\] Contract address saved in file: (?:.*/)?(.*)\\.address"
+)
 CANNOT_DEPLOY = "[-] Cannot deploy the contract"  # no bincode, e.g. interfaces in the source code
 NOT_PRODIGAL = "[+] The code does not have CALL/SUICIDE, hence it is not prodigal"
 LEAK_FOUND = "[-] Leak vulnerability found!"
-CANNOT_CONFIRM_BUG = (
-    "[-] Cannot confirm the bug because the contract is not deployed on the blockchain."
-)
+CANNOT_CONFIRM_BUG = "[-] Cannot confirm the bug because the contract is not deployed on the blockchain."
 CANNOT_CONFIRM_LEAK = "[ ] Confirming leak vulnerability on private chain ...     Cannot confirm the leak vulnerability"
-PRODIGAL_CONFIRMED = "    Confirmed ! The contract is prodigal !"
+PRODIGAL_CONFIRMED = (
+    "    Confirmed ! The contract is prodigal !"
+)
 PRODIGAL_NOT_FOUND = "[+] No prodigal vulnerability found"
 CAN_RECEIVE_ETHER = "[+] Contract can receive Ether"
 CANNOT_RECEIVE_ETHER = "[-] No lock vulnerability found because the contract cannot receive Ether"
@@ -41,7 +45,9 @@ LOCK_FOUND = "[-] Locking vulnerability found!"
 NO_SELFDESTRUCT = "[-] The code does not contain SUICIDE instructions, hence it is not vulnerable"
 SD_VULN_FOUND = "[-] Suicidal vulnerability found!"
 CANNOT_CONFIRM_SDV = "[ ] Confirming suicide vulnerability on private chain ...     Cannot confirm the suicide vulnerability"
-SD_VULN_CONFIRMED = "    Confirmed ! The contract is suicidal !"
+SD_VULN_CONFIRMED = (
+    "    Confirmed ! The contract is suicidal !"
+)
 SD_VULN_NOT_FOUND = "[-] No suicidal vulnerability found"
 TRANSACTION = re.compile("    -Tx\\[.+\\] :([0-9a-z ]+)")
 
@@ -53,7 +59,10 @@ MAP_FINDINGS = (
     (CANNOT_RECEIVE_ETHER, "No Ether lock (Ether refused)"),
     (IS_GREEDY, "Ether lock (Ether accepted without send)"),
     (LOCK_FOUND, "Ether lock"),
-    (NO_SELFDESTRUCT, "Not destructible (no self-destruct)"),
+    (
+        NO_SELFDESTRUCT,
+        "Not destructible (no self-destruct)",
+    ),
     (SD_VULN_FOUND, "Destructible"),
     (SD_VULN_CONFIRMED, "Destructible (verified)"),
 )
@@ -88,7 +97,9 @@ ERRORS = (
     re.compile(".*(?<!Z3)Exception: (.{,64})"),
 )
 
-CHECK = re.compile("\\[ \\] Check if contract is (PRODIGAL|GREEDY|SUICIDAL)")
+CHECK = re.compile(
+    "\\[ \\] Check if contract is (PRODIGAL|GREEDY|SUICIDAL)"
+)
 
 
 def parse(
@@ -96,7 +107,9 @@ def parse(
 ) -> tuple[list[dict], set[str], set[str], set[str]]:
     findings: list[dict] = []
     infos: set[str] = set()
-    errors, fails = sb.parse_utils.errors_fails(exit_code, log)
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, log
+    )
     if fails:
         errors.discard("EXIT_CODE_1")  # redundant
 
@@ -148,7 +161,10 @@ def parse(
 
         m = CHECK.match(line)
         if m:
-            k = (finding.get("filename"), finding.get("contract"))
+            k = (
+                finding.get("filename"),
+                finding.get("contract"),
+            )
             if k not in analysis_complete:
                 analysis_complete[k] = set()
             analysis_complete[k].add(m[1])

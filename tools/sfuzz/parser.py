@@ -30,26 +30,43 @@ def parse(
 ) -> tuple[list[dict], set[str], set[str], set[str]]:
     findings: list[dict] = []
     infos: set[str] = set()
-    errors, fails = sb.parse_utils.errors_fails(exit_code, log)
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, log
+    )
 
     if output:
         try:
             # file structure:
             # stats: contracts/<contract_name>.sol:<contract_name>/stats.csv
             # vulnerabilities: contracts/<contract_name>.sol:<contract_name>/<finding_name>.json
-            with io.BytesIO(output) as o, tarfile.open(fileobj=o) as tar:
+            with (
+                io.BytesIO(output) as o,
+                tarfile.open(fileobj=o) as tar,
+            ):
                 for member in tar.getmembers():
                     if member.name.endswith(STATS_FILENAME):
                         stats = tar.extractfile(member)
                         vs = vulnerabilities(stats)
                         for name, filename in vs.items():
-                            v_member = tar.getmember(member.name.replace(STATS_FILENAME, filename))
-                            v_json = json.load(tar.extractfile(v_member))
-                            for function in v_json["functions"]:
+                            v_member = tar.getmember(
+                                member.name.replace(
+                                    STATS_FILENAME, filename
+                                )
+                            )
+                            v_json = json.load(
+                                tar.extractfile(v_member)
+                            )
+                            for function in v_json[
+                                "functions"
+                            ]:
                                 finding = {
-                                    "contract": member.name.split(os.path.sep)[1].split(":")[0],
+                                    "contract": member.name.split(
+                                        os.path.sep
+                                    )[1].split(":")[0],
                                     "name": name,
-                                    "function": function["name"],
+                                    "function": function[
+                                        "name"
+                                    ],
                                 }
                                 findings.append(finding)
         except Exception as e:
@@ -82,11 +99,17 @@ def vulnerabilities(stats: IO[bytes]) -> dict[str, str]:
     if results[-9] >= 1:
         vs["Freezing Ether"] = "freezing_ether.json"
     if results[-10] >= 1:
-        vs["Dangerous Delegate Call"] = "dangerous_delegatecall.json"
+        vs["Dangerous Delegate Call"] = (
+            "dangerous_delegatecall.json"
+        )
     if results[-11] >= 1:
-        vs["Block Number Dependency"] = "block_number_dependency.json"
+        vs["Block Number Dependency"] = (
+            "block_number_dependency.json"
+        )
     if results[-12] >= 1:
-        vs["Timestamp Dependency"] = "timestamp_dependency.json"
+        vs["Timestamp Dependency"] = (
+            "timestamp_dependency.json"
+        )
     if results[-13] >= 1:
         vs["Reentrancy"] = "reentrancy.json"
     if results[-14] >= 1:

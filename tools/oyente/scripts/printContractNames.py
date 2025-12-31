@@ -31,5 +31,9 @@ for error in result.get("errors", []):
         sys.exit(1)
 contracts = result["contracts"][filename]
 for contract in contracts.keys():
-    if len(contracts[contract]["evm"]["deployedBytecode"]["object"]):
+    if len(
+        contracts[contract]["evm"]["deployedBytecode"][
+            "object"
+        ]
+    ):
         print(contract)

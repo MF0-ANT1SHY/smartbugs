@@ -24,7 +24,9 @@ def parse(
 ) -> tuple[list[dict], set[str], set[str], set[str]]:
     findings_set: set[str] = set()
     infos: set[str] = set()
-    errors, fails = sb.parse_utils.errors_fails(exit_code, log, log_expected=False)
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, log, log_expected=False
+    )
     if fails:
         errors.discard("EXIT_CODE_1")
 
@@ -36,12 +38,23 @@ def parse(
         try:
             analysis = json.loads("\n".join(log))
         except (json.JSONDecodeError, TypeError):
-            with io.BytesIO(output) as o, tarfile.open(fileobj=o) as tar:
+            with (
+                io.BytesIO(output) as o,
+                tarfile.open(fileobj=o) as tar,
+            ):
                 try:
-                    jsn = tar.extractfile("results/results.json").read()
+                    jsn = tar.extractfile(
+                        "results/results.json"
+                    ).read()
                     analysis = json.loads(jsn)
-                except (KeyError, json.JSONDecodeError, TypeError):
-                    jsn = tar.extractfile("results/live.json").read()
+                except (
+                    KeyError,
+                    json.JSONDecodeError,
+                    TypeError,
+                ):
+                    jsn = tar.extractfile(
+                        "results/live.json"
+                    ).read()
                     analysis = json.loads(jsn)
     except Exception:
         analysis = {}
@@ -49,11 +62,19 @@ def parse(
     if not analysis:
         infos.add("analysis incomplete")
     elif "patternResults" in analysis:  # live.json
-        if "finished" in analysis and not analysis["finished"]:
+        if (
+            "finished" in analysis
+            and not analysis["finished"]
+        ):
             infos.add("analysis incomplete")
-        if "decompiled" in analysis and not analysis["decompiled"]:
+        if (
+            "decompiled" in analysis
+            and not analysis["decompiled"]
+        ):
             errors.add("decompilation error")
-        for vuln, check in analysis["patternResults"].items():
+        for vuln, check in analysis[
+            "patternResults"
+        ].items():
             if not check["completed"]:
                 infos.add("analysis incomplete")
             if check["hasViolations"]:

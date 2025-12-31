@@ -81,15 +81,15 @@ def message_lines(log_iterator: Iterator[str]) -> str:
 def parse(
     exit_code: int, log: list[str], output: bytes
 ) -> tuple[list[dict], set[str], set[str], set[str]]:
-
     findings: list[dict] = []
     infos: set[str] = set()
     finding: dict = {}
-    errors, fails = sb.parse_utils.errors_fails(exit_code, log)
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, log
+    )
     log_iterator = iter(log)
 
     for line in log_iterator:
-
         line = line.strip()
 
         # if line.startswith('/'):
@@ -97,8 +97,14 @@ def parse(
         #     filename = '/'.join(filename[-2:])
         #     finding = {'filename': filename}
 
-        if re.search(r"solidity\.(performance|best-practice|security)\.", line):
-            match = re.search(r"solidity\.(performance|best-practice|security)\.(\S+)", line)
+        if re.search(
+            r"solidity\.(performance|best-practice|security)\.",
+            line,
+        ):
+            match = re.search(
+                r"solidity\.(performance|best-practice|security)\.(\S+)",
+                line,
+            )
             category = match.group(1)
             name = match.group(2)
             finding["name"] = name

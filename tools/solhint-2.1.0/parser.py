@@ -66,7 +66,9 @@ def parse(
 ) -> tuple[list[dict], set[str], set[str], set[str]]:
     findings: list[dict] = []
     infos: set[str] = set()
-    errors, fails = sb.parse_utils.errors_fails(exit_code, log)
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, log
+    )
 
     for line in log:
         if ":" in line:
@@ -76,9 +78,18 @@ def parse(
             (file, lineno, column, end_error) = s_result
             if "]" not in end_error:
                 continue
-            message = end_error[1 : end_error.index("[") - 1]
-            level = end_error[end_error.index("[") + 1 : end_error.index("/")]
-            name = end_error[end_error.index("/") + 1 : len(end_error) - 1]
+            message = end_error[
+                1 : end_error.index("[") - 1
+            ]
+            level = end_error[
+                end_error.index("[") + 1 : end_error.index(
+                    "/"
+                )
+            ]
+            name = end_error[
+                end_error.index("/") + 1 : len(end_error)
+                - 1
+            ]
             findings.append(
                 {
                     "filename": file,

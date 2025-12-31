@@ -101,13 +101,23 @@ def sample_compilation_json() -> dict[str, Any]:
                         {
                             "inputs": [],
                             "name": "getValue",
-                            "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+                            "outputs": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "",
+                                    "type": "uint256",
+                                }
+                            ],
                             "stateMutability": "view",
                             "type": "function",
                         },
                         {
                             "inputs": [
-                                {"internalType": "uint256", "name": "_value", "type": "uint256"}
+                                {
+                                    "internalType": "uint256",
+                                    "name": "_value",
+                                    "type": "uint256",
+                                }
                             ],
                             "name": "setValue",
                             "outputs": [],
@@ -117,7 +127,13 @@ def sample_compilation_json() -> dict[str, Any]:
                         {
                             "inputs": [],
                             "name": "value",
-                            "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+                            "outputs": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "",
+                                    "type": "uint256",
+                                }
+                            ],
                             "stateMutability": "view",
                             "type": "function",
                         },
@@ -145,7 +161,9 @@ def sample_compilation_json() -> dict[str, Any]:
                 "id": 0,
                 "ast": {
                     "absolutePath": "SimpleStorage.sol",
-                    "exportedSymbols": {"SimpleStorage": [15]},
+                    "exportedSymbols": {
+                        "SimpleStorage": [15]
+                    },
                     "id": 16,
                     "nodeType": "SourceUnit",
                     "nodes": [],
@@ -157,7 +175,9 @@ def sample_compilation_json() -> dict[str, Any]:
 
 
 @pytest.fixture
-def tmp_contract_file(tmp_path: Path) -> Generator[Path, None, None]:
+def tmp_contract_file(
+    tmp_path: Path,
+) -> Generator[Path, None, None]:
     """Creates a temporary .sol file with simple contract.
 
     Args:
@@ -201,7 +221,9 @@ def mock_docker_client(mocker) -> MagicMock:
             assert container.wait.called
     """
     mock_client = mocker.MagicMock()
-    mocker.patch("docker.from_env", return_value=mock_client)
+    mocker.patch(
+        "docker.from_env", return_value=mock_client
+    )
     return mock_client
 
 
@@ -230,7 +252,9 @@ def mock_settings() -> Settings:
     settings.cpu_quota = None
     settings.mem_limit = None
     settings.continue_on_errors = False
-    settings.results = "results/${TOOL}/${RUNID}/${FILENAME}"
+    settings.results = (
+        "results/${TOOL}/${RUNID}/${FILENAME}"
+    )
     settings.log = "results/logs/${RUNID}.log"
     settings.json = False
     settings.sarif = False

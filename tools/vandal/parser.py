@@ -25,7 +25,11 @@ MAP_FINDINGS = {
     "uncheckedCall.csv": "UncheckedCall",
 }
 
-ANALYSIS_COMPLETE = ("+ /vandal/bin/decompile", "+ souffle -F facts-tmp", "+ rm -rf facts-tmp")
+ANALYSIS_COMPLETE = (
+    "+ /vandal/bin/decompile",
+    "+ souffle -F facts-tmp",
+    "+ rm -rf facts-tmp",
+)
 
 DEPRECATED = "Warning: Deprecated type declaration"
 CANNOT_OPEN_FACT_FILE = "Cannot open fact file"
@@ -35,8 +39,12 @@ def parse(
     exit_code: int, log: list[str], output: bytes
 ) -> tuple[list[dict], set[str], set[str], set[str]]:
     findings, infos = [], set()
-    errors, fails = sb.parse_utils.errors_fails(exit_code, log)
-    errors.discard("EXIT_CODE_1")  # = no findings; EXIT_CODE_0 = findings
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, log
+    )
+    errors.discard(
+        "EXIT_CODE_1"
+    )  # = no findings; EXIT_CODE_0 = findings
 
     analysis_complete = set()
     for line in log:
@@ -51,7 +59,10 @@ def parse(
                 analysis_complete.add(indicator)
                 break
 
-    if log and (len(analysis_complete) < 3 or CANNOT_OPEN_FACT_FILE in fails):
+    if log and (
+        len(analysis_complete) < 3
+        or CANNOT_OPEN_FACT_FILE in fails
+    ):
         infos.add("analysis incomplete")
         if not fails and not errors:
             fails.add("execution failed")
@@ -60,21 +71,32 @@ def parse(
 
     if output:
         try:
-            with io.BytesIO(output) as o, tarfile.open(fileobj=o) as tar:
+            with (
+                io.BytesIO(output) as o,
+                tarfile.open(fileobj=o) as tar,
+            ):
                 for fn in tar.getnames():
                     if not fn.endswith(".csv"):
                         continue
                     indicator = os.path.basename(fn)
                     try:
-                        contents = tar.extractfile(fn).read()
+                        contents = tar.extractfile(
+                            fn
+                        ).read()
                     except Exception as e:
-                        fails.add(f"problem extracting {fn} from output archive: {e}")
+                        fails.add(
+                            f"problem extracting {fn} from output archive: {e}"
+                        )
                         continue
                     for line_bytes in contents.splitlines():
-                        line = line_bytes.decode("utf-8", errors="ignore")
+                        line = line_bytes.decode(
+                            "utf-8", errors="ignore"
+                        )
                         finding = {
                             "name": MAP_FINDINGS[indicator],
-                            "address": int(line.strip(), 16),
+                            "address": int(
+                                line.strip(), 16
+                            ),
                         }
                         findings.append(finding)
         except Exception as e:
@@ -84,7 +106,9 @@ def parse(
         for line in log:
             for indicator in MAP_FINDINGS:
                 if indicator in line:
-                    findings.append({"name": MAP_FINDINGS[indicator]})
+                    findings.append(
+                        {"name": MAP_FINDINGS[indicator]}
+                    )
                     break
 
     return findings, infos, errors, fails

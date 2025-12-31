@@ -1,0 +1,13 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_TIMEOUT"
+    ],
+    "findings": [],
+    "infos": [],
+    "parser": {
+        "id": "achecker",
+        "mode": "runtime",
+        "version": "2023/02/24"
+    }
+}

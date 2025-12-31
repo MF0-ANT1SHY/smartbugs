@@ -95,7 +95,9 @@ class TestToolInitialization:
         }
         tool = Tool(cfg)
 
-        expected_path = os.path.join(sb.cfg.TOOLS_HOME, "binned_tool", "scripts/")
+        expected_path = os.path.join(
+            sb.cfg.TOOLS_HOME, "binned_tool", "scripts/"
+        )
         assert tool.absbin == expected_path
 
 
@@ -109,7 +111,10 @@ class TestToolValidation:
             "image": "smartbugs/test:1.0",
             "command": "analyze $FILENAME",
         }
-        with pytest.raises(sb.errors.InternalError, match="Field 'id' missing"):
+        with pytest.raises(
+            sb.errors.InternalError,
+            match="Field 'id' missing",
+        ):
             Tool(cfg)
 
     def test_missing_mode_raises_internal_error(self):
@@ -119,7 +124,10 @@ class TestToolValidation:
             "image": "smartbugs/test:1.0",
             "command": "analyze $FILENAME",
         }
-        with pytest.raises(sb.errors.InternalError, match="Field 'mode' missing"):
+        with pytest.raises(
+            sb.errors.InternalError,
+            match="Field 'mode' missing",
+        ):
             Tool(cfg)
 
     def test_missing_image_raises_error(self):
@@ -129,10 +137,15 @@ class TestToolValidation:
             "mode": "solidity",
             "command": "analyze $FILENAME",
         }
-        with pytest.raises(sb.errors.SmartBugsError, match="no image specified"):
+        with pytest.raises(
+            sb.errors.SmartBugsError,
+            match="no image specified",
+        ):
             Tool(cfg)
 
-    def test_missing_command_and_entrypoint_raises_error(self):
+    def test_missing_command_and_entrypoint_raises_error(
+        self,
+    ):
         """Test that missing both command and entrypoint raises error."""
         cfg = {
             "id": "test_tool",
@@ -140,7 +153,8 @@ class TestToolValidation:
             "image": "smartbugs/test:1.0",
         }
         with pytest.raises(
-            sb.errors.SmartBugsError, match="neither command nor entrypoint specified"
+            sb.errors.SmartBugsError,
+            match="neither command nor entrypoint specified",
         ):
             Tool(cfg)
 
@@ -154,7 +168,9 @@ class TestToolValidation:
             "extra_field": "unexpected",
             "another_extra": 123,
         }
-        with pytest.raises(sb.errors.SmartBugsError, match="extra field"):
+        with pytest.raises(
+            sb.errors.SmartBugsError, match="extra field"
+        ):
             Tool(cfg)
 
     def test_invalid_solc_boolean_raises_error(self):
@@ -182,7 +198,9 @@ class TestToolValidation:
             "command": "analyze $FILENAME",
             "cpu_quota": "not_an_integer",
         }
-        with pytest.raises(sb.errors.SmartBugsError, match="not an integer"):
+        with pytest.raises(
+            sb.errors.SmartBugsError, match="not an integer"
+        ):
             Tool(cfg)
 
     def test_negative_cpu_quota_raises_error(self):
@@ -194,7 +212,9 @@ class TestToolValidation:
             "command": "analyze $FILENAME",
             "cpu_quota": -100,
         }
-        with pytest.raises(sb.errors.SmartBugsError, match="not an integer"):
+        with pytest.raises(
+            sb.errors.SmartBugsError, match="not an integer"
+        ):
             Tool(cfg)
 
     def test_invalid_mem_limit_raises_error(self):
@@ -206,12 +226,23 @@ class TestToolValidation:
             "command": "analyze $FILENAME",
             "mem_limit": "invalid",
         }
-        with pytest.raises(sb.errors.SmartBugsError, match="not a valid memory"):
+        with pytest.raises(
+            sb.errors.SmartBugsError,
+            match="not a valid memory",
+        ):
             Tool(cfg)
 
     def test_valid_mem_limit_formats(self):
         """Test that various valid memory limit formats are accepted."""
-        valid_formats = ["512m", "4g", "1024M", "2G", "512000000", "1 g", "2 G"]
+        valid_formats = [
+            "512m",
+            "4g",
+            "1024M",
+            "2G",
+            "512000000",
+            "1 g",
+            "2 G",
+        ]
 
         for mem_format in valid_formats:
             cfg = {
@@ -239,9 +270,17 @@ class TestCommandTemplateExpansion:
         }
         tool = Tool(cfg)
 
-        result = tool.command(filename="test.sol", timeout=300, bin="/bin/solc", main="MyContract")
+        result = tool.command(
+            filename="test.sol",
+            timeout=300,
+            bin="/bin/solc",
+            main="MyContract",
+        )
 
-        assert result == "analyze test.sol --timeout 300 --bin /bin/solc --main MyContract"
+        assert (
+            result
+            == "analyze test.sol --timeout 300 --bin /bin/solc --main MyContract"
+        )
 
     def test_command_expansion_with_partial_variables(self):
         """Test command template with only some variables."""
@@ -253,7 +292,12 @@ class TestCommandTemplateExpansion:
         }
         tool = Tool(cfg)
 
-        result = tool.command(filename="contract.sol", timeout=60, bin="", main="")
+        result = tool.command(
+            filename="contract.sol",
+            timeout=60,
+            bin="",
+            main="",
+        )
 
         assert result == "run contract.sol"
 
@@ -267,11 +311,21 @@ class TestCommandTemplateExpansion:
         }
         tool = Tool(cfg)
 
-        result = tool.entrypoint(filename="bytecode.hex", timeout=600, bin="/scripts", main="")
+        result = tool.entrypoint(
+            filename="bytecode.hex",
+            timeout=600,
+            bin="/scripts",
+            main="",
+        )
 
-        assert result == "/bin/bash /scripts/script.sh bytecode.hex 600"
+        assert (
+            result
+            == "/bin/bash /scripts/script.sh bytecode.hex 600"
+        )
 
-    def test_command_with_unknown_variable_raises_error(self):
+    def test_command_with_unknown_variable_raises_error(
+        self,
+    ):
         """Test that unknown variable in command template raises error."""
         cfg = {
             "id": "test_tool",
@@ -281,10 +335,20 @@ class TestCommandTemplateExpansion:
         }
         tool = Tool(cfg)
 
-        with pytest.raises(sb.errors.SmartBugsError, match="Unknown variable"):
-            tool.command(filename="test.sol", timeout=60, bin="", main="")
+        with pytest.raises(
+            sb.errors.SmartBugsError,
+            match="Unknown variable",
+        ):
+            tool.command(
+                filename="test.sol",
+                timeout=60,
+                bin="",
+                main="",
+            )
 
-    def test_entrypoint_with_unknown_variable_raises_error(self):
+    def test_entrypoint_with_unknown_variable_raises_error(
+        self,
+    ):
         """Test that unknown variable in entrypoint template raises error."""
         cfg = {
             "id": "test_tool",
@@ -294,8 +358,16 @@ class TestCommandTemplateExpansion:
         }
         tool = Tool(cfg)
 
-        with pytest.raises(sb.errors.SmartBugsError, match="Unknown variable"):
-            tool.entrypoint(filename="test.sol", timeout=60, bin="", main="")
+        with pytest.raises(
+            sb.errors.SmartBugsError,
+            match="Unknown variable",
+        ):
+            tool.entrypoint(
+                filename="test.sol",
+                timeout=60,
+                bin="",
+                main="",
+            )
 
     def test_command_returns_none_when_not_set(self):
         """Test that command() returns None when only entrypoint is set."""
@@ -307,7 +379,9 @@ class TestCommandTemplateExpansion:
         }
         tool = Tool(cfg)
 
-        result = tool.command(filename="test.sol", timeout=60, bin="", main="")
+        result = tool.command(
+            filename="test.sol", timeout=60, bin="", main=""
+        )
 
         assert result is None
 
@@ -321,7 +395,9 @@ class TestCommandTemplateExpansion:
         }
         tool = Tool(cfg)
 
-        result = tool.entrypoint(filename="test.sol", timeout=60, bin="", main="")
+        result = tool.entrypoint(
+            filename="test.sol", timeout=60, bin="", main=""
+        )
 
         assert result is None
 
@@ -412,7 +488,9 @@ solidity:
         assert tools[0].mode == "solidity"
         assert tools[0].image == "smartbugs/test:1.0"
 
-    def test_load_tool_with_multiple_modes(self, tmp_path: Path):
+    def test_load_tool_with_multiple_modes(
+        self, tmp_path: Path
+    ):
         """Test loading a tool that supports multiple modes."""
         tool_dir = tmp_path / "multi_mode_tool"
         tool_dir.mkdir()
@@ -437,7 +515,9 @@ runtime:
         modes = {tool.mode for tool in tools}
         assert modes == {"solidity", "bytecode", "runtime"}
         # Check that all tools have the same id
-        assert all(tool.id == "multi_mode_tool" for tool in tools)
+        assert all(
+            tool.id == "multi_mode_tool" for tool in tools
+        )
 
     def test_load_tool_alias(self, tmp_path: Path):
         """Test loading a tool alias that points to other tools."""
@@ -499,7 +579,9 @@ solidity:
         tool_ids = {tool.id for tool in tools}
         assert tool_ids == {"tool0", "tool1", "tool2"}
 
-    def test_load_duplicate_ids_ignored(self, tmp_path: Path):
+    def test_load_duplicate_ids_ignored(
+        self, tmp_path: Path
+    ):
         """Test that duplicate tool IDs are ignored (seen set)."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -513,12 +595,16 @@ solidity:
 
         with patch("sb.cfg.TOOLS_HOME", str(tmp_path)):
             # Request same tool multiple times
-            tools = load(["test_tool", "test_tool", "test_tool"])
+            tools = load(
+                ["test_tool", "test_tool", "test_tool"]
+            )
 
         # Should only load once
         assert len(tools) == 1
 
-    def test_load_with_mode_specific_overrides(self, tmp_path: Path):
+    def test_load_with_mode_specific_overrides(
+        self, tmp_path: Path
+    ):
         """Test that mode-specific config overrides base config."""
         tool_dir = tmp_path / "override_tool"
         tool_dir.mkdir()
@@ -538,19 +624,27 @@ bytecode:
             tools = load(["override_tool"])
 
         assert len(tools) == 2
-        sol_tool = next(t for t in tools if t.mode == "solidity")
-        bc_tool = next(t for t in tools if t.mode == "bytecode")
+        sol_tool = next(
+            t for t in tools if t.mode == "solidity"
+        )
+        bc_tool = next(
+            t for t in tools if t.mode == "bytecode"
+        )
 
         assert sol_tool.output == "/solidity_output.json"
         assert bc_tool.output == "/default_output.tar"
 
-    def test_load_missing_tool_raises_error(self, tmp_path: Path):
+    def test_load_missing_tool_raises_error(
+        self, tmp_path: Path
+    ):
         """Test that loading a non-existent tool raises error."""
         with patch("sb.cfg.TOOLS_HOME", str(tmp_path)):
             with pytest.raises(sb.errors.SmartBugsError):
                 load(["nonexistent_tool"])
 
-    def test_load_tool_without_modes_or_alias_raises_error(self, tmp_path: Path):
+    def test_load_tool_without_modes_or_alias_raises_error(
+        self, tmp_path: Path
+    ):
         """Test that tool config without modes or alias raises error."""
         tool_dir = tmp_path / "invalid_tool"
         tool_dir.mkdir()
@@ -563,11 +657,14 @@ image: smartbugs/invalid:1.0
 
         with patch("sb.cfg.TOOLS_HOME", str(tmp_path)):
             with pytest.raises(
-                sb.errors.SmartBugsError, match="needs one of the attributes 'alias'"
+                sb.errors.SmartBugsError,
+                match="needs one of the attributes 'alias'",
             ):
                 load(["invalid_tool"])
 
-    def test_load_with_non_dict_mode_raises_error(self, tmp_path: Path):
+    def test_load_with_non_dict_mode_raises_error(
+        self, tmp_path: Path
+    ):
         """Test that non-dict mode value raises error."""
         tool_dir = tmp_path / "bad_mode_tool"
         tool_dir.mkdir()
@@ -579,14 +676,19 @@ solidity: "this should be a dict"
         )
 
         with patch("sb.cfg.TOOLS_HOME", str(tmp_path)):
-            with pytest.raises(sb.errors.SmartBugsError, match="key/value mapping expected"):
+            with pytest.raises(
+                sb.errors.SmartBugsError,
+                match="key/value mapping expected",
+            ):
                 load(["bad_mode_tool"])
 
 
 class TestInfoFindingFunction:
     """Test the info_finding() function for loading vulnerability descriptions."""
 
-    def test_info_finding_loads_findings_yaml(self, tmp_path: Path):
+    def test_info_finding_loads_findings_yaml(
+        self, tmp_path: Path
+    ):
         """Test that info_finding loads and returns findings from YAML."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -610,7 +712,9 @@ integer-overflow:
         assert result["title"] == "Reentrancy Vulnerability"
         assert result["impact"] == "high"
 
-    def test_info_finding_returns_empty_for_unknown_finding(self, tmp_path: Path):
+    def test_info_finding_returns_empty_for_unknown_finding(
+        self, tmp_path: Path
+    ):
         """Test that info_finding returns empty dict for unknown finding."""
         tool_dir = tmp_path / "test_tool"
         tool_dir.mkdir()
@@ -622,11 +726,15 @@ integer-overflow:
         )
 
         with patch("sb.cfg.TOOLS_HOME", str(tmp_path)):
-            result = info_finding("test_tool", "nonexistent_finding")
+            result = info_finding(
+                "test_tool", "nonexistent_finding"
+            )
 
         assert result == {}
 
-    def test_info_finding_caches_results(self, tmp_path: Path):
+    def test_info_finding_caches_results(
+        self, tmp_path: Path
+    ):
         """Test that info_finding caches findings per tool."""
         tool_dir = tmp_path / "cached_tool"
         tool_dir.mkdir()
@@ -642,14 +750,20 @@ integer-overflow:
 
         with patch("sb.cfg.TOOLS_HOME", str(tmp_path)):
             # First call should load from file
-            result1 = info_finding("cached_tool", "test-finding")
+            result1 = info_finding(
+                "cached_tool", "test-finding"
+            )
             # Second call should use cache
-            result2 = info_finding("cached_tool", "test-finding")
+            result2 = info_finding(
+                "cached_tool", "test-finding"
+            )
 
         assert result1 == result2
         assert "cached_tool" in info_findings
 
-    def test_info_finding_handles_missing_file(self, tmp_path: Path):
+    def test_info_finding_handles_missing_file(
+        self, tmp_path: Path
+    ):
         """Test that info_finding handles missing findings.yaml gracefully."""
         tool_dir = tmp_path / "no_findings_tool"
         tool_dir.mkdir()
@@ -659,7 +773,9 @@ integer-overflow:
         info_findings.clear()
 
         with patch("sb.cfg.TOOLS_HOME", str(tmp_path)):
-            result = info_finding("no_findings_tool", "any_finding")
+            result = info_finding(
+                "no_findings_tool", "any_finding"
+            )
 
         assert result == {}
         assert "no_findings_tool" in info_findings
@@ -669,7 +785,9 @@ integer-overflow:
 class TestToolFixtures:
     """Test using the actual fixture tool configs from Phase 3."""
 
-    def test_load_fixture_simple_tool(self, fixtures_dir: Path, tmp_path: Path):
+    def test_load_fixture_simple_tool(
+        self, fixtures_dir: Path, tmp_path: Path
+    ):
         """Test loading the test_tool_simple fixture."""
         fixture_configs = fixtures_dir / "tool_configs"
         # Create proper directory structure expected by load()
@@ -677,7 +795,10 @@ class TestToolFixtures:
         tool_dir.mkdir()
         import shutil
 
-        shutil.copy(fixture_configs / "test_tool_simple.yaml", tool_dir / "config.yaml")
+        shutil.copy(
+            fixture_configs / "test_tool_simple.yaml",
+            tool_dir / "config.yaml",
+        )
 
         with patch("sb.cfg.TOOLS_HOME", str(tmp_path)):
             tools = load(["test_tool_simple"])
@@ -689,7 +810,9 @@ class TestToolFixtures:
         assert tool.mode == "solidity"
         assert tool.solc is False
 
-    def test_load_fixture_tool_with_modes(self, fixtures_dir: Path, tmp_path: Path):
+    def test_load_fixture_tool_with_modes(
+        self, fixtures_dir: Path, tmp_path: Path
+    ):
         """Test loading the test_tool_with_modes fixture."""
         fixture_configs = fixtures_dir / "tool_configs"
         # Create proper directory structure expected by load()
@@ -697,7 +820,10 @@ class TestToolFixtures:
         tool_dir.mkdir()
         import shutil
 
-        shutil.copy(fixture_configs / "test_tool_with_modes.yaml", tool_dir / "config.yaml")
+        shutil.copy(
+            fixture_configs / "test_tool_with_modes.yaml",
+            tool_dir / "config.yaml",
+        )
 
         with patch("sb.cfg.TOOLS_HOME", str(tmp_path)):
             tools = load(["test_tool_with_modes"])
@@ -707,24 +833,39 @@ class TestToolFixtures:
         assert modes == {"solidity", "bytecode", "runtime"}
 
         # Check mode-specific configurations
-        sol_tool = next(t for t in tools if t.mode == "solidity")
+        sol_tool = next(
+            t for t in tools if t.mode == "solidity"
+        )
         assert sol_tool.solc is True
-        entrypoint_result = sol_tool.entrypoint("test.sol", 60, "/bin", "Main")
+        entrypoint_result = sol_tool.entrypoint(
+            "test.sol", 60, "/bin", "Main"
+        )
         assert "test.sol" in entrypoint_result
 
-        runtime_tool = next(t for t in tools if t.mode == "runtime")
+        runtime_tool = next(
+            t for t in tools if t.mode == "runtime"
+        )
         assert runtime_tool.output == "/results.json"
 
-    def test_load_fixture_alias_tool(self, fixtures_dir: Path, tmp_path: Path):
+    def test_load_fixture_alias_tool(
+        self, fixtures_dir: Path, tmp_path: Path
+    ):
         """Test loading the test_tool_alias fixture."""
         fixture_configs = fixtures_dir / "tool_configs"
         import shutil
 
         # Create directories for all tools referenced by alias
-        for tool_name in ["test_tool_simple", "test_tool_with_modes", "test_tool_alias"]:
+        for tool_name in [
+            "test_tool_simple",
+            "test_tool_with_modes",
+            "test_tool_alias",
+        ]:
             tool_dir = tmp_path / tool_name
             tool_dir.mkdir()
-            shutil.copy(fixture_configs / f"{tool_name}.yaml", tool_dir / "config.yaml")
+            shutil.copy(
+                fixture_configs / f"{tool_name}.yaml",
+                tool_dir / "config.yaml",
+            )
 
         with patch("sb.cfg.TOOLS_HOME", str(tmp_path)):
             tools = load(["test_tool_alias"])
@@ -735,7 +876,9 @@ class TestToolFixtures:
         assert "test_tool_simple" in tool_ids
         assert "test_tool_with_modes" in tool_ids
 
-    def test_load_fixture_invalid_tool(self, fixtures_dir: Path, tmp_path: Path):
+    def test_load_fixture_invalid_tool(
+        self, fixtures_dir: Path, tmp_path: Path
+    ):
         """Test that loading invalid fixture with actual invalid data raises error."""
         # The test_tool_invalid.yaml fixture doesn't actually cause errors
         # because: 1) 'name' is optional, 2) bool("invalid_boolean_value") = True
@@ -750,5 +893,8 @@ image: smartbugs/invalid:1.0.0
         )
 
         with patch("sb.cfg.TOOLS_HOME", str(tmp_path)):
-            with pytest.raises(sb.errors.SmartBugsError, match="needs one of the attributes"):
+            with pytest.raises(
+                sb.errors.SmartBugsError,
+                match="needs one of the attributes",
+            ):
                 load(["test_tool_invalid"])

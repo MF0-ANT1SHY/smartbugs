@@ -3,7 +3,11 @@ import tools.gigahorse.parser as gigahorse
 
 VERSION = gigahorse.VERSION
 
-FINDINGS = {"OverflowLoopIterator", "UnboundedMassOp", "WalletGriefing"}
+FINDINGS = {
+    "OverflowLoopIterator",
+    "UnboundedMassOp",
+    "WalletGriefing",
+}
 
 
 def parse(

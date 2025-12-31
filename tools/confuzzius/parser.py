@@ -42,13 +42,17 @@ def parse(
     findings: list[dict] = []
     infos: set[str] = set()
     cleaned_log = list(filter(is_relevant, log))
-    errors, fails = sb.parse_utils.errors_fails(exit_code, cleaned_log)
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, cleaned_log
+    )
 
     for line in sb.parse_utils.discard_ansi(log):
         msg = [field.strip() for field in line.split(" - ")]
         if len(msg) >= 4 and msg[2] == "ERROR":
             e = msg[3]
-            if e.startswith("Validation error") and e.endswith(
+            if e.startswith(
+                "Validation error"
+            ) and e.endswith(
                 "Sender account balance cannot afford txn (ignoring for now)"
             ):
                 e = "Validation error: Sender account balance cannot afford txn (ignoring for now)"
@@ -56,7 +60,10 @@ def parse(
 
     if output:
         try:
-            with io.BytesIO(output) as o, tarfile.open(fileobj=o) as tar:
+            with (
+                io.BytesIO(output) as o,
+                tarfile.open(fileobj=o) as tar,
+            ):
                 file = tar.extractfile("results.json")
                 results = json.load(file)
 
@@ -66,7 +73,9 @@ def parse(
                             finding = {
                                 "contract": contract,
                                 "name": issue["type"],
-                                "severity": issue["severity"],
+                                "severity": issue[
+                                    "severity"
+                                ],
                                 "line": issue["line"],
                                 "message": f"Classification: SWC-{issue['swc_id']}",
                             }

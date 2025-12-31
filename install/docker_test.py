@@ -19,8 +19,12 @@ if image_list:
 else:
     print(f"loading of {image} failed")
 
-print("run the container, retrieve the output, and print the second line")
-container = client.containers.run(image="hello-world", detach=True)
+print(
+    "run the container, retrieve the output, and print the second line"
+)
+container = client.containers.run(
+    image="hello-world", detach=True
+)
 logs = container.logs().decode("utf8").splitlines()
 print(f"*** {logs[1]} ***")
 

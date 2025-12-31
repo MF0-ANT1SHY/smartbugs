@@ -1,0 +1,15 @@
+{
+    "errors": [
+        "EXIT_CODE_1"
+    ],
+    "fails": [
+        "exception (RecursionError: maximum recursion depth exceeded while calling a Python object)"
+    ],
+    "findings": [],
+    "infos": [],
+    "parser": {
+        "id": "achecker",
+        "mode": "runtime",
+        "version": "2023/02/24"
+    }
+}

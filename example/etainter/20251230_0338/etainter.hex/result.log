@@ -1,0 +1,16 @@
+Checking contract for [4mUnbounded-Loop[0m 
+------------------
+
+Unbounded loop condition in function: start(uint256)
+Following loop bound is tainted in function buyTicket(uint256)
+( 1892)  764:	57	-2 +0 = -2	JUMPI
+
+
+Checking contract for [4mDoS-With-Failed-Call[0m 
+------------------
+
+DoS-With-Failed-Call in function: start(uint256)
+Following call target is tainted in function buyTicket(uint256)
+( 1976)  7b8:	f1	-7 +1 = -6	CALL
+
+

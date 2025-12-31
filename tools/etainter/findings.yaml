@@ -1,0 +1,4 @@
+Unbounded loop:
+    classification: SWC-128
+DoS with failed call:
+    classification: SWC-113

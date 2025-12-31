@@ -82,7 +82,9 @@ def parse(
 
     findings: list[dict] = []
     infos: set[str] = set()
-    errors, fails = sb.parse_utils.errors_fails(exit_code, log)
+    errors, fails = sb.parse_utils.errors_fails(
+        exit_code, log
+    )
 
     finding: dict = {}
     last_key: str = ""
@@ -100,7 +102,10 @@ def parse(
             else:
                 finding[key] = val
             last_key = key
-        elif line.startswith("             ") and last_key == "message":
+        elif (
+            line.startswith("             ")
+            and last_key == "message"
+        ):
             finding["message"] += " " + val
         elif (
             line.startswith(">")

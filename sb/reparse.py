@@ -15,7 +15,11 @@ if TYPE_CHECKING:
     from multiprocessing.queues import Queue
 
 
-def reparser(taskqueue: "Queue[str | None]", sarif: bool, verbose: bool) -> None:
+def reparser(
+    taskqueue: "Queue[str | None]",
+    sarif: bool,
+    verbose: bool,
+) -> None:
     while True:
         d = taskqueue.get()
         if d is None:
@@ -29,7 +33,9 @@ def reparser(taskqueue: "Queue[str | None]", sarif: bool, verbose: bool) -> None
 
         if not os.path.exists(fn_sbj):
             if verbose:
-                print(f"{d}: {sb.cfg.TASK_LOG} not found, skipping")
+                print(
+                    f"{d}: {sb.cfg.TASK_LOG} not found, skipping"
+                )
             continue
 
         for fn in (fn_json, fn_sarif):
@@ -37,15 +43,27 @@ def reparser(taskqueue: "Queue[str | None]", sarif: bool, verbose: bool) -> None
                 os.remove(fn)
             except Exception:
                 pass
-        if os.path.exists(fn_json) or os.path.exists(fn_sarif):
-            print(f"{d}: Cannot clear old parse output, skipping")
+        if os.path.exists(fn_json) or os.path.exists(
+            fn_sarif
+        ):
+            print(
+                f"{d}: Cannot clear old parse output, skipping"
+            )
             continue
 
         if verbose:
             print(d)
         sbj = sb.io.read_json(fn_sbj)
-        log = sb.io.read_lines(fn_log) if os.path.exists(fn_log) else None
-        tar = sb.io.read_bin(fn_tar) if os.path.exists(fn_tar) else None
+        log = (
+            sb.io.read_lines(fn_log)
+            if os.path.exists(fn_log)
+            else None
+        )
+        tar = (
+            sb.io.read_bin(fn_tar)
+            if os.path.exists(fn_tar)
+            else None
+        )
         try:
             parsed_result = sb.parsing.parse(sbj, log, tar)
         except sb.errors.SmartBugsError as e:
@@ -53,7 +71,9 @@ def reparser(taskqueue: "Queue[str | None]", sarif: bool, verbose: bool) -> None
             continue
         sb.io.write_json(fn_json, parsed_result)
         if sarif:
-            sarif_result = sb.sarif.sarify(sbj["tool"], parsed_result["findings"])
+            sarif_result = sb.sarif.sarify(
+                sbj["tool"], parsed_result["findings"]
+            )
             sb.io.write_json(fn_sarif, sarif_result)
 
 
@@ -77,9 +97,14 @@ def main() -> None:
         default=1,
         help="number of parallel processes (default 1)",
     )
-    argparser.add_argument("-v", action="store_true", help="show progress")
     argparser.add_argument(
-        "results", nargs="+", metavar="DIR", help="directories containing the run results"
+        "-v", action="store_true", help="show progress"
+    )
+    argparser.add_argument(
+        "results",
+        nargs="+",
+        metavar="DIR",
+        help="directories containing the run results",
     )
 
     if len(sys.argv) == 1:
@@ -104,7 +129,10 @@ def main() -> None:
         taskqueue.put(None)
 
     reparsers = [
-        mp.Process(target=reparser, args=(taskqueue, args.sarif, args.v))
+        mp.Process(
+            target=reparser,
+            args=(taskqueue, args.sarif, args.v),
+        )
         for _ in range(args.processes)
     ]
     for r in reparsers:

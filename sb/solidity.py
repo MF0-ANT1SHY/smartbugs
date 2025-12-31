@@ -52,11 +52,15 @@ RE_CONTRACT_NAMES: re.Pattern[str] = re.compile(
 )
 
 
-def get_pragma_contractnames(prg: list[str]) -> tuple[Optional[str], list[str]]:
+def get_pragma_contractnames(
+    prg: list[str],
+) -> tuple[Optional[str], list[str]]:
     prg_wo_comments_strings = remove_comments_strings(prg)
     m = PRAGMA.search(prg_wo_comments_strings)
     pragma = m[0] if m else None
-    contractnames = RE_CONTRACT_NAMES.findall(prg_wo_comments_strings)
+    contractnames = RE_CONTRACT_NAMES.findall(
+        prg_wo_comments_strings
+    )
     return pragma, contractnames
 
 
@@ -68,22 +72,34 @@ def ensure_solc_versions_loaded() -> bool:
     if cached_solc_versions:
         return True
     try:
-        cached_solc_versions = solcx.get_installable_solc_versions()
+        cached_solc_versions = (
+            solcx.get_installable_solc_versions()
+        )
         return True
     except Exception:
-        cached_solc_versions = solcx.get_installed_solc_versions()
+        cached_solc_versions = (
+            solcx.get_installed_solc_versions()
+        )
         return False
 
 
-def get_solc_version(pragma: Optional[str]) -> Optional[str]:
+def get_solc_version(
+    pragma: Optional[str],
+) -> Optional[str]:
     if not pragma:
         return None
     # correct >=0.y.z to ^0.y.z
     pragma = re.sub(r">=0\.", r"^0.", pragma)
     # replace x.y by x.y.0
-    pragma = re.sub(r"([^0-9])([0-9]+\.[0-9]+)([^0-9.]|$)", r"\1\2.0\3", pragma)
+    pragma = re.sub(
+        r"([^0-9])([0-9]+\.[0-9]+)([^0-9.]|$)",
+        r"\1\2.0\3",
+        pragma,
+    )
     try:
-        version = solcx.install._select_pragma_version(pragma, cached_solc_versions)
+        version = solcx.install._select_pragma_version(
+            pragma, cached_solc_versions
+        )
     except Exception:
         version = None
     return version
@@ -101,7 +117,9 @@ def get_solc_path(version: Optional[str]) -> Optional[str]:
         solcx.install_solc(version)
         solc_path_obj = solcx.get_executable(version)
         # solcx.get_executable returns a Path object, convert to string
-        solc_path = str(solc_path_obj) if solc_path_obj else None
+        solc_path = (
+            str(solc_path_obj) if solc_path_obj else None
+        )
     except Exception:
         solc_path = None
     cached_solc_paths[version] = solc_path

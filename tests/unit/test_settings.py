@@ -35,15 +35,22 @@ class TestSettingsInitialization:
         assert settings.main is False
         assert settings.runtime is False
         assert settings.tools == []
-        assert settings.runid == "${YEAR}${MONTH}${DAY}_${HOUR}${MIN}"
+        assert (
+            settings.runid
+            == "${YEAR}${MONTH}${DAY}_${HOUR}${MIN}"
+        )
         assert settings.overwrite is False
         assert settings.processes == 1
         assert settings.timeout is None
         assert settings.cpu_quota is None
         assert settings.mem_limit is None
         assert settings.continue_on_errors is False
-        assert settings.results == os.path.join("results", "${TOOL}", "${RUNID}", "${FILENAME}")
-        assert settings.log == os.path.join("results", "logs", "${RUNID}.log")
+        assert settings.results == os.path.join(
+            "results", "${TOOL}", "${RUNID}", "${FILENAME}"
+        )
+        assert settings.log == os.path.join(
+            "results", "logs", "${RUNID}.log"
+        )
         assert settings.json is False
         assert settings.sarif is False
         assert settings.quiet is False
@@ -120,7 +127,10 @@ class TestSettingsFreeze:
         settings = Settings()
         settings.runid = "${INVALID_VAR}"
 
-        with pytest.raises(sb.errors.SmartBugsError, match="Unknown variable.*in run id"):
+        with pytest.raises(
+            sb.errors.SmartBugsError,
+            match="Unknown variable.*in run id",
+        ):
             settings.freeze()
 
     def test_freeze_with_invalid_variable_in_log(self):
@@ -128,7 +138,10 @@ class TestSettingsFreeze:
         settings = Settings()
         settings.log = "logs/${INVALID_VAR}.log"
 
-        with pytest.raises(sb.errors.SmartBugsError, match="Unknown variable.*in name of log file"):
+        with pytest.raises(
+            sb.errors.SmartBugsError,
+            match="Unknown variable.*in name of log file",
+        ):
             settings.freeze()
 
     def test_freeze_substitutes_all_env_variables(self):
@@ -153,8 +166,16 @@ class TestSettingsResultDir:
         """Test that resultdir() raises error if settings not frozen."""
         settings = Settings()
 
-        with pytest.raises(sb.errors.InternalError, match="before settings have been frozen"):
-            settings.resultdir("mythril", "solidity", "/path/to/file.sol", "file.sol")
+        with pytest.raises(
+            sb.errors.InternalError,
+            match="before settings have been frozen",
+        ):
+            settings.resultdir(
+                "mythril",
+                "solidity",
+                "/path/to/file.sol",
+                "file.sol",
+            )
 
     def test_resultdir_substitutes_variables(self):
         """Test that resultdir() correctly substitutes all template variables."""
@@ -176,7 +197,9 @@ class TestSettingsResultDir:
     def test_resultdir_extracts_file_components(self):
         """Test that resultdir() correctly extracts filename components."""
         settings = Settings()
-        settings.results = "results/${FILEBASE}_${FILEEXT}/${TOOL}"
+        settings.results = (
+            "results/${FILEBASE}_${FILEEXT}/${TOOL}"
+        )
         settings.freeze()
 
         result = settings.resultdir(
@@ -213,9 +236,12 @@ class TestSettingsResultDir:
         settings.freeze()
 
         with pytest.raises(
-            sb.errors.SmartBugsError, match="Unknown variable.*in template of result dir"
+            sb.errors.SmartBugsError,
+            match="Unknown variable.*in template of result dir",
         ):
-            settings.resultdir("tool", "mode", "/file.sol", "file.sol")
+            settings.resultdir(
+                "tool", "mode", "/file.sol", "file.sol"
+            )
 
     def test_resultdir_with_absdir_and_reldir(self):
         """Test that resultdir() correctly substitutes directory paths."""
@@ -243,7 +269,10 @@ class TestSettingsUpdate:
         settings = Settings()
         settings.freeze()
 
-        with pytest.raises(sb.errors.InternalError, match="Frozen settings cannot be updated"):
+        with pytest.raises(
+            sb.errors.InternalError,
+            match="Frozen settings cannot be updated",
+        ):
             settings.update({"timeout": 300})
 
     def test_update_with_none_does_nothing(self):
@@ -258,7 +287,12 @@ class TestSettingsUpdate:
     def test_update_from_dict(self):
         """Test updating settings from a dictionary."""
         settings = Settings()
-        config = {"timeout": 300, "processes": 4, "mem_limit": "2g", "overwrite": True}
+        config = {
+            "timeout": 300,
+            "processes": 4,
+            "mem_limit": "2g",
+            "overwrite": True,
+        }
 
         settings.update(config)
 
@@ -293,13 +327,20 @@ json: true
         """Test that update() raises error for invalid input types."""
         settings = Settings()
 
-        with pytest.raises(sb.errors.SmartBugsError, match="cannot be updated by objects"):
+        with pytest.raises(
+            sb.errors.SmartBugsError,
+            match="cannot be updated by objects",
+        ):
             settings.update([1, 2, 3])  # type: ignore
 
     def test_update_replaces_hyphens_with_underscores(self):
         """Test that update() converts hyphens to underscores in keys."""
         settings = Settings()
-        config = {"mem-limit": "4g", "cpu-quota": 50000, "continue-on-errors": True}
+        config = {
+            "mem-limit": "4g",
+            "cpu-quota": 50000,
+            "continue-on-errors": True,
+        }
 
         settings.update(config)
 
@@ -337,7 +378,11 @@ json: true
     def test_update_positive_integer_fields(self):
         """Test updating positive integer fields (timeout, cpu_quota, processes)."""
         settings = Settings()
-        config = {"timeout": "300", "cpu_quota": "50000", "processes": "4"}
+        config = {
+            "timeout": "300",
+            "cpu_quota": "50000",
+            "processes": "4",
+        }
 
         settings.update(config)
 
@@ -350,7 +395,8 @@ json: true
         settings = Settings()
 
         with pytest.raises(
-            sb.errors.SmartBugsError, match="'timeout' needs to be a positive integer"
+            sb.errors.SmartBugsError,
+            match="'timeout' needs to be a positive integer",
         ):
             settings.update({"timeout": -100})
 
@@ -359,7 +405,8 @@ json: true
         settings = Settings()
 
         with pytest.raises(
-            sb.errors.SmartBugsError, match="'processes' needs to be a positive integer"
+            sb.errors.SmartBugsError,
+            match="'processes' needs to be a positive integer",
         ):
             settings.update({"processes": "invalid"})
 
@@ -375,17 +422,27 @@ json: true
         """Test that tools can be provided as a list."""
         settings = Settings()
 
-        settings.update({"tools": ["mythril", "slither", "oyente"]})
+        settings.update(
+            {"tools": ["mythril", "slither", "oyente"]}
+        )
 
-        assert settings.tools == ["mythril", "slither", "oyente"]
+        assert settings.tools == [
+            "mythril",
+            "slither",
+            "oyente",
+        ]
 
-    def test_update_tools_with_dict_converts_to_string(self):
+    def test_update_tools_with_dict_converts_to_string(
+        self,
+    ):
         """Test that tools with dict type converts the dict to a string."""
         settings = Settings()
 
         # The code converts dict to string via list comprehension [str(vi) for vi in v]
         # This documents the current behavior (dict gets stringified)
-        settings.update({"tools": {"tool1": "value", "tool2": "value"}})
+        settings.update(
+            {"tools": {"tool1": "value", "tool2": "value"}}
+        )
 
         # Dict gets converted to a string representation
         assert len(settings.tools) == 1
@@ -403,42 +460,71 @@ json: true
         """Test that files can be provided as a list."""
         settings = Settings()
 
-        settings.update({"files": ["samples/*.sol", "contracts/*.sol"]})
+        settings.update(
+            {"files": ["samples/*.sol", "contracts/*.sol"]}
+        )
 
-        assert settings.files == [(None, "samples/*.sol"), (None, "contracts/*.sol")]
+        assert settings.files == [
+            (None, "samples/*.sol"),
+            (None, "contracts/*.sol"),
+        ]
 
     def test_update_files_with_root_specification(self):
         """Test that files can include root:path specifications."""
         settings = Settings()
 
-        settings.update({"files": ["/root/path:*.sol", "relative/*.sol"]})
+        settings.update(
+            {
+                "files": [
+                    "/root/path:*.sol",
+                    "relative/*.sol",
+                ]
+            }
+        )
 
-        assert settings.files == [("/root/path", "*.sol"), (None, "relative/*.sol")]
+        assert settings.files == [
+            ("/root/path", "*.sol"),
+            (None, "relative/*.sol"),
+        ]
 
-    def test_update_files_with_home_variable(self, tmp_path: Path):
+    def test_update_files_with_home_variable(
+        self, tmp_path: Path
+    ):
         """Test that files patterns can use $HOME variable."""
         settings = Settings()
         home = os.path.expanduser("~")
 
         settings.update({"files": "$HOME/contracts/*.sol"})
 
-        assert settings.files == [(None, f"{home}/contracts/*.sol")]
+        assert settings.files == [
+            (None, f"{home}/contracts/*.sol")
+        ]
 
-    def test_update_files_with_invalid_colon_count_raises_error(self):
+    def test_update_files_with_invalid_colon_count_raises_error(
+        self,
+    ):
         """Test that files with too many colons raise error."""
         settings = Settings()
 
-        with pytest.raises(sb.errors.SmartBugsError, match="contains more than one colon"):
+        with pytest.raises(
+            sb.errors.SmartBugsError,
+            match="contains more than one colon",
+        ):
             settings.update({"files": "a:b:c"})
 
-    def test_update_files_with_unknown_variable_raises_error(self):
+    def test_update_files_with_unknown_variable_raises_error(
+        self,
+    ):
         """Test that files with unknown variables raise error."""
         settings = Settings()
 
         with pytest.raises(
-            sb.errors.SmartBugsError, match="Unknown variable.*in file specification"
+            sb.errors.SmartBugsError,
+            match="Unknown variable.*in file specification",
         ):
-            settings.update({"files": "${UNKNOWN_VAR}/contracts/*.sol"})
+            settings.update(
+                {"files": "${UNKNOWN_VAR}/contracts/*.sol"}
+            )
 
     def test_update_boolean_fields(self):
         """Test updating boolean fields."""
@@ -467,34 +553,52 @@ json: true
         """Test that invalid boolean values raise errors."""
         settings = Settings()
 
-        with pytest.raises(sb.errors.SmartBugsError, match="'main' needs to be a Boolean"):
+        with pytest.raises(
+            sb.errors.SmartBugsError,
+            match="'main' needs to be a Boolean",
+        ):
             settings.update({"main": "yes"})
 
     def test_update_path_fields(self):
         """Test updating path fields (results, log)."""
         settings = Settings()
 
-        settings.update({"results": "output/${TOOL}/${FILENAME}", "log": "logs/run.log"})
+        settings.update(
+            {
+                "results": "output/${TOOL}/${FILENAME}",
+                "log": "logs/run.log",
+            }
+        )
 
-        assert settings.results == os.path.join("output", "${TOOL}", "${FILENAME}")
+        assert settings.results == os.path.join(
+            "output", "${TOOL}", "${FILENAME}"
+        )
         assert settings.log == "logs/run.log"
 
     def test_update_path_converts_slashes_to_os_sep(self):
         """Test that path fields convert slashes to os.path.sep."""
         settings = Settings()
 
-        settings.update({"results": "output/results/${TOOL}"})
+        settings.update(
+            {"results": "output/results/${TOOL}"}
+        )
 
-        expected = os.path.join("output", "results", "${TOOL}")
+        expected = os.path.join(
+            "output", "results", "${TOOL}"
+        )
         assert settings.results == expected
 
     def test_update_runid_field(self):
         """Test updating runid field."""
         settings = Settings()
 
-        settings.update({"runid": "custom_${YEAR}${MONTH}${DAY}"})
+        settings.update(
+            {"runid": "custom_${YEAR}${MONTH}${DAY}"}
+        )
 
-        assert settings.runid == "custom_${YEAR}${MONTH}${DAY}"
+        assert (
+            settings.runid == "custom_${YEAR}${MONTH}${DAY}"
+        )
 
     def test_update_mem_limit_with_units(self):
         """Test updating mem_limit with various units."""
@@ -526,18 +630,28 @@ json: true
 
         assert settings.mem_limit == "2147483648"
 
-    def test_update_mem_limit_invalid_value_raises_error(self):
+    def test_update_mem_limit_invalid_value_raises_error(
+        self,
+    ):
         """Test that invalid mem_limit values raise errors."""
         settings = Settings()
 
-        with pytest.raises(sb.errors.SmartBugsError, match="'mem_limit' needs to be a memory"):
+        with pytest.raises(
+            sb.errors.SmartBugsError,
+            match="'mem_limit' needs to be a memory",
+        ):
             settings.update({"mem_limit": "invalid"})
 
-    def test_update_mem_limit_negative_value_raises_error(self):
+    def test_update_mem_limit_negative_value_raises_error(
+        self,
+    ):
         """Test that negative mem_limit values raise errors."""
         settings = Settings()
 
-        with pytest.raises(sb.errors.SmartBugsError, match="'mem_limit' needs to be a memory"):
+        with pytest.raises(
+            sb.errors.SmartBugsError,
+            match="'mem_limit' needs to be a memory",
+        ):
             settings.update({"mem_limit": "-1g"})
 
     def test_update_mem_limit_with_none(self):
@@ -553,17 +667,24 @@ json: true
         """Test that invalid keys raise errors."""
         settings = Settings()
 
-        with pytest.raises(sb.errors.SmartBugsError, match="Invalid key 'unknown_key'"):
+        with pytest.raises(
+            sb.errors.SmartBugsError,
+            match="Invalid key 'unknown_key'",
+        ):
             settings.update({"unknown_key": "value"})
 
 
 class TestSettingsConfigurationHierarchy:
     """Test configuration hierarchy (site → user → CLI)."""
 
-    def test_user_config_overrides_site_config(self, tmp_path: Path):
+    def test_user_config_overrides_site_config(
+        self, tmp_path: Path
+    ):
         """Test that user config overrides site config."""
         site_config = tmp_path / "site.yaml"
-        site_config.write_text("timeout: 100\nprocesses: 2\n")
+        site_config.write_text(
+            "timeout: 100\nprocesses: 2\n"
+        )
 
         user_config = tmp_path / "user.yaml"
         user_config.write_text("timeout: 300\n")
@@ -577,10 +698,14 @@ class TestSettingsConfigurationHierarchy:
         assert settings.timeout == 300
         assert settings.processes == 2  # Not overridden
 
-    def test_cli_overrides_user_config(self, tmp_path: Path):
+    def test_cli_overrides_user_config(
+        self, tmp_path: Path
+    ):
         """Test that CLI arguments override user config."""
         user_config = tmp_path / "user.yaml"
-        user_config.write_text("timeout: 300\nprocesses: 2\n")
+        user_config.write_text(
+            "timeout: 300\nprocesses: 2\n"
+        )
 
         settings = Settings()
         settings.update(str(user_config))
@@ -595,10 +720,14 @@ class TestSettingsConfigurationHierarchy:
     def test_three_level_hierarchy(self, tmp_path: Path):
         """Test complete hierarchy: site → user → CLI."""
         site_config = tmp_path / "site.yaml"
-        site_config.write_text("timeout: 100\nprocesses: 2\nmem_limit: 2g\n")
+        site_config.write_text(
+            "timeout: 100\nprocesses: 2\nmem_limit: 2g\n"
+        )
 
         user_config = tmp_path / "user.yaml"
-        user_config.write_text("timeout: 300\nprocesses: 4\n")
+        user_config.write_text(
+            "timeout: 300\nprocesses: 4\n"
+        )
 
         settings = Settings()
 
@@ -618,7 +747,9 @@ class TestSettingsConfigurationHierarchy:
         settings.update({"timeout": 600})
         assert settings.timeout == 600
         assert settings.processes == 4  # From user config
-        assert settings.mem_limit == "2g"  # From site config
+        assert (
+            settings.mem_limit == "2g"
+        )  # From site config
 
 
 class TestSettingsErrorHandling:
@@ -631,10 +762,14 @@ class TestSettingsErrorHandling:
         with pytest.raises(sb.errors.SmartBugsError):
             settings.update("/nonexistent/config.yaml")
 
-    def test_invalid_yaml_raises_error(self, tmp_path: Path):
+    def test_invalid_yaml_raises_error(
+        self, tmp_path: Path
+    ):
         """Test that invalid YAML raises SmartBugsError."""
         config_file = tmp_path / "invalid.yaml"
-        config_file.write_text("invalid: yaml: content: {{{")
+        config_file.write_text(
+            "invalid: yaml: content: {{{"
+        )
 
         settings = Settings()
 
@@ -744,7 +879,9 @@ class TestSettingsEdgeCases:
         settings.results = "${FILEBASE}_${FILEEXT}"
         settings.freeze()
 
-        result = settings.resultdir("tool", "mode", "/path/to/filename", "filename")
+        result = settings.resultdir(
+            "tool", "mode", "/path/to/filename", "filename"
+        )
 
         assert "filename" in result
 
@@ -754,7 +891,12 @@ class TestSettingsEdgeCases:
         settings.results = "${FILEBASE}.${FILEEXT}"
         settings.freeze()
 
-        result = settings.resultdir("tool", "mode", "/path/to/my.contract.sol", "my.contract.sol")
+        result = settings.resultdir(
+            "tool",
+            "mode",
+            "/path/to/my.contract.sol",
+            "my.contract.sol",
+        )
 
         assert "my.contract" in result
         assert "sol" in result
@@ -788,13 +930,18 @@ class TestSettingsEdgeCases:
         settings.update({"results": "C:/output/results"})
 
         # Should convert to os-appropriate separators
-        assert "C:" in settings.results or "output" in settings.results
+        assert (
+            "C:" in settings.results
+            or "output" in settings.results
+        )
 
 
 class TestSettingsIntegration:
     """Integration tests for realistic usage scenarios."""
 
-    def test_typical_cli_usage_scenario(self, tmp_path: Path):
+    def test_typical_cli_usage_scenario(
+        self, tmp_path: Path
+    ):
         """Test a typical CLI usage scenario with all features."""
         # Create a site config
         site_config = tmp_path / "site_cfg.yaml"
@@ -827,13 +974,22 @@ json: true
         settings.update(str(user_config))
 
         # CLI overrides
-        settings.update({"timeout": 900, "processes": 4, "mem_limit": "4g"})
+        settings.update(
+            {
+                "timeout": 900,
+                "processes": 4,
+                "mem_limit": "4g",
+            }
+        )
 
         # Verify hierarchy
         assert settings.timeout == 900  # CLI override
         assert settings.processes == 4  # CLI override
         assert settings.mem_limit == "4g"  # CLI override
-        assert settings.tools == ["mythril", "slither"]  # User config
+        assert settings.tools == [
+            "mythril",
+            "slither",
+        ]  # User config
         assert settings.json is True  # User config
 
         # Freeze and verify
@@ -842,7 +998,12 @@ json: true
         assert isinstance(settings.results, string.Template)
 
         # Generate result directory
-        result_dir = settings.resultdir("mythril", "solidity", "/tmp/test.sol", "test.sol")
+        result_dir = settings.resultdir(
+            "mythril",
+            "solidity",
+            "/tmp/test.sol",
+            "test.sol",
+        )
         assert "mythril" in result_dir
         assert "test.sol" in result_dir
 
@@ -851,7 +1012,12 @@ json: true
         settings = Settings()
         settings.freeze()
 
-        result_dir = settings.resultdir("slither", "solidity", "/path/test.sol", "test.sol")
+        result_dir = settings.resultdir(
+            "slither",
+            "solidity",
+            "/path/test.sol",
+            "test.sol",
+        )
 
         assert "slither" in result_dir
         assert "test.sol" in result_dir
