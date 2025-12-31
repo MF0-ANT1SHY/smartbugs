@@ -1,3 +1,8 @@
+对SmartBugs进行扩展，集成更多工具。
+目前扩展了对Achecker, eTainter的集成，并添加了Oyente的两个变体（修改原生的循环展开次数以及路径长度限制）
+
+--------------------------------
+
 # SmartBugs: A Framework for Analysing Ethereum Smart Contracts
 
 <a href="https://github.com/smartbugs/smartbugs/releases"><img alt="Smartbugs release" src="https://img.shields.io/github/release/smartbugs/smartbugs.svg"></a>
